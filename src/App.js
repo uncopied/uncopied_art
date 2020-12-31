@@ -9,11 +9,15 @@ import { LinkContainer } from "react-router-bootstrap";
 import { AppContext } from "./libs/contextLib";
 import { useHistory } from "react-router-dom";
 import { onError } from "./libs/errorLib";
+import LangLib from "./libs/langLib";
+import { useTranslation } from "react-i18next";
 
 function App() {
 	const [isAuthenticated, userHasAuthenticated] = useState(false);
 	const [isAuthenticating, setIsAuthenticating] = useState(true);
 	const history = useHistory();
+	const { t } = useTranslation();
+
 	useEffect(() => {
 	  onLoad();
 	}, []);
@@ -44,7 +48,12 @@ function App() {
 	
   return (
     <div className="App container py-3">
-		<small>( debug : env is {process.env.REACT_APP_UNCOPIED_API} - PLEASE NOTE : UNCOPIED IS IN ALPHA <a href="https://calendly.com/namsor/uncopied_art" target="top"> contact / schedule a chat </a> ) </small>
+		<small>
+			{t('common.debug-header')} -
+			<a href="https://calendly.com/namsor/uncopied_art" target="top"> {t('common.debug-contact')} </a>
+			-
+			debug env {process.env.REACT_APP_UNCOPIED_API}
+		</small>
 		<Navbar collapseOnSelect bg="light" expand="md" className="mb-3">
 		<LinkContainer to="/">
 			<Navbar.Brand className="font-weight-bold text-muted">
@@ -66,9 +75,9 @@ function App() {
 					</LinkContainer>
 				  </>
 				)}
-          </Nav>
+          </Nav> <LangLib />
         </Navbar.Collapse>
-	  </Navbar>		
+	  </Navbar>
 	<AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
 	  <Routes />
 	</AppContext.Provider>

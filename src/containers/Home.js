@@ -4,8 +4,10 @@ import ListGroup from "react-bootstrap/ListGroup";
 import {useAppContext} from "../libs/contextLib";
 import {LinkContainer} from "react-router-bootstrap";
 import embossing from "../embossing.svg";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+    const { t } = useTranslation();
     const {isAuthenticated} = useAppContext();
 
     function renderNewCertificateChoice() {
@@ -64,25 +66,22 @@ export default function Home() {
         return (
             <div className="Home">
                 <div className="lander">
-                    <h1>Uncopied.art</h1>
-                    <p className="text-muted">Physical and digitally immutable certificates of authenticity for the
-                        original artwork.</p>
+                    <h1>UNCOPIED.ART</h1>
+                    <p className="text-muted">
+                        {t('home.mission-statement')}
+                    </p>
                 </div>
-                <h2>For artists</h2>
+                <h2>{t('home.for-artists')}</h2>
                 <p>
-                    <strong>Certificates of Authenticity</strong> offer strong and long term protection for your intellectual property.
-                    You gain control and decide with maximum flexibility on creating physical or digital editions of your artworks
-                    (single original edition, limited edition of original prints, digital prints or non fungible tokens NFTs).
+                    {t('home.for-artists-statement')}
                 </p>
-                <h2>For museums and institutions</h2>
+                <h2>{t('home.for-collectors')}</h2>
                 <p>
-                    <strong>Certificates of Inventory</strong> support long term preservation of your digital and
-                    physical collections, as well as dissemination of your collection metadata in a standard and future-proof format.
+                    {t('home.for-collectors-statement')}
                 </p>
-                <h2>For art collectors</h2>
+                <h2>{t('home.for-museums')}</h2>
                 <p>
-                    <strong>Certificates of Expertise</strong> increase the value of your collection with physically and
-                    digitally signed documents from world-class experts and appraisers.
+                    {t('home.for-museums-statement')}
                 </p>
             </div>
         );

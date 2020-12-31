@@ -1,0 +1,16 @@
+{
+    "common": {
+        "translate-button": "FR",
+        "debug-header": "CE SITE EST EN CONSTRUCTION ALPHA",
+        "debug-contact": "nous contacter, programmer une conversation"
+    },
+    "home": {
+        "mission-statement": "Des documents sécurisés pour certifier l’œuvre d’art originale.",
+        "for-artists": "Pour les artistes",
+        "for-artists-statement": "Le Certificat d'Authenticité offre une protection solide à long terme pour vos créations. Vous gardez le contrôle et décidez avec le maximum de flexibilité de vos éditions physiques ou digitales : original unique, tirage limité en N exemplaires numérotés, droits de reproduction pour les oeuvres digitales, oeuvres cryptographiques NFT.",
+        "for-collectors": "Pour les collectionneurs",
+        "for-collectors-statement": "Le Certificat d'Expertise sécurise la valeur de vos collections avec des documents signés physiquement et électroniquement par les meilleurs experts du marché.",
+        "for-museums": "Pour les musées et institutions",
+        "for-museums-statement": "Le Certificat d'Inventaire sécurise le processus décénal de récolement et la préservation à long terme des collections physiques et de leur représentation numériques, en même temps que la dissémination des méta-données dans un format standard et ouvert."
+    }
+}
