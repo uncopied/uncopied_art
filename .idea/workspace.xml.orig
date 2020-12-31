@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6d6ddb0c-847a-48a0-9eaa-47d34d653717" name="Default Changelist" comment="">
+<<<<<<< working copy
+      <change beforePath="$PROJECT_DIR$/../../NamSorAPIv2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../NamSorAPIv2/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../NamSorAPIv2/src/main/java/com/namsor/api2/firebase/FirebaseAppServiceAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../NamSorAPIv2/src/main/java/com/namsor/api2/firebase/FirebaseAppServiceAccount.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+>>>>>>> merge rev
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< working copy
+=======
+      <change beforePath="$PROJECT_DIR$/src/containers/ArtworkSource.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ArtworkSource.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/CheckoutCertificate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CheckoutCertificate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/NewArtworkSource.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/NewArtworkSource.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Signup.js" afterDir="false" />
+>>>>>>> merge rev
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../Go" />
+  <component name="ProjectId" id="1lmN5IoSsTrDQt0GXDHLoqJHkfv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\GoLand 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\namsor\uncopiedOrg\uncopied-www" />
+      <recent name="D:\Projects\namsor\uncopiedOrg\uncopied-www\src\containers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\namsor\uncopiedOrg\uncopied-www\public" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+<<<<<<< working copy
+  <component name="WindowStateProjectService">
+    <state x="449" y="168" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1609403531296">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="449" y="168" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864@0.0.1536.864" timestamp="1609403531296" />
+=======
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/App.js</url>
+          <line>41</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/App.js</url>
+          <line>37</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+>>>>>>> merge rev
+  </component>
+  <component name="hg4idea.settings">
+    <option name="CHECK_INCOMING_OUTGOING" value="true" />
+    <option name="RECENT_HG_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+</project>
