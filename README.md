@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Uncopied.art web site
+This is the front-end for Uncopied.art web site. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It is based on the [serverless-stack.com](https://serverless-stack.com/chapters/initialize-the-frontend-repo.html) tutorial.
 
 ## Available Scripts
 
