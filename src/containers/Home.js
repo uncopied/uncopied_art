@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import ListGroup from "react-bootstrap/ListGroup";
-import {useAppContext} from "../libs/contextLib";
-import {LinkContainer} from "react-router-bootstrap";
+import { useAppContext } from "../libs/contextLib";
+import { LinkContainer } from "react-router-bootstrap";
 import embossing from "../embossing.svg";
 import { useTranslation } from "react-i18next";
 
 export default function Home() {
     const { t } = useTranslation();
-    const {isAuthenticated} = useAppContext();
+    const { isAuthenticated } = useAppContext();
 
     function renderNewCertificateChoice() {
         return (
@@ -71,18 +71,29 @@ export default function Home() {
                         {t('home.mission-statement')}
                     </p>
                 </div>
-                <h2>{t('home.for-artists')}</h2>
-                <p>
-                    {t('home.for-artists-statement')}
-                </p>
-                <h2>{t('home.for-collectors')}</h2>
-                <p>
-                    {t('home.for-collectors-statement')}
-                </p>
-                <h2>{t('home.for-museums')}</h2>
-                <p>
-                    {t('home.for-museums-statement')}
-                </p>
+                <div className="row">
+                    <div className="div">
+                        <h2>{t('home.for-artists')}</h2>
+                        <p>
+                            {t('home.for-artists-statement')}
+                        </p>
+                    </div>
+                    <div className="div">
+
+                        <h2>{t('home.for-collectors')}</h2>
+                        <p>
+                            {t('home.for-collectors-statement')}
+                        </p>
+
+                    </div>
+                    <div className="div">
+
+                        <h2>{t('home.for-museums')}</h2>
+                        <p>
+                            {t('home.for-museums-statement')}
+                        </p>
+                    </div>
+                </div>
             </div>
         );
     }

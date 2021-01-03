@@ -1,4 +1,4 @@
-. {
+* {
   font-family: Montserrat-Regular;
 }
 
@@ -20,4 +20,15 @@
 
 .thumbnailCaption {
   text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.row .div {
+  flex: 1 1 300px;
+  padding: 0 15px;
 }

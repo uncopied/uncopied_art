@@ -1,3 +1,9 @@
+.embossing {
+  display: block;
+  margin: auto;
+  width: 40px;
+}
+
 @media all and (min-width: 480px) {
   .Login {
     padding: 60px 0;
@@ -7,10 +13,29 @@
     margin: 0 auto;
     max-width: 320px;
   }
+
   .embossing {
-    display:block;
-    margin:auto;
-    width: 50px ;
+    display: block;
+    margin: auto;
+    width: 50px;
   }
 
+}
+
+@media (min-width: 767px) {
+  .Login {
+    max-width: 540px;
+    margin: auto;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 24px;
+  }
 }

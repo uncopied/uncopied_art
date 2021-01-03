@@ -8,3 +8,15 @@
     max-width: 320px;
   }
 }
+
+@media (min-width: 767px) {
+  .Signup {
+    max-width: 540px;
+    margin: auto;
+  }
+
+  .Signup form {
+    margin: 0 auto;
+    max-width: none;
+  }
+}
