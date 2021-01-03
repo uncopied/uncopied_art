@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { onError } from "../libs/errorLib";
+import "./Forms.css";
 import "./ArtworkSource.css";
 import {useAppContext} from "../libs/contextLib";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -140,8 +141,8 @@ export default function ArtworkSource() {
 
     function renderArtworkSource() {
         return (
-            <div>
-                <div>
+            <div className="form-container-outer">
+                <div className="form-container-inner">
                     <div>
                         <img className="embossing" src={embossing} alt="embossing" />
                         <h2 align="center">CREATE EDITION</h2>
@@ -213,12 +214,12 @@ export default function ArtworkSource() {
                         with the promise you made in earlier edition. Please, don't hesitate to
                         <a href="https://calendly.com/namsor/uncopied_art" target="top"> schedule a free chat </a> with an advisor.
                     </p>
-                </div>
-                <div className="ArtworkSource">
+                    <div className="ArtworkSource">
                    <span className="font-weight-bold">
                        <img className="thumbnail" src={`${process.env.REACT_APP_UNCOPIED_IPFS}${artworkSource.IPFSHashThumbnail}`} alt={`${new Date(artworkSource.CreatedAt).toLocaleString()} ${artworkSource.SourceLicense}`}/>
                        <figcaption className="thumbnailCaption">{new Date(artworkSource.CreatedAt).toLocaleString()} {artworkSource.SourceLicense}</figcaption>
                    </span>
+                    </div>
                 </div>
             </div>
         );

@@ -2,7 +2,10 @@
     "common": {
         "translate-button": "EN",
         "debug-header": "PLEASE NOTE THIS WEBSITE IS IN CONSTRUCTION ALPHA",
-        "debug-contact": "contact us, schedule a live chat"
+        "debug-contact": "contact us, schedule a live chat",
+        "signup": "Signup",
+        "login": "Login",
+        "logout": "Logout"
     },
     "home": {
         "mission-statement": "Physical and digitally immutable certificates of authenticity for the original artwork.",

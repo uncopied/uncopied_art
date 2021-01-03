@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 // import Button from "react-bootstrap/Button";
-import "./Login.css";
+import "./Forms.css";
 import LoaderButton from "./LoaderButton";
 import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
@@ -9,7 +9,6 @@ import { useHistory } from "react-router-dom";
 import { onError } from "../libs/errorLib";
 
 import embossing from "../embossing.svg";
-import Navbar from "react-bootstrap/Navbar";
 
 export default function Login() {
 	const { userHasAuthenticated } = useAppContext();
@@ -58,8 +57,8 @@ export default function Login() {
 	}
 
 	return (
-		<div className="login-container">
-			<div className="Login">
+		<div className="form-container-outer">
+			<div className="form-container-inner">
 				<div>
 					<img className="embossing" src={embossing} alt="embossing" />
 					<h2 align="center">LOG IN TO YOUR ACCOUNT</h2>
@@ -90,8 +89,7 @@ export default function Login() {
 						disabled={!validateForm()}
 					>
 						Login
-		</LoaderButton>
-
+					</LoaderButton>
 				</Form>
 			</div>
 		</div>

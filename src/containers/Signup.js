@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 // import Button from "react-bootstrap/Button";
 import LoaderButton from "./LoaderButton";
-import "./Login.css";
-import "./Signup.css";
+import "./Forms.css";
 import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
 import { useHistory } from "react-router-dom";
@@ -73,8 +72,8 @@ export default function Signup() {
   }
 
   return (
-    <div className="signup-container">
-      <div className="Signup">
+    <div className="form-container-outer">
+      <div className="form-container-inner">
         <div>
           <img className="embossing" src={embossing} alt="embossing" />
           <h2 align="center">CREATE YOUR ACCOUNT</h2>

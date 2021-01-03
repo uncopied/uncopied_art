@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import {useHistory} from "react-router-dom";
 import LoaderButton from "./LoaderButton";
 import {onError} from "../libs/errorLib";
-
+import "./Forms.css";
 import "./NewArtworkSource.css";
 import embossing from "../embossing.svg";
 
@@ -117,7 +117,9 @@ export default function NewArtworkSource() {
     }
 
     return (
-        <div className="NewNote">
+        <div className="form-container-outer">
+            <div className="form-container-inner">
+
             <div>
                 <img className="embossing" src={embossing} alt="embossing" />
                 <h2 align="center">UPLOAD NEW ARTWORK</h2>
@@ -181,6 +183,7 @@ export default function NewArtworkSource() {
                     Create
                 </LoaderButton>
             </Form>
+            </div>
         </div>
     );
 }

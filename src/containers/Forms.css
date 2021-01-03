@@ -4,16 +4,9 @@
   width: 40px;
 }
 
-.signup-container,
-.login-container {
+.form-container-outer {
   background: #2d2929;
   padding: 60px 15px;
-}
-
-.Signup,
-.Login {
-  background-color: #ffffff;
-  padding: 15px;
 }
 
 div form button.btn {
@@ -22,40 +15,32 @@ div form button.btn {
   opacity: 1 !important;
 }
 
+.form-container-inner {
+  background-color: #ffffff;
+  padding: 15px;
+}
+
 @media all and (min-width: 480px) {
-  .Login {
+  .form-container-inner {
     padding: 60px 0;
   }
 
-  .Login form {
+  .form-container-inner form {
     margin: 0 auto;
     max-width: 320px;
   }
-
-  .embossing {
-    display: block;
-    margin: auto;
-    width: 50px;
-  }
-
 }
 
 @media (min-width: 767px) {
-  .Login {
+  .form-container-inner {
     max-width: 740px;
-    margin: auto;
     padding-left: 100px;
     padding-right: 100px;
+    margin: auto;
   }
 
-  .Login form {
+  .form-container-inner form {
     margin: 0 auto;
     max-width: none;
-  }
-}
-
-@media (max-width: 480px) {
-  h2 {
-    font-size: 24px;
   }
 }

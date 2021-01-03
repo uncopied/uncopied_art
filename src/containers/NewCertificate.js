@@ -1,12 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { onError } from "../libs/errorLib";
-import "./ArtworkSource.css";
+import "./Forms.css";
+import "./NewCertificate.css";
 import {useAppContext} from "../libs/contextLib";
-import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
 import LoaderButton from "./LoaderButton";
-import {useFormFields} from "../libs/hooksLib";
 import embossing from "../embossing.svg";
 
 export default function NewCertificate() {
@@ -120,7 +119,9 @@ export default function NewCertificate() {
 
     function renderAssetTemplate() {
         return (
-            <div>
+            <div className="form-container-outer">
+                <div className="form-container-inner">
+
                 <div>
                     <img className="embossing" src={embossing} alt="embossing" />
                     <h2 align="center">PREVIEW CERTIFICATE</h2>
@@ -162,6 +163,7 @@ export default function NewCertificate() {
                     with the promise you made in earlier edition. Please, follow our <a href="https://en.wikipedia.org/wiki/Guideline" target="top">guideline</a> and don't hesitate to
                     <a href="https://calendly.com/namsor/uncopied_art" target="top"> schedule a free chat </a> with an advisor.
                 </p>
+                </div>
             </div>
         );
     }

@@ -2,10 +2,13 @@
     "common": {
         "translate-button": "FR",
         "debug-header": "CE SITE EST EN CONSTRUCTION ALPHA",
-        "debug-contact": "nous contacter, programmer une conversation"
+        "debug-contact": "nous contacter, programmer une conversation",
+        "signup": "Créer votre compte",
+        "login": "S'identifier",
+        "logout": "Se déconnecter"
     },
     "home": {
-        "mission-statement": "Des documents sécurisés pour certifier l’œuvre d’art originale.",
+        "mission-statement": "Des documents sécurisés pour certifier l’œuvre d’art originale, physique ou numérique.",
         "for-artists": "Artistes",
         "for-artists-statement": "Le Certificat d'Authenticité offre une protection solide à long terme pour vos créations. Vous gardez le contrôle et décidez avec flexibilité de vos éditions physiques ou digitales : original unique, tirage limité en N exemplaires numérotés, droits de reproduction pour les oeuvres digitales, oeuvres cryptographiques NFT.",
         "for-collectors": "Collectionneurs",

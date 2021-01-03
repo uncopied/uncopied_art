@@ -1,12 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { onError } from "../libs/errorLib";
-import "./ArtworkSource.css";
+import "./Forms.css";
+import "./CheckoutCertificate.css";
 import {useAppContext} from "../libs/contextLib";
-import ListGroup from "react-bootstrap/ListGroup";
-import Form from "react-bootstrap/Form";
-import LoaderButton from "./LoaderButton";
-import {useFormFields} from "../libs/hooksLib";
 import embossing from "../embossing.svg";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
@@ -196,7 +192,8 @@ export default function CheckoutCertificate() {
 
     function renderOrder() {
         return (
-            <div>
+            <div className="form-container-outer">
+                <div className="form-container-inner">
                 <div>
                     <img className="embossing" src={embossing} alt="embossing" />
                     <h2 align="center">CHECKOUT CERTIFICATE</h2>
@@ -205,7 +202,7 @@ export default function CheckoutCertificate() {
                         to secure commercial contracts. Our registered and unique design combines physical and digital security features to protect your
                         certificates.
                     </p>
-                    <div align="center" dangerouslySetInnerHTML={{ __html: checkout.CertPreview.TaillyPreviewSVG }} />
+                    <div className="tallypreview" dangerouslySetInnerHTML={{ __html: checkout.CertPreview.TaillyPreviewSVG }} />
                 </div>
                 <h3>Delivery options</h3>
                 <p>
@@ -266,6 +263,7 @@ export default function CheckoutCertificate() {
                 <p>
                     SATISFIED OR REIMBURSED !
                 </p>
+                </div>
             </div>
         );
     }
