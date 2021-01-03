@@ -68,13 +68,13 @@ export default function ArtworkSource() {
     }, [isAuthenticated,id]);
 
 
-    function loadArtworkSource(id) {
+    function loadArtworkSource(sourceId) {
         return new Promise(resolve => {
             try {
                 // Sending and receiving data in JSON format using POST method
                 //
                 var xhr = new XMLHttpRequest();
-                var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/src/"+id.id;
+                var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/src/"+sourceId.id;
                 console.log(url)
                 xhr.open("GET", url, true);
                 xhr.setRequestHeader("Content-Type", "application/json");
@@ -120,10 +120,9 @@ export default function ArtworkSource() {
                         alert("Could not read asset template");
                     } else {
                         console.log("got asset template "+json);
-                        localStorage.setItem('assetTemplateID', json.Template.ID);
-                        history.push("/cert/new");
+                        // local Storage.setItem('assetTemplateID', json.Template.ID);
+                        history.push("/cert/new/"+parseInt(json.Template.ID.valueOf()));
                     }
-
                 } else {
                     alert("Could not create asset template");
                 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Forms.css"
 import "./Home.css";
 import ListGroup from "react-bootstrap/ListGroup";
 import { useAppContext } from "../libs/contextLib";
@@ -43,7 +44,7 @@ export default function Home() {
     function renderListArtworksChoice() {
         return (
             <LinkContainer to="/src">
-                <ListGroup.Item action className="py-3   text-nowrap text-truncate">
+                <ListGroup.Item action className="py-3 text-nowrap text-truncate">
                     <span className="ml-2 font-weight-bold">Your Artworks</span>
                 </ListGroup.Item>
             </LinkContainer>
@@ -52,12 +53,16 @@ export default function Home() {
 
     function renderMainChoices() {
         return (
-            <div className="artworkSources">
-                <div>
-                    <img className="embossing" src={embossing} alt="embossing" />
-                    <h2 align="center">WELCOME!</h2>
+            <div className="form-container-outer">
+                <div className="form-container-inner">
+                    <div className="artworkSources">
+                    <div>
+                        <img className="embossing" src={embossing} alt="embossing" />
+                        <h2 align="center">WELCOME!</h2>
+                    </div>
+                    {renderUploadNewArtworkChoice()}
+                    </div>
                 </div>
-                {renderUploadNewArtworkChoice()}
             </div>
         );
     }

@@ -22,19 +22,12 @@
     <list default="true" id="6d6ddb0c-847a-48a0-9eaa-47d34d653717" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/ArtworkSource.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ArtworkSource.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/CheckoutCertificate.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CheckoutCertificate.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/CheckoutCertificate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CheckoutCertificate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/CollectCertificate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CollectCertificate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Forms.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/NewArtworkSource.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/NewArtworkSource.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/NewCertificate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/NewCertificate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Signup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/i18n/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/i18n/fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/fr.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +59,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="ts.external.directory.path" value="D:\APPS\JetBrains\GoLand 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\GoLand 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -102,24 +95,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609409254926">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1609409254926" />
-    <state x="549" y="174" key="FileChooserDialogImpl" timestamp="1609407967754">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="549" y="174" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1609407967754" />
-    <state x="633" y="153" key="RollbackChangesDialog" timestamp="1609409387836">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="633" y="153" key="RollbackChangesDialog/0.0.1536.864@0.0.1536.864" timestamp="1609409387836" />
-    <state x="278" y="77" key="SettingsEditor" timestamp="1609407118661">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="278" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1609407118661" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
