@@ -6,11 +6,11 @@
     },
     "home": {
         "mission-statement": "Physical and digitally immutable certificates of authenticity for the original artwork.",
-        "for-artists": "For artists",
+        "for-artists": "Artists",
         "for-artists-statement": "The Certificate of Authenticity (CoA) offers strong long term protection for your intellectual property. You gain control and decide with maximum flexibility on creating physical or digital editions of your artworks (single original edition, limited edition of original prints, digital prints or non fungible tokens NFTs).",
-        "for-collectors": "For art collectors",
+        "for-collectors": "Collectors",
         "for-collectors-statement": "The Certificate of Expertise increase the value of your collection with physically and digitally signed documents from world-class experts and art appraisers.",
-        "for-museums": "For museums and institutions",
+        "for-museums": "Museums",
         "for-museums-statement": "The Certificates of Inventory (CoI) support long term preservation of your digital and physical collections, as well as dissemination of your collection metadata in a standard and future-proof format."
     }
 }

@@ -4,6 +4,24 @@
   width: 40px;
 }
 
+.signup-container,
+.login-container {
+  background: #2d2929;
+  padding: 60px 15px;
+}
+
+.Signup,
+.Login {
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+div form button.btn {
+  background-color: black !important;
+  border-color: black !important;
+  opacity: 1 !important;
+}
+
 @media all and (min-width: 480px) {
   .Login {
     padding: 60px 0;
@@ -24,8 +42,10 @@
 
 @media (min-width: 767px) {
   .Login {
-    max-width: 540px;
+    max-width: 740px;
     margin: auto;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 
   .Login form {

@@ -19,24 +19,24 @@ function App() {
 	const { t } = useTranslation();
 
 	useEffect(() => {
-	  onLoad();
+		onLoad();
 	}, []);
 
 	async function onLoad() {
-	  try {
-	  	if( localStorage.getItem("jwtoken") ) {
-	  		// TODO set client-side expiry for this token
-			userHasAuthenticated(true);
+		try {
+			if (localStorage.getItem("jwtoken")) {
+				// TODO set client-side expiry for this token
+				userHasAuthenticated(true);
+			}
 		}
-	  }
-	  catch(e) {
-		if (e !== 'No current user') {
-		  onError(e);
+		catch (e) {
+			if (e !== 'No current user') {
+				onError(e);
+			}
 		}
-	  }
-	  setIsAuthenticating(false);
+		setIsAuthenticating(false);
 	}
-	
+
 	function handleLogout() {
 		// need to clear cookies?
 		localStorage.removeItem('jwtoken');
@@ -45,43 +45,45 @@ function App() {
 		setIsAuthenticating(false);
 		history.push("/login");
 	}
-	
-  return (
-    <div className="App container py-3">
-		<small>
-			{t('common.debug-header')} -
+
+	return (
+		<div className="App pt-3">
+			<div className="container">
+				<small>
+					{t('common.debug-header')} -
 			<a href="https://calendly.com/namsor/uncopied_art" target="top"> {t('common.debug-contact')} </a>
 			-
 			debug env {process.env.REACT_APP_UNCOPIED_API}
-		</small>
-		<Navbar collapseOnSelect bg="light" expand="md" className="mb-3">
-		<LinkContainer to="/">
-			<Navbar.Brand className="font-weight-bold text-muted">
-			  <img className="logo" src={logo} alt="logo" width="150px"/>
-			</Navbar.Brand>
-		 </LinkContainer>
-		<Navbar.Toggle />
-		<Navbar.Collapse className="justify-content-end">
-          <Nav activeKey={window.location.pathname}>	
-			{isAuthenticated ? (
-				  <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
-				) : (
-				  <>
-					<LinkContainer to="/signup">
-					  <Nav.Link>Signup</Nav.Link>
+				</small>
+				<Navbar collapseOnSelect bg="light" expand="md" className="mb-3">
+					<LinkContainer to="/">
+						<Navbar.Brand className="font-weight-bold text-muted">
+							<img className="logo" src={logo} alt="logo" width="150px" />
+						</Navbar.Brand>
 					</LinkContainer>
-					<LinkContainer to="/login">
-					  <Nav.Link>Login</Nav.Link>
-					</LinkContainer>
-				  </>
-				)}
-          </Nav> <LangLib />
-        </Navbar.Collapse>
-	  </Navbar>
-	<AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
-	  <Routes />
-	</AppContext.Provider>
-    </div>  
-  );
+					<Navbar.Toggle />
+					<Navbar.Collapse className="justify-content-end">
+						<Nav activeKey={window.location.pathname}>
+							{isAuthenticated ? (
+								<Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+							) : (
+									<>
+										<LinkContainer to="/signup">
+											<Nav.Link>Signup</Nav.Link>
+										</LinkContainer>
+										<LinkContainer to="/login">
+											<Nav.Link>Login</Nav.Link>
+										</LinkContainer>
+									</>
+								)}
+						</Nav> <LangLib />
+					</Navbar.Collapse>
+				</Navbar>
+			</div>
+			<AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+				<Routes />
+			</AppContext.Provider>
+		</div>
+	);
 }
 export default App;

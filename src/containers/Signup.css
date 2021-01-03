@@ -11,7 +11,9 @@
 
 @media (min-width: 767px) {
   .Signup {
-    max-width: 540px;
+    max-width: 740px;
+    padding-left: 100px;
+    padding-right: 100px;
     margin: auto;
   }
 

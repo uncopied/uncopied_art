@@ -71,27 +71,29 @@ export default function Home() {
                         {t('home.mission-statement')}
                     </p>
                 </div>
-                <div className="row">
-                    <div className="div">
-                        <h2>{t('home.for-artists')}</h2>
-                        <p>
-                            {t('home.for-artists-statement')}
-                        </p>
-                    </div>
-                    <div className="div">
+                <div className="benefits">
+                    <div className="row">
+                        <div className="div">
+                            <h2>{t('home.for-artists')}</h2>
+                            <p>
+                                {t('home.for-artists-statement')}
+                            </p>
+                        </div>
+                        <div className="div">
 
-                        <h2>{t('home.for-collectors')}</h2>
-                        <p>
-                            {t('home.for-collectors-statement')}
-                        </p>
+                            <h2>{t('home.for-collectors')}</h2>
+                            <p>
+                                {t('home.for-collectors-statement')}
+                            </p>
 
-                    </div>
-                    <div className="div">
+                        </div>
+                        <div className="div">
 
-                        <h2>{t('home.for-museums')}</h2>
-                        <p>
-                            {t('home.for-museums-statement')}
-                        </p>
+                            <h2>{t('home.for-museums')}</h2>
+                            <p>
+                                {t('home.for-museums-statement')}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
