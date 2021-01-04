@@ -50,7 +50,7 @@ function App() {
 		<div className="App">
 			<Navbar collapseOnSelect expand="md" bg="light" style={{ padding: 15, height: 75 }} variant="light">
 				<LinkContainer to="/">
-					<Navbar.Brand className="font-weight-bold text-muted">
+					<Navbar.Brand style={{ paddingLeft: 40 }} className="font-weight-bold text-muted">
 						<img className="logo" src={logo} alt="logo" width="150px" />
 					</Navbar.Brand>
 				</LinkContainer>
