@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from './logo.svg';
 import fonts from './fonts-import.css';
-import Navbar from "react-bootstrap/Navbar";
+import { Navbar, Button } from "react-bootstrap";
 import './App.css';
 import Routes from "./Routes";
 import Nav from "react-bootstrap/Nav";
@@ -47,36 +47,34 @@ function App() {
 	}
 
 	return (
-		<div className="App pt-3">
-			<div className="container">
-				<small>
-					{t('common.debug-header')} -
-			<a href="https://calendly.com/namsor/uncopied_art" target="top"> {t('common.debug-contact')} </a>
-			-
-			debug env {process.env.REACT_APP_UNCOPIED_API}
-				</small>
-				<Navbar collapseOnSelect bg="light" expand="md" className="mb-3">
+		<div className="App">
+			<div className="container-fluid" style={{ padding: 0 }}>
+				<Navbar collapseOnSelect expand="md" bg="light" style={{ padding: 15 }} variant="light">
 					<LinkContainer to="/">
 						<Navbar.Brand className="font-weight-bold text-muted">
 							<img className="logo" src={logo} alt="logo" width="150px" />
 						</Navbar.Brand>
 					</LinkContainer>
-					<Navbar.Toggle />
-					<Navbar.Collapse className="justify-content-end">
-						<Nav activeKey={window.location.pathname}>
-							{isAuthenticated ? (
+					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+					<Navbar.Collapse id="responsive-navbar-nav">
+						<Nav className="mx-auto">
+							<Nav.Link href="#link1">Link 1</Nav.Link>
+							<Nav.Link href="#link2">Link 2</Nav.Link>
+							<Nav.Link href="#link3">Link 3</Nav.Link>
+							<Nav.Link href="#link4">Link 4</Nav.Link>
+						</Nav>
+						<Nav activeKey={window.location.pathname} style={{ paddingRight: 20 }}>
+							{ isAuthenticated ? (
 								<Nav.Link onClick={handleLogout}>{t('common.logout')}</Nav.Link>
 							) : (
 									<>
-										<LinkContainer to="/signup">
-											<Nav.Link>{t('common.signup')}</Nav.Link>
-										</LinkContainer>
 										<LinkContainer to="/login">
 											<Nav.Link>{t('common.login')}</Nav.Link>
 										</LinkContainer>
+										<Button style={{ padding: "7px 30px"}} variant="dark" href="/signup">{t('common.signup')}</Button>
 									</>
 								)}
-						</Nav> <LangLib />
+						</Nav>
 					</Navbar.Collapse>
 				</Navbar>
 			</div>
