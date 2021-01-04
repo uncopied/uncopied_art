@@ -1,18 +1,35 @@
 .embossing {
   display: block;
   margin: auto;
-  width: 40px;
+  width: 80px;
+}
+
+.form-contatiner-logo {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .form-container-outer {
   background: #2d2929;
   padding: 60px 15px;
+  height: calc(100% - 75px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 div form button.btn {
   background-color: black !important;
   border-color: black !important;
   opacity: 1 !important;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+div form a {
+  text-decoration: underline;
+  color: black !important;
+  font-size: medium;
 }
 
 .form-container-inner {
@@ -24,23 +41,28 @@ div form button.btn {
   .form-container-inner {
     padding: 60px 0;
   }
-
-  .form-container-inner form {
-    margin: 0 auto;
-    max-width: 320px;
-  }
 }
 
 @media (min-width: 767px) {
   .form-container-inner {
-    max-width: 740px;
-    padding-left: 100px;
-    padding-right: 100px;
-    margin: auto;
+    padding-left: 150px;
+    padding-right: 150px;
   }
+}
 
-  .form-container-inner form {
-    margin: 0 auto;
-    max-width: none;
+@media (max-width: 480px) {
+  
+  .form-contatiner-logo {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .form-contatiner-logo h4 {
+    font-size: small;
+  }
+  .embossing {
+    width: 60px;
+  }
+  div form a {
+    font-size: small;
   }
 }

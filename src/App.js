@@ -48,36 +48,34 @@ function App() {
 
 	return (
 		<div className="App">
-			<div className="container-fluid" style={{ padding: 0 }}>
-				<Navbar collapseOnSelect expand="md" bg="light" style={{ padding: 15 }} variant="light">
-					<LinkContainer to="/">
-						<Navbar.Brand className="font-weight-bold text-muted">
-							<img className="logo" src={logo} alt="logo" width="150px" />
-						</Navbar.Brand>
-					</LinkContainer>
-					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-					<Navbar.Collapse id="responsive-navbar-nav">
-						<Nav className="mx-auto">
-							<Nav.Link href="#link1">Link 1</Nav.Link>
-							<Nav.Link href="#link2">Link 2</Nav.Link>
-							<Nav.Link href="#link3">Link 3</Nav.Link>
-							<Nav.Link href="#link4">Link 4</Nav.Link>
-						</Nav>
-						<Nav activeKey={window.location.pathname} style={{ paddingRight: 20 }}>
-							{ isAuthenticated ? (
-								<Nav.Link onClick={handleLogout}>{t('common.logout')}</Nav.Link>
-							) : (
-									<>
-										<LinkContainer to="/login">
-											<Nav.Link>{t('common.login')}</Nav.Link>
-										</LinkContainer>
-										<Button style={{ padding: "7px 30px"}} variant="dark" href="/signup">{t('common.signup')}</Button>
-									</>
-								)}
-						</Nav>
-					</Navbar.Collapse>
-				</Navbar>
-			</div>
+			<Navbar collapseOnSelect expand="md" bg="light" style={{ padding: 15, height: 75 }} variant="light">
+				<LinkContainer to="/">
+					<Navbar.Brand className="font-weight-bold text-muted">
+						<img className="logo" src={logo} alt="logo" width="150px" />
+					</Navbar.Brand>
+				</LinkContainer>
+				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+				<Navbar.Collapse id="responsive-navbar-nav">
+					<Nav className="mx-auto">
+						<Nav.Link href="#link1">Link 1</Nav.Link>
+						<Nav.Link href="#link2">Link 2</Nav.Link>
+						<Nav.Link href="#link3">Link 3</Nav.Link>
+						<Nav.Link href="#link4">Link 4</Nav.Link>
+					</Nav>
+					<Nav activeKey={window.location.pathname} style={{ paddingRight: 20 }}>
+						{ isAuthenticated ? (
+							<Nav.Link onClick={handleLogout}>{t('common.logout')}</Nav.Link>
+						) : (
+								<>
+									<LinkContainer to="/login">
+										<Nav.Link>{t('common.login')}</Nav.Link>
+									</LinkContainer>
+									<Button style={{ padding: "7px 30px"}} variant="dark" href="/signup">{t('common.signup')}</Button>
+								</>
+							)}
+					</Nav>
+				</Navbar.Collapse>
+			</Navbar>
 			<AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
 				<Routes />
 			</AppContext.Provider>
