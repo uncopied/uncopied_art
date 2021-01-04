@@ -6,8 +6,8 @@ import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
 import { useHistory } from "react-router-dom";
 import { onError } from "../libs/errorLib";
-
 import embossing from "../embossing.svg";
+import { Link } from  'react-router-dom';
 
 export default function Login() {
 	const { userHasAuthenticated } = useAppContext();
@@ -104,7 +104,7 @@ export default function Login() {
 									</LoaderButton>
 								</Col>
 							</Form.Row>
-							<Form.Row className='mt-5 mb-3 text-center'>
+							<Form.Row className='mt-4 mb-3 text-center'>
 								<Col>
 									<Form.Text>
 										<a href="#">Forget password ?</a>
@@ -114,7 +114,7 @@ export default function Login() {
 							<Form.Row className='mt-3 mb-3 text-center'>
 								<Col>
 									<Form.Text>
-										<a href="#">Don't have an account</a>
+										<Link to="/signup">Don't have an account</Link>
 									</Form.Text>
 								</Col>
 							</Form.Row>

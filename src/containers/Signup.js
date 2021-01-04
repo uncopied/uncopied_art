@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-// import Button from "react-bootstrap/Button";
+import { Form, Row, Col } from "react-bootstrap";
 import LoaderButton from "./LoaderButton";
 import "./Forms.css";
 import { useAppContext } from "../libs/contextLib";
@@ -8,8 +7,7 @@ import { useFormFields } from "../libs/hooksLib";
 import { useHistory } from "react-router-dom";
 import { onError } from "../libs/errorLib";
 import embossing from "../embossing.svg";
-import Nav from "react-bootstrap/Nav";
-import { LinkContainer } from "react-router-bootstrap";
+import { Link } from 'react-router-dom';
 
 export default function Signup() {
   const [fields, handleFieldChange] = useFormFields({
@@ -74,72 +72,106 @@ export default function Signup() {
   return (
     <div className="form-container-outer">
       <div className="form-container-inner">
-        <div>
-          <img className="embossing" src={embossing} alt="embossing" />
-          <h2 align="center">CREATE YOUR ACCOUNT</h2>
-        </div>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="username" size="lg">
-            <Form.Label>Username</Form.Label>
-            <Form.Control
-              autoFocus
-              type="text"
-              value={fields.username}
-              onChange={handleFieldChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="displayName" size="lg">
-            <Form.Label>Display name</Form.Label>
-            <Form.Control
-              autoFocus
-              type="text"
-              value={fields.displayName}
-              onChange={handleFieldChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="email" size="lg">
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              autoFocus
-              type="email"
-              value={fields.email}
-              onChange={handleFieldChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="password" size="lg">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              value={fields.password}
-              onChange={handleFieldChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="role">
-            <Form.Label>Role</Form.Label>
-            <Form.Control as="select" onChange={handleFieldChange} value={fields.role} >
-              <option value="artist">Artist</option>
-              <option value="collector">Collector</option>
-              <option value="museum">Museum</option>
-              <option value="other">Other</option>
-            </Form.Control>
-          </Form.Group>
-        By registering, you agree to our <a href="/assets/pdf/202101_Uncopied_terms.pdf" target="top">Terms and Conditions</a>.
-        <LoaderButton
-            block
-            size="lg"
-            type="submit"
-            variant="success my-3"
-            isLoading={isLoading}
-            disabled={!validateForm()}
-          >
-            Create account
-        </LoaderButton>
-        </Form>
-        <p align="center">
-          <LinkContainer to="/login">
-            <Nav.Link>I already have an account</Nav.Link>
-          </LinkContainer>
-        </p>
+        <Row className="form-contatiner-logo">
+          <Col>
+            <img className="embossing mb-4" src={embossing} alt="embossing" />
+						<h4 align="center" className='mb-4'><b>Create YOUR ACCOUNT</b></h4>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Form onSubmit={handleSubmit}>
+            <Form.Row className='mt-3 mb-3'>
+                <Col>
+                  <Form.Group controlId="username" size="lg">
+                    <Form.Control
+                      autoFocus
+                      type="text"
+                      placeholder="Username"
+                      value={fields.username}
+                      onChange={handleFieldChange}
+                    />
+                  </Form.Group>   
+                </Col>
+              </Form.Row>
+              <Form.Row className='mt-3 mb-3'>
+                <Col>
+                  <Form.Group controlId="displayName" size="lg">
+                    <Form.Control
+                      autoFocus
+                      placeholder="Display Name"
+                      type="text"
+                      value={fields.displayName}
+                      onChange={handleFieldChange}
+                    />
+                  </Form.Group>
+                </Col>
+              </Form.Row>
+              <Form.Row className='mt-3 mb-3'>
+                <Col>
+                  <Form.Group controlId="email" size="lg">
+                    <Form.Control
+                      autoFocus
+                      placeholder="Email"
+                      type="email"
+                      value={fields.email}
+                      onChange={handleFieldChange}
+                    />
+                  </Form.Group>
+                </Col>
+              </Form.Row>
+              <Form.Row className='mt-3 mb-3'>
+                <Col>
+                  <Form.Group controlId="password" size="lg">
+                    <Form.Control
+                      type="password"
+                      placeholder="Password"
+                      value={fields.password}
+                      onChange={handleFieldChange}
+                    />
+                  </Form.Group>
+                </Col>
+              </Form.Row>
+              <Form.Row className='mt-3 mb-3'>
+                <Col>
+                  <Form.Group controlId="role">
+                    <Form.Control as="select" onChange={handleFieldChange} value={fields.role} >
+                      <option value="artist">Artist</option>
+                      <option value="collector">Collector</option>
+                      <option value="museum">Museum</option>
+                      <option value="other">Other</option>
+                    </Form.Control>
+                  </Form.Group>  
+                </Col>
+              </Form.Row>
+              <Form.Row className='mt-3 mb-3'>
+                <Col>
+                  <Form.Text as={'p'}>
+                    By registering, you agree to our <a href="/assets/pdf/202101_Uncopied_terms.pdf" target="top">Terms and Conditions</a>.
+                  </Form.Text>    
+                </Col>
+              </Form.Row>
+              <Form.Row className='mt-3 mb-3 text-center'>
+                <Col>
+                  <LoaderButton
+                    size="lg"
+                    type="submit"
+                    variant="success my-3"
+                    isLoading={isLoading}
+                    disabled={!validateForm()}
+                  >
+                    Create account
+                  </LoaderButton>
+                </Col>
+              </Form.Row>
+              <Form.Row className="mt-3 mb-1 text-center">
+                <Col>
+                  <Link to="/login">I already have an account</Link>
+                </Col>
+              </Form.Row>
+            </Form>
+            </Col>
+        </Row>
       </div>
     </div>
   );

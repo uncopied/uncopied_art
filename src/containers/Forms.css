@@ -56,11 +56,18 @@ div form a {
     padding-right: 0px;
     padding-left: 0px;
   }
+
   .form-contatiner-logo h4 {
     font-size: small;
   }
+  
   .embossing {
     width: 60px;
+  }
+  div form button.btn {
+    font-size: 1rem;
+    padding-left: 40px;
+    padding-right: 40px;
   }
   div form a {
     font-size: small;
