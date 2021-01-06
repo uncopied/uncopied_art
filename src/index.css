@@ -1,8 +1,3 @@
-. {
-  font-family: Montserrat-Regular;
-}
-
-
 body {
   margin: 0;
   padding: 0;
@@ -10,12 +5,12 @@ body {
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: "Montserrat-Regular";
+  font-family: "Montserrat-Regular"; 
+  height: 100%; 
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 select.form-control,
@@ -25,4 +20,8 @@ input.form-control {
 }
 input[type=file] {
   width: 100%;
+}
+
+#root {
+  height: 100%;
 }

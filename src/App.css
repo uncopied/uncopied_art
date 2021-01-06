@@ -1,2 +1,11 @@
 .App {
+    height: 100%;
+}
+
+.navbar-light .navbar-nav .nav-link {
+   color: #212529;
+}
+
+.nav-link.active {
+    font-weight: bold;
 }
