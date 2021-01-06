@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { Form, Row, Col } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+// import Button from "react-bootstrap/Button";
 import "./Forms.css";
 import LoaderButton from "./LoaderButton";
 import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
 import { useHistory } from "react-router-dom";
 import { onError } from "../libs/errorLib";
+
 import embossing from "../embossing.svg";
-import { Link } from  'react-router-dom';
 
 export default function Login() {
 	const { userHasAuthenticated } = useAppContext();
@@ -58,69 +59,38 @@ export default function Login() {
 	return (
 		<div className="form-container-outer">
 			<div className="form-container-inner">
-				<Row className="form-contatiner-logo">
-					<Col>
-						<img className="embossing mb-4" src={embossing} alt="embossing" />
-						<h4 align="center" className='mb-4'><b>LOG IN TO YOUR ACCOUNT</b></h4>
-					</Col>
-				</Row>
-				<Row>
-					<Col>
-						<Form onSubmit={handleSubmit}>
-							<Form.Row className='mt-3 mb-3'>
-								<Col>
-									<Form.Group size="lg" controlId="username">
-										<Form.Control
-											autoFocus
-											type="username"
-											placeholder="Email"
-											value={fields.username}
-											onChange={handleFieldChange}
-										/>
-									</Form.Group>
-								</Col>
-							</Form.Row>
-							<Form.Row className='mt-3 mb-3'>
-								<Col>
-									<Form.Group size="lg" controlId="password">
-										<Form.Control
-											type="password"
-											placeholder="Password"
-											value={fields.password}
-											onChange={handleFieldChange}
-										/>
-									</Form.Group>
-								</Col>
-							</Form.Row>
-							<Form.Row className='mt-3 mb-3 text-center'>
-								<Col>
-									<LoaderButton
-										size="lg"
-										type="submit"
-										isLoading={isLoading}
-										disabled={!validateForm()}
-									>
-										Login
-									</LoaderButton>
-								</Col>
-							</Form.Row>
-							<Form.Row className='mt-4 mb-3 text-center'>
-								<Col>
-									<Form.Text>
-										<a href="#">Forget password ?</a>
-									</Form.Text>
-								</Col>
-							</Form.Row>
-							<Form.Row className='mt-3 mb-3 text-center'>
-								<Col>
-									<Form.Text>
-										<Link to="/signup">Don't have an account</Link>
-									</Form.Text>
-								</Col>
-							</Form.Row>
-						</Form>
-					</Col>
-				</Row>
+				<div>
+					<img className="embossing" src={embossing} alt="embossing" />
+					<h2 align="center">LOG IN TO YOUR ACCOUNT</h2>
+				</div>
+				<Form onSubmit={handleSubmit}>
+					<Form.Group size="lg" controlId="username">
+						<Form.Label>Username</Form.Label>
+						<Form.Control
+							autoFocus
+							type="username"
+							value={fields.username}
+							onChange={handleFieldChange}
+						/>
+					</Form.Group>
+					<Form.Group size="lg" controlId="password">
+						<Form.Label>Password</Form.Label>
+						<Form.Control
+							type="password"
+							value={fields.password}
+							onChange={handleFieldChange}
+						/>
+					</Form.Group>
+					<LoaderButton
+						block
+						size="lg"
+						type="submit"
+						isLoading={isLoading}
+						disabled={!validateForm()}
+					>
+						Login
+					</LoaderButton>
+				</Form>
 			</div>
 		</div>
 	);

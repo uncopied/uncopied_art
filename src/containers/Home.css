@@ -39,39 +39,3 @@
   flex: 1 1 300px;
   padding: 0 15px;
 }
-
-
-#section1 {
-  padding: 100px;
-}
-
-.section-bak {
-  background-color: #eb6d6d;
-}
-
-#section2 {
-  background-color: #f3f1f3;
-}
-
-#section2-title {
-  padding: 50px;
-  text-align: center;
-}
-
-#section3 {
-  color: #d6d6d6;
-  background-color: black;
-}
-
-#section3 button.btn {
-  background-color: #d6d6d6;
-  color: black;
-}
-
-#section4 {
-  background-color: #f3f1f3;
-}
-
-#section6{
-  background-color: black;
-}

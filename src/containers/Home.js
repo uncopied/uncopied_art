@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "./Forms.css";
+import "./Forms.css"
 import "./Home.css";
-import { ListGroup, Row, Col, Button, Container, Form } from "react-bootstrap";
+import ListGroup from "react-bootstrap/ListGroup";
 import { useAppContext } from "../libs/contextLib";
 import { LinkContainer } from "react-router-bootstrap";
 import embossing from "../embossing.svg";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 
 export default function Home() {
     const { t } = useTranslation();
@@ -54,247 +53,61 @@ export default function Home() {
 
     function renderMainChoices() {
         return (
-            <div className="Home">
-                <div className="form-container-outer">
-                    <div className="form-container-inner">
-                        <div className="artworkSources">
-                            <div>
-                                <img className="embossing" src={embossing} alt="embossing" />
-                                <h2 align="center">WELCOME!</h2>
-                            </div>
-                            {renderUploadNewArtworkChoice()}
-                        </div>
+            <div className="form-container-outer">
+                <div className="form-container-inner">
+                    <div className="artworkSources">
+                    <div>
+                        <img className="embossing" src={embossing} alt="embossing" />
+                        <h2 align="center">WELCOME!</h2>
+                    </div>
+                    {renderUploadNewArtworkChoice()}
                     </div>
                 </div>
             </div>
-
         );
     }
 
     function renderLander() {
         return (
-            <Container fluid>
-                <Row>
-                    <Col sm={6} id="section1">
-                        <h1 className='mb-5'>
-                            <b>UNCOPIED.ART</b>                           
-                        </h1>
-                        <p className="mb-4">
-                            {t('home.mission-statement')}
-                        </p>
-                        <h2>{t('home.for-artists')}</h2>
-                        <p>
+            <div className="Home">
+                <div className="lander">
+                    <h1>UNCOPIED.ART</h1>
+                    <p className="text-muted">
+                        {t('home.mission-statement')}
+                    </p>
+                </div>
+                <div className="benefits">
+                    <div className="row">
+                        <div className="div">
+                            <h2>{t('home.for-artists')}</h2>
+                            <p>
                                 {t('home.for-artists-statement')}
-                        </p>
+                            </p>
+                        </div>
+                        <div className="div">
+
                             <h2>{t('home.for-collectors')}</h2>
                             <p>
                                 {t('home.for-collectors-statement')}
                             </p>
-							<h2>{t('home.for-museums')}</h2>
+
+                        </div>
+                        <div className="div">
+
+                            <h2>{t('home.for-museums')}</h2>
                             <p>
                                 {t('home.for-museums-statement')}
-                            </p>                        <Button variant="dark">Button</Button>
-                    </Col>
-                    <Col sm={6} className="section-bak">
-
-                    </Col>
-                </Row>
-                <Row id="section2">
-                    <Col>
-                        <Row>
-                            <Col id="section2-title">
-                                <h1><b>HOW IT WORKS</b></h1>
-                            </Col>
-                        </Row>
-                        <Row className="text-center" style={{ paddingBottom: 50 }}>
-                            <Col md={{ span: 8, offset: 2 }}>
-                                <Row>
-                                    <Col md={3}>
-                                        <i className="fal fa-user-plus mb-5" style={{ fontSize: 100 }}></i>
-                                        <h6><b>Create Account</b></h6>
-                                        <p>
-                                            Create your personal account. Optionally link your account with
-                                            your blockchain address.
-                                        </p>
-                                    </Col>
-                                    <Col md={3}>
-                                        <i className="fal fa-image mb-5" style={{ fontSize: 100 }}></i>
-                                        <h6><b>Upload Source</b></h6>
-                                        <p>
-                                            Upload your high-definition source image for long-term preservation and
-                                            proof-of-authorship.
-                                        </p>
-                                    </Col>
-                                    <Col md={3}>
-                                        <i className="fal fa-gem mb-5" style={{ fontSize: 100 }}></i>
-                                        <h6><b>Create Edition</b></h6>
-                                        <p>
-                                            Create your art edition: artwork name and metadata, licensing and digital rights, NFT spec.
-                                        </p>
-                                    </Col>
-                                    <Col md={3}>
-                                        <i className="fal fa-file-signature mb-5" style={{ fontSize: 100 }}></i>
-                                        <h6><b>Sign Certificate</b></h6>
-                                        <p>
-                                            Receive print and sign the physical certificate. Optionally transfer
-                                            the asset to your crypto wallet.
-                                        </p>
-                                    </Col>
-
-                                </Row>
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-                <Row id="section3">
-                    <Col>
-                        <div style={{ padding: 100 }}>
-                            <Row>
-                                <Col md={6} style={{ paddingRight: 100 }}>
-                                    <h1 className="mb-4 mt-5"><b>CERTIFICATES</b></h1>
-                                    <p className="mb-4">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Nunc vitae congue quam, vitae egestas tortor. Morbi sit amet lectus risus.
-                                        Nunc vitae congue quam, vitae egestas tortor. Morbi sit amet lectus risus.
-                                        Nunc vitae congue quam, vitae egestas tortor. Morbi sit amet lectus risus.
-                                    </p>
-                                    <p className="mb-4 text-muted" >
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Nunc vitae congue quam, vitae egestas tortor.
-                                    </p>
-                                    <div style={{ marginBottom: 100 }}>
-                                        <Button variant="light">Button</Button>
-                                    </div>
-                                </Col>
-                                <Col md={6} className="section-bak" style={{ paddingLeft: 100 }}>
-                                </Col>
-                            </Row>
+                            </p>
                         </div>
-                    </Col>
-                </Row>
-                <Row id="section4">
-                    <Col>
-                        <div style={{ padding: 100 }}>
-                            <Row>
-                                <Col md={6} style={{ paddingRight: 100 }}>
-                                    <div className="section-bak" style={{ height: '100%' }}>
-
-                                    </div>
-                                </Col>
-                                <Col md={6} style={{ paddingRight: 100 }}>
-                                    <h1 className="mb-4 mt-5"><b>ABOUT</b></h1>
-                                    <p style={{ marginBottom: 100 }}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Nunc vitae congue quam, vitae egestas tortor. Morbi sit amet lectus risus.
-                                        Nunc vitae congue quam, vitae egestas tortor. Morbi sit amet lectus risus.
-                                        Nunc vitae congue quam, vitae egestas tortor. Morbi sit amet lectus risus.
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Nunc vitae congue quam, vitae egestas tortor.
-                                    </p>
-                                </Col>
-                            </Row>
-                        </div>
-                    </Col>
-                </Row>
-                <Row id="section5">
-                    <Col md={6}>
-                        <Row>
-                            <Col md={{ span: 8, offset: 2 }}>
-                                <h1 className="mb-4 mt-5"><b>CONTACT</b></h1>
-                                <Form>
-                                    <Form.Row className='mt-3 mb-3'>
-                                        <Col>
-                                            <Form.Group size="lg" controlId="name">
-                                                <Form.Control
-                                                    type="text"
-                                                    placeholder="Name"
-                                                />
-                                            </Form.Group>
-                                        </Col>
-                                    </Form.Row>
-                                    <Form.Row className='mt-3 mb-3'>
-                                        <Col>
-                                            <Form.Group size="lg" controlId="email">
-                                                <Form.Control
-                                                    type="email"
-                                                    placeholder="Email"
-                                                />
-                                            </Form.Group>
-                                        </Col>
-                                    </Form.Row>
-                                    <Form.Row className='mt-3 mb-3'>
-                                        <Col>
-                                            <Form.Group size="lg" controlId="message">
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={10}
-                                                    placeholder="Message"
-                                                />
-                                            </Form.Group>
-                                        </Col>
-                                    </Form.Row>
-                                    <Form.Row className='mt-3 mb-3'>
-                                        <Col>
-                                            <Button type="submit" style={{ paddingLeft: 60, paddingRight: 60 }}>SEND</Button>
-                                        </Col>
-                                    </Form.Row>
-                                </Form>
-                            </Col>
-                        </Row>
-                    </Col>
-                    <Col md={6} className="section-bak"></Col>
-                </Row>
-                <Row id="section6">
-                    <Col style={{ paddingTop: 50, paddingBottom: 60 }}>
-                        <Row>
-                            <Col sm={{ span: 10, offset: 1}}>
-                                <Row style={{ color: '#d6d6d6' }}>
-                                    <Col md={4} className="text-center">
-                                        Address
-                                    </Col>
-                                    <Col md={4}>
-                                        Mention
-                                    </Col>
-                                    <Col md={4}>
-                                        Social
-                                    </Col>
-                                </Row>
-                                <hr style={{ borderColor: '#d6d6d6' }} />
-                                <Row style={{ color: '#ffffff' }}>
-                                    <Col md={4} className="text-center">
-                                        <Row>
-                                            <Col xs={3} className="text-right">
-
-                                            </Col>
-                                            <Col xs={9}>
-                                                <h6>UNCOPIED</h6>
-                                                <p className="text-muted">65 rue de la Paroisse,</p>
-                                                <p className="text-muted">78000, Versailles</p>
-                                            </Col>
-                                        </Row>
-                                    </Col>
-                                    <Col md={4}>
-                                        <h6><Link style={{ textDecoration: 'underline',  color: '#ffffff' }} to="/">Link1</Link></h6>
-                                        <h6><Link style={{ textDecoration: 'underline',  color: '#ffffff' }} to="/">Link2</Link></h6>
-                                        <h6><Link style={{ textDecoration: 'underline', color: '#ffffff' }} to="/">Link3</Link></h6>
-                                    </Col>
-                                    <Col md={4}>
-                                        <h6>LinkedIn</h6>
-                                        <h6>Facebook</h6>
-                                        <h6>Instagram</h6>
-                                    </Col>
-                                </Row>
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-            </Container>
+                    </div>
+                </div>
+            </div>
         );
     }
 
     return (
-        <>
-            { isAuthenticated ? renderMainChoices() : renderLander()}
-        </>
+        <div className="Home">
+            {isAuthenticated ? renderMainChoices() : renderLander()}
+        </div>
     );
 }
