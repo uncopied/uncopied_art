@@ -75,7 +75,7 @@ export default function Signup() {
         <Row className="form-contatiner-logo">
           <Col>
             <img className="embossing mb-4" src={embossing} alt="embossing" />
-						<h4 align="center" className='mb-4'><b>Create YOUR ACCOUNT</b></h4>
+						<h4 align="center" className='mb-4'><b>CREATE YOUR ACCOUNT</b></h4>
           </Col>
         </Row>
         <Row>

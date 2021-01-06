@@ -48,6 +48,12 @@ function App() {
 
 	return (
 		<div className="App">
+				<small>
+					{t('common.debug-header')} -
+			<a href="https://calendly.com/namsor/uncopied_art" target="top"> {t('common.debug-contact')} </a>
+			-
+			debug env {process.env.REACT_APP_UNCOPIED_API}
+				</small>
 			<Navbar collapseOnSelect expand="md" bg="light" style={{ padding: 15, height: 75 }} variant="light">
 				<LinkContainer to="/">
 					<Navbar.Brand style={{ paddingLeft: 40 }} className="font-weight-bold text-muted">
@@ -73,7 +79,7 @@ function App() {
 									<Button style={{ padding: "7px 30px"}} variant="dark" href="/signup">{t('common.signup')}</Button>
 								</>
 							)}
-					</Nav>
+					</Nav> <LangLib />
 				</Navbar.Collapse>
 			</Navbar>
 			<AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>

@@ -77,12 +77,23 @@ export default function Home() {
                 <Row>
                     <Col sm={6} id="section1">
                         <h1 className='mb-5'>
-                            <b>Your Best Value Proposition</b>
+                            <b>UNCOPIED.ART</b>                           
                         </h1>
                         <p className="mb-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae congue quam, vitae egestas tortor. Morbi sit amet lectus risus. Phasellus nec purus finibus, porta velit et, facilisis nibh. Donec dolor orci, egestas et ante ut, gravida ornare nibh. Proin vel magna nulla. In luctus efficitur nulla at fringilla.
+                            {t('home.mission-statement')}
                         </p>
-                        <Button variant="dark">Button</Button>
+                        <h2>{t('home.for-artists')}</h2>
+                        <p>
+                                {t('home.for-artists-statement')}
+                        </p>
+                            <h2>{t('home.for-collectors')}</h2>
+                            <p>
+                                {t('home.for-collectors-statement')}
+                            </p>
+							<h2>{t('home.for-museums')}</h2>
+                            <p>
+                                {t('home.for-museums-statement')}
+                            </p>                        <Button variant="dark">Button</Button>
                     </Col>
                     <Col sm={6} className="section-bak">
 
@@ -99,37 +110,37 @@ export default function Home() {
                             <Col md={{ span: 8, offset: 2 }}>
                                 <Row>
                                     <Col md={3}>
-                                        <i className="fal fa-desktop-alt mb-5" style={{ fontSize: 100 }}></i>
+                                        <i className="fal fa-user-plus mb-5" style={{ fontSize: 100 }}></i>
                                         <h6><b>Create Account</b></h6>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Nunc vitae congue quam, vitae egestas tortor. Morbi sit amet lectus risus.
+                                            Create your personal account. Optionally link your account with
+                                            your blockchain address.
                                         </p>
                                     </Col>
                                     <Col md={3}>
-                                        <i className="fal fa-desktop-alt mb-5" style={{ fontSize: 100 }}></i>
-                                        <h6><b>Create Account</b></h6>
+                                        <i className="fal fa-image mb-5" style={{ fontSize: 100 }}></i>
+                                        <h6><b>Upload Source</b></h6>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Nunc vitae congue quam, vitae egestas tortor. Morbi sit amet lectus risus.
+                                            Upload your high-definition source image for long-term preservation and
+                                            proof-of-authorship.
                                         </p>
                                     </Col>
                                     <Col md={3}>
-                                        <i className="fal fa-desktop-alt mb-5" style={{ fontSize: 100 }}></i>
-                                        <h6><b>Create Account</b></h6>
+                                        <i className="fal fa-gem mb-5" style={{ fontSize: 100 }}></i>
+                                        <h6><b>Create Edition</b></h6>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Nunc vitae congue quam, vitae egestas tortor. Morbi sit amet lectus risus.
+                                            Create your art edition: artwork name and metadata, licensing and digital rights, NFT spec.
                                         </p>
                                     </Col>
                                     <Col md={3}>
-                                        <i className="fal fa-desktop-alt mb-5" style={{ fontSize: 100 }}></i>
-                                        <h6><b>Create Account</b></h6>
+                                        <i className="fal fa-file-signature mb-5" style={{ fontSize: 100 }}></i>
+                                        <h6><b>Sign Certificate</b></h6>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Nunc vitae congue quam, vitae egestas tortor. Morbi sit amet lectus risus.
+                                            Receive print and sign the physical certificate. Optionally transfer
+                                            the asset to your crypto wallet.
                                         </p>
                                     </Col>
+
                                 </Row>
                             </Col>
                         </Row>
@@ -140,7 +151,7 @@ export default function Home() {
                         <div style={{ padding: 100 }}>
                             <Row>
                                 <Col md={6} style={{ paddingRight: 100 }}>
-                                    <h1 className="mb-4 mt-5"><b>LE CERTIFICAT</b></h1>
+                                    <h1 className="mb-4 mt-5"><b>CERTIFICATES</b></h1>
                                     <p className="mb-4">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                         Nunc vitae congue quam, vitae egestas tortor. Morbi sit amet lectus risus.
@@ -171,7 +182,7 @@ export default function Home() {
                                     </div>
                                 </Col>
                                 <Col md={6} style={{ paddingRight: 100 }}>
-                                    <h1 className="mb-4 mt-5"><b>About</b></h1>
+                                    <h1 className="mb-4 mt-5"><b>ABOUT</b></h1>
                                     <p style={{ marginBottom: 100 }}>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                         Nunc vitae congue quam, vitae egestas tortor. Morbi sit amet lectus risus.
@@ -189,7 +200,7 @@ export default function Home() {
                     <Col md={6}>
                         <Row>
                             <Col md={{ span: 8, offset: 2 }}>
-                                <h1 className="mb-4 mt-5"><b>Contact</b></h1>
+                                <h1 className="mb-4 mt-5"><b>CONTACT</b></h1>
                                 <Form>
                                     <Form.Row className='mt-3 mb-3'>
                                         <Col>
