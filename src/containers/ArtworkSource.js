@@ -14,6 +14,10 @@ export default function ArtworkSource() {
 
     const [fields, handleFieldChange] = useFormFields({
         artworkName: "",
+        artMedium: "",
+        artworkSurface: "",
+        width: "",
+        height: "",
         labelTemplate:"",
         certificateLabel:"",
         assetLabel:"",
@@ -34,10 +38,67 @@ export default function ArtworkSource() {
             fields.editionTotal=1;
             fields.certificateLabel="{{.AssetName}} by {{.IssuerName}}, {{.CurrentYear}} (Unique Original)";
             fields.assetLabel="{{.AssetName}}";
+            fields.metadataTemplate="    {\n" +
+                "      \"@context\": \"https://schema.org\",\n" +
+                "      \"@type\": \"VisualArtwork\",\n" +
+                "      \"name\": \"{{.AssetName}}\",\n" +
+                "      \"image\": \"{{.ThumbnailURL}}\",\n" +
+                "      \"description\": \"{{.CertificateLabel}}\",\n" +
+                "      \"creator\": [\n" +
+                "        {\n" +
+                "          \"@type\": \"Person\",\n" +
+                "          \"name\": \"{{.IssuerName}}\"\n" +
+                "        }\n" +
+                "      ],\n" +
+                "      \"width\": [\n" +
+                "        {\n" +
+                "          \"@type\": \"Distance\",\n" +
+                "          \"name\": \"{{.AssetProperties.Width}}\"\n" +
+                "        }\n" +
+                "      ],\n" +
+                "      \"height\": [\n" +
+                "        {\n" +
+                "          \"@type\": \"Distance\",\n" +
+                "          \"name\": \"{{.AssetProperties.Height}}\"\n" +
+                "        }\n" +
+                "      ],\n" +
+                "      \"artMedium\": \"{{.AssetProperties.ArtMedium}}\",\n" +
+                "      \"artworkSurface\": \"{{.AssetProperties.ArtworkSurface}}\"\n" +
+                "    }";
             return false
         } else {
             fields.certificateLabel="{{.AssetName}} by {{.IssuerName}}, {{.CurrentYear}} ({{.EditionNumber}} / {{.EditionTotal}})";
             fields.assetLabel="{{.AssetName}} {{.EditionNumber}}/{{.EditionTotal}}";
+            fields.metadataTemplate="";
+            fields.metadataTemplate="    {\n" +
+                "      \"@context\": \"https://schema.org\",\n" +
+                "      \"@type\": \"VisualArtwork\",\n" +
+                "      \"name\": \"{{.AssetName}}\",\n" +
+                "      \"image\": \"{{.ThumbnailURL}}\",\n" +
+                "      \"description\": \"{{.CertificateLabel}}\",\n" +
+                "      \"creator\": [\n" +
+                "        {\n" +
+                "          \"@type\": \"Person\",\n" +
+                "          \"name\": \"{{.IssuerName}}\"\n" +
+                "        }\n" +
+                "      ],\n" +
+                "      \"width\": [\n" +
+                "        {\n" +
+                "          \"@type\": \"Distance\",\n" +
+                "          \"name\": \"{{.AssetProperties.Width}}\"\n" +
+                "        }\n" +
+                "      ],\n" +
+                "      \"height\": [\n" +
+                "        {\n" +
+                "          \"@type\": \"Distance\",\n" +
+                "          \"name\": \"{{.AssetProperties.Height}}\"\n" +
+                "        }\n" +
+                "      ],\n" +
+                "      \"artEdition\": \"{{.EditionTotal}}\",\n" +
+                "      \"position\": \"{{.EditionNumber}}\",\n" +
+                "      \"artMedium\": \"{{.AssetProperties.ArtMedium}}\",\n" +
+                "      \"artworkSurface\": \"{{.AssetProperties.ArtworkSurface}}\"\n" +
+                "    }";
             return true
         }
     }
@@ -129,7 +190,16 @@ export default function ArtworkSource() {
                 setIsLoading(false);
             };
             var data = JSON.stringify(
-                {"name": fields.artworkName, "certificate_label": fields.certificateLabel, "asset_label": fields.assetLabel, "edition_total": parseInt(fields.editionTotal), "source_id": parseInt(id)});
+                {"name": fields.artworkName, "certificate_label": fields.certificateLabel,
+                    "asset_label": fields.assetLabel, "edition_total": parseInt(fields.editionTotal),
+                    "metadata":fields.metadataTemplate,
+                    "asset_properties" : {
+                        "ArtMedium":fields.artMedium,
+                        "ArtworkSurface":fields.artworkSurface,
+                        "Width":fields.width,
+                        "Height":fields.height,
+                    },
+                    "source_id": parseInt(id)});
             console.log("create asset data = "+data)
             xhr.send(data);
         } catch (e) {
@@ -177,6 +247,42 @@ export default function ArtworkSource() {
                                 disabled={!isLimitedEdition()}
                             />
                         </Form.Group>
+                        <Form.Group controlId="artMedium">
+                            <Form.Label>Art medium</Form.Label>
+                            <Form.Control
+                                autoFocus
+                                type="text"
+                                value={fields.artMedium}
+                                onChange={handleFieldChange}
+                            />
+                        </Form.Group>
+                        <Form.Group controlId="artworkSurface">
+                            <Form.Label>Artwork surface</Form.Label>
+                            <Form.Control
+                                autoFocus
+                                type="text"
+                                value={fields.artworkSurface}
+                                onChange={handleFieldChange}
+                            />
+                        </Form.Group>
+                        <Form.Group controlId="width">
+                            <Form.Label>Width</Form.Label>
+                            <Form.Control
+                                autoFocus
+                                type="text"
+                                value={fields.width}
+                                onChange={handleFieldChange}
+                            />
+                        </Form.Group>
+                        <Form.Group controlId="height">
+                            <Form.Label>Height</Form.Label>
+                            <Form.Control
+                                autoFocus
+                                type="text"
+                                value={fields.height}
+                                onChange={handleFieldChange}
+                            />
+                        </Form.Group>
                         <Form.Group controlId="certificateLabel" size="lg">
                             <Form.Label>Certificate label preview (max length : 128)</Form.Label>
                             <Form.Control
@@ -193,6 +299,19 @@ export default function ArtworkSource() {
                                 autoFocus
                                 type="text"
                                 value={fields.assetLabel}
+                                onChange={handleFieldChange}
+                                disabled={true}
+                            />
+                        </Form.Group>
+                        <Form.Group controlId="metadataTemplate" size="lg">
+
+                            <Form.Label>Metadata template</Form.Label>
+                            <Form.Control
+                                autoFocus
+                                as="textarea"
+                                type="text"
+                                plaintext="true"
+                                value={fields.metadataTemplate}
                                 onChange={handleFieldChange}
                                 disabled={true}
                             />
@@ -229,6 +348,5 @@ export default function ArtworkSource() {
             {isAuthenticated && !isLoading ? renderArtworkSource() : <p>Please sign-in</p>}
         </div>
     );
-
 
 }

@@ -211,7 +211,7 @@ export default function CheckoutCertificate() {
                     The cost is 25 {checkout.Pricing.CcySymbol} + 5 {checkout.Pricing.CcySymbol} per certificate.
                 </p>
                 <p>
-                    Pay now {checkout.Pricing.CcySymbol} {checkout.Pricing.Price} {checkout.Pricing.Ccy}
+                    Pay now {checkout.Pricing.CcySymbol} {checkout.Pricing.Price} {checkout.Pricing.Ccy} {process.env.REACT_APP_UNCOPIED_PAYPAL_TESTCARD}
                 </p>
                 <PayPalScriptProvider options={{
                     "client-id": process.env.REACT_APP_UNCOPIED_PAYPAL ,
@@ -240,7 +240,7 @@ export default function CheckoutCertificate() {
                     While we are in ALPHA/BETA, the cost is just 1 {checkout.Pricing.CcySymbol} per certificate. Then the cost will be 5 {checkout.Pricing.CcySymbol} + 3 {checkout.Pricing.CcySymbol} per certificate.
                 </p>
                 <p>
-                    Pay now {checkout.Pricing.CcySymbol} {checkout.Pricing.PriceDiy} {checkout.Pricing.Ccy}
+                    Pay now {checkout.Pricing.CcySymbol} {checkout.Pricing.PriceDiy} {checkout.Pricing.Ccy} {process.env.REACT_APP_UNCOPIED_PAYPAL_TESTCARD}
                 </p>
                 <PayPalScriptProvider options={{
                     "client-id": process.env.REACT_APP_UNCOPIED_PAYPAL ,

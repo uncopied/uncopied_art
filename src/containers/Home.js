@@ -101,6 +101,48 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+                <div className="lander">
+                    <h3>HOW IT WORKS</h3>
+                    <div className="row">
+                        <div className="div">
+                            <i className="fal fa-user-plus mb-5" style={{ fontSize: 100 }}></i>
+                            <h4><b>Create Account</b></h4>
+                            <p>
+                                Create your personal account. Optionally link your account with
+                                your blockchain address.
+                            </p>
+                        </div>
+                        <div className="div">
+                            <i className="fal fa-image mb-5" style={{ fontSize: 100 }}></i>
+                            <h4><b>Upload Source</b></h4>
+                            <p>
+                                Upload your high-definition source image for long-term preservation and
+                                proof-of-authorship.
+                            </p>
+                        </div>
+                        <div className="div">
+                            <i className="fal fa-gem mb-5" style={{ fontSize: 100 }}></i>
+                            <h4><b>Create Edition</b></h4>
+                            <p>
+                                Create your art edition: artwork name and metadata, licensing and digital rights, NFT spec.
+                            </p>
+                        </div>
+                        <div className="div">
+                            <i className="fal fa-file-signature mb-5" style={{ fontSize: 100 }}></i>
+                            <h4><b>Sign Certificate</b></h4>
+                            <p>
+                                Receive and sign the physical certificate. Optionally transfer
+                                the NFT asset to your crypto wallet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div className="lander">
+                    <h3>OUR CERTIFICATES</h3>
+                    <p>
+                        We create plain, elegant certificate documents with physical and digital security features.
+                    </p>
+                </div>
             </div>
         );
     }
