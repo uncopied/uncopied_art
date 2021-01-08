@@ -1,19 +1,19 @@
 {
     "common": {
         "translate-button": "FR",
-        "debug-header": "CE SITE EST EN CONSTRUCTION ALPHA",
+        "debug-header": "CE SITE EST EN CONSTRUCTION ALPHA, NE PAS UTILISER EN VRAI",
         "debug-contact": "nous contacter, programmer une conversation",
         "signup": "Créer votre compte",
         "login": "S'identifier",
         "logout": "Se déconnecter"
     },
     "home": {
-        "mission-statement": "Des documents sécurisés pour certifier l’œuvre d’art originale, physique ou numérique.",
+        "mission-statement": "Des documents élégants et sécurisés pour certifier l’œuvre d’art originale.",
         "for-artists": "Artistes",
-        "for-artists-statement": "Le Certificat d'Authenticité offre une protection solide à long terme pour vos créations. Vous gardez le contrôle et décidez avec flexibilité de vos éditions physiques ou digitales : original unique, tirage limité en N exemplaires numérotés, droits de reproduction pour les oeuvres digitales, oeuvres cryptographiques NFT.",
+        "for-artists-statement": "Le Certificat d'Authenticité offre une protection solide à long terme pour vos créations. Vous gardez le contrôle et vous décidez avec flexibilité de vos éditions physiques ou digitales : original unique, tirage limité en N exemplaires numérotés, droits de reproduction pour les oeuvres digitales, oeuvres cryptographiques NFT.",
         "for-collectors": "Collectionneurs",
         "for-collectors-statement": "Le Certificat d'Expertise sécurise vos collections avec des documents signés physiquement et électroniquement par les meilleurs experts du marché.",
         "for-museums": "Musées",
-        "for-museums-statement": "Le Certificat d'Inventaire sécurise le processus décénal de récolement et la préservation à long terme des collections physiques et de leur représentation numériques, en même temps que la dissémination des méta-données dans un format standard et ouvert."
+        "for-museums-statement": "Le Certificat d'Inventaire sécurise la préservation à long terme des collections physiques et de leur représentation numérique. Le processus de récolement est plus transparent, facilité par la dissémination de méta-données en open-data."
     }
 }

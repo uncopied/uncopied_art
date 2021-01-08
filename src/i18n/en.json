@@ -1,14 +1,14 @@
 {
     "common": {
         "translate-button": "EN",
-        "debug-header": "PLEASE NOTE THIS WEBSITE IS IN CONSTRUCTION ALPHA",
+        "debug-header": "PLEASE NOTE THIS WEBSITE IS IN CONSTRUCTION ALPHA, DO NOT USE FOR REAL",
         "debug-contact": "contact us, schedule a live chat",
         "signup": "Signup",
         "login": "Login",
         "logout": "Logout"
     },
     "home": {
-        "mission-statement": "Physical and digitally immutable certificates of authenticity for the original artwork.",
+        "mission-statement": "Elegant and digitally immutable certificates of authenticity for the original artwork.",
         "for-artists": "Artists",
         "for-artists-statement": "The Certificate of Authenticity (CoA) offers strong long term protection for your intellectual property. You gain control and decide with maximum flexibility on creating physical or digital editions of your artworks (single original edition, limited edition of original prints, digital prints or non fungible tokens NFTs).",
         "for-collectors": "Collectors",

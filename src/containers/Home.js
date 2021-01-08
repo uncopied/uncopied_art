@@ -6,6 +6,7 @@ import { useAppContext } from "../libs/contextLib";
 import { LinkContainer } from "react-router-bootstrap";
 import embossing from "../embossing.svg";
 import { useTranslation } from "react-i18next";
+import Nav from "react-bootstrap/Nav";
 
 export default function Home() {
     const { t } = useTranslation();
@@ -75,9 +76,11 @@ export default function Home() {
                     <p className="text-muted">
                         {t('home.mission-statement')}
                     </p>
+                    <LinkContainer to="/signup">
+                        <Nav.Link>{t('common.signup')}</Nav.Link>
+                    </LinkContainer>
                 </div>
                 <div className="benefits">
-                    <div className="row">
                         <div className="div">
                             <h2>{t('home.for-artists')}</h2>
                             <p>
@@ -99,21 +102,20 @@ export default function Home() {
                                 {t('home.for-museums-statement')}
                             </p>
                         </div>
-                    </div>
                 </div>
                 <div className="lander">
                     <h3>HOW IT WORKS</h3>
                     <div className="row">
                         <div className="div">
-                            <i className="fal fa-user-plus mb-5" style={{ fontSize: 100 }}></i>
+                            <i className="fal fa-user-plus mb-5" style={{ fontSize: 50 }}></i>
                             <h4><b>Create Account</b></h4>
                             <p>
                                 Create your personal account. Optionally link your account with
-                                your blockchain address.
+                                a blockchain address. We aim towards self-sovereign identity. 
                             </p>
                         </div>
                         <div className="div">
-                            <i className="fal fa-image mb-5" style={{ fontSize: 100 }}></i>
+                            <i className="fal fa-image mb-5" style={{ fontSize: 50 }}></i>
                             <h4><b>Upload Source</b></h4>
                             <p>
                                 Upload your high-definition source image for long-term preservation and
@@ -121,14 +123,14 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="div">
-                            <i className="fal fa-gem mb-5" style={{ fontSize: 100 }}></i>
+                            <i className="fal fa-gem mb-5" style={{ fontSize: 50 }}></i>
                             <h4><b>Create Edition</b></h4>
                             <p>
                                 Create your art edition: artwork name and metadata, licensing and digital rights, NFT spec.
                             </p>
                         </div>
                         <div className="div">
-                            <i className="fal fa-file-signature mb-5" style={{ fontSize: 100 }}></i>
+                            <i className="fal fa-file-signature mb-5" style={{ fontSize: 50 }}></i>
                             <h4><b>Sign Certificate</b></h4>
                             <p>
                                 Receive and sign the physical certificate. Optionally transfer
@@ -136,12 +138,6 @@ export default function Home() {
                             </p>
                         </div>
                     </div>
-                </div>
-                <div className="lander">
-                    <h3>OUR CERTIFICATES</h3>
-                    <p>
-                        We create plain, elegant certificate documents with physical and digital security features.
-                    </p>
                 </div>
             </div>
         );
