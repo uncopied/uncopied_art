@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import logo from './logo.svg';
-import fonts from './fonts-import.css';
 import Navbar from "react-bootstrap/Navbar";
 import './App.css';
 import Routes from "./Routes";
