@@ -97,7 +97,7 @@ export default function CollectCertificate() {
                     <h3>Thank you !</h3>
                     <p>
                         Your order production status is {checkout.Order.ProductionStatus}.
-                        { checkout.Order.ProductionStatus=='READY_TO_DELIVER' ? <p> Download <a href={`${process.env.REACT_APP_UNCOPIED_WWW}doc/${checkout.Order.OrderUUID}/${checkout.Order.ZipBundle}`}>{checkout.Order.ZipBundle}</a> </p> : <p> Reload to refresh status </p> }
+                        { checkout.Order.ProductionStatus=='READY_TO_DELIVER' ? <p> Download <a href={`${process.env.REACT_APP_UNCOPIED_WWW}doc/${checkout.Order.OrderUUID}/${checkout.Order.ZipBundle}`}>{checkout.Order.ZipBundle}</a> </p> : <p>  Reload to refresh status {checkout.Order.ProductionMessage}  </p> }
                     </p>
                     <p>
                         Your order delivery status is {checkout.Order.DeliveryStatus}
