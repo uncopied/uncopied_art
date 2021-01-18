@@ -1,0 +1,46 @@
+.embossing {
+  display: block;
+  margin: auto;
+  width: 40px;
+}
+
+.form-container-outer {
+  background: #2d2929;
+  padding: 60px 15px;
+}
+
+div form button.btn {
+  background-color: black !important;
+  border-color: black !important;
+  opacity: 1 !important;
+}
+
+.form-container-inner {
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+@media all and (min-width: 480px) {
+  .form-container-inner {
+    padding: 60px 0;
+  }
+
+  .form-container-inner form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 767px) {
+  .form-container-inner {
+    max-width: 740px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: auto;
+  }
+
+  .form-container-inner form {
+    margin: 0 auto;
+    max-width: none;
+  }
+}

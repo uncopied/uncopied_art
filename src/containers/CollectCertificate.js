@@ -1,14 +1,14 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { onError } from "../../libs/errorLib";
-import "../Forms/style.css";
-import "../CollectCertificate/style.css";
-import {useAppContext} from "../../libs/contextLib";
-import embossing from "../../embossing.svg";
+import { onError } from "../libs/errorLib";
+import "./Forms.css";
+import "./CollectCertificate.css";
+import {useAppContext} from "../libs/contextLib";
+import embossing from "../embossing.svg";
 import ListGroup from "react-bootstrap/ListGroup";
 import {LinkContainer} from "react-router-bootstrap";
 import Form from "react-bootstrap/Form";
-import LoaderButton from "../LoaderButton";
+import LoaderButton from "./LoaderButton";
 
 export default function CollectCertificate() {
     const [key, setKey] = useState(null);

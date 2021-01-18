@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import "../Forms/style.css";
-import "../CheckoutCertificate/style.css";
-import {useAppContext} from "../../libs/contextLib";
-import embossing from "../../embossing.svg";
+import "./Forms.css";
+import "./CheckoutCertificate.css";
+import {useAppContext} from "../libs/contextLib";
+import embossing from "../embossing.svg";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 export default function CheckoutCertificate() {
