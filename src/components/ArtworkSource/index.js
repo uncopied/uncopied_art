@@ -1,12 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { onError } from "../libs/errorLib";
-import "./Forms.css";
-import "./ArtworkSource.css";
+import "../Forms/style.css";
+import "../ArtworkSource/style.css";
 import {useAppContext} from "../libs/contextLib";
 import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
-import LoaderButton from "./LoaderButton";
+import LoaderButton from "../LoaderButton";
 import {useFormFields} from "../libs/hooksLib";
 import embossing from "../embossing.svg";
 

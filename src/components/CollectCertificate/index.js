@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { onError } from "../libs/errorLib";
-import "./Forms.css";
-import "./CollectCertificate.css";
+import "../Forms/style.css";
+import "../CollectCertificate/style.css";
 import {useAppContext} from "../libs/contextLib";
 import embossing from "../embossing.svg";
 import ListGroup from "react-bootstrap/ListGroup";

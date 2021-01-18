@@ -3,8 +3,8 @@ import Form from "react-bootstrap/Form";
 import {useHistory} from "react-router-dom";
 import LoaderButton from "./LoaderButton";
 import {onError} from "../libs/errorLib";
-import "./Forms.css";
-import "./NewArtworkSource.css";
+import "../Forms/style.css";
+import "../NewArtworkSource/style.css";
 import embossing from "../embossing.svg";
 
 export default function NewArtworkSource() {

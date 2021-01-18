@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./Forms.css"
-import "./Home.css";
+import "../Forms/style.css"
+import "../Home/style.css";
 import ListGroup from "react-bootstrap/ListGroup";
 import { useAppContext } from "../libs/contextLib";
 import { LinkContainer } from "react-router-bootstrap";
