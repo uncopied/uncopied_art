@@ -1,15 +1,15 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "./containers/Home";
-import NotFound from "./containers/NotFound";
-import Login from "./containers/Login";
-import Signup from "./containers/Signup";
-import NewArtworkSource from "./containers/NewArtworkSource";
-import ArtworkSource from "./containers/ArtworkSource";
-import ArtworkSources from "./containers/ArtworkSources";
-import NewCertificate from "./containers/NewCertificate"
-import CheckoutCertificate from "./containers/CheckoutCertificate"
-import CollectCertificate from "./containers/CollectCertificate"
+import Home from "./components/Home";
+import NotFound from "./components/NotFound";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import NewArtworkSource from "./components/NewArtworkSource";
+import ArtworkSource from "./components/ArtworkSource";
+import ArtworkSources from "./components/ArtworkSources";
+import NewCertificate from "./components/NewCertificate"
+import CheckoutCertificate from "./components/CheckoutCertificate"
+import CollectCertificate from "./components/CollectCertificate"
 
 export default function Routes() {
   return (

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 // import Button from "react-bootstrap/Button";
-import LoaderButton from "./LoaderButton";
-import "./Forms.css";
-import { useAppContext } from "../libs/contextLib";
-import { useFormFields } from "../libs/hooksLib";
+import LoaderButton from "../LoaderButton";
+import "../Forms/style.css";
+import { useAppContext } from "../../libs/contextLib";
+import { useFormFields } from "../../libs/hooksLib";
 import { useHistory } from "react-router-dom";
-import { onError } from "../libs/errorLib";
-import embossing from "../embossing.svg";
+import { onError } from "../../libs/errorLib";
+import embossing from "../../embossing.svg";
 import Nav from "react-bootstrap/Nav";
 import { LinkContainer } from "react-router-bootstrap";
 

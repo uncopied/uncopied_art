@@ -1,12 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { onError } from "../libs/errorLib";
-import "./Forms.css";
-import "./NewCertificate.css";
-import {useAppContext} from "../libs/contextLib";
+import { onError } from "../../libs/errorLib";
+import "../Forms/style.css";
+import "../NewCertificate/style.css";
+import {useAppContext} from "../../libs/contextLib";
 import Form from "react-bootstrap/Form";
-import LoaderButton from "./LoaderButton";
-import embossing from "../embossing.svg";
+import LoaderButton from "../LoaderButton/style.css";
+import embossing from "../../embossing.svg";
 
 export default function NewCertificate() {
 

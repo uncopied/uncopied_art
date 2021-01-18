@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./Forms.css"
-import "./Home.css";
+import "../Forms/style.css"
+import "../Home/style.css";
 import ListGroup from "react-bootstrap/ListGroup";
-import { useAppContext } from "../libs/contextLib";
+import { useAppContext } from "../../libs/contextLib";
 import { LinkContainer } from "react-router-bootstrap";
-import embossing from "../embossing.svg";
+import embossing from "../../embossing.svg";
 import { useTranslation } from "react-i18next";
 import Nav from "react-bootstrap/Nav";
 

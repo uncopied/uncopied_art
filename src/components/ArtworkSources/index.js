@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
-import "./Home.css";
+import "../Home/style.css";
 import ListGroup from "react-bootstrap/ListGroup";
-import {useAppContext} from "../libs/contextLib";
-import {onError} from "../libs/errorLib";
+import {useAppContext} from "../../libs/contextLib";
+import {onError} from "../../libs/errorLib";
 import {LinkContainer} from "react-router-bootstrap";
 import Nav from "react-bootstrap/Nav";
-import embossing from "../embossing.svg";
+import embossing from "../../embossing.svg";
 
 export default function Home() {
     const [artworkSources, setArtworkSources] = useState([]);
