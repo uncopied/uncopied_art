@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 // import Button from "react-bootstrap/Button";
 import "../Forms/style.css";
-import LoaderButton from "./LoaderButton";
-import { useAppContext } from "../libs/contextLib";
-import { useFormFields } from "../libs/hooksLib";
+import LoaderButton from "../LoaderButton";
+import { useAppContext } from "../../libs/contextLib";
+import { useFormFields } from "../../libs/hooksLib";
 import { useHistory } from "react-router-dom";
-import { onError } from "../libs/errorLib";
+import { onError } from "../../libs/errorLib";
 
-import embossing from "../embossing.svg";
+import embossing from "../../embossing.svg";
 
 export default function Login() {
 	const { userHasAuthenticated } = useAppContext();
