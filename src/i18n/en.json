@@ -3,9 +3,10 @@
         "translate-button": "EN",
         "debug-header": "PLEASE NOTE THIS WEBSITE IS IN CONSTRUCTION ALPHA, DO NOT USE FOR REAL",
         "debug-contact": "contact us, schedule a live chat",
-        "signup": "Signup",
+        "signup": "Sign up",
         "login": "Login",
-        "logout": "Logout"
+        "logout": "Logout",
+        "Link":  "Link"
     },
     "home": {
         "mission-statement": "Elegant and digitally immutable certificates of authenticity for the original artwork.",

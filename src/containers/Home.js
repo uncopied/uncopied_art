@@ -70,31 +70,43 @@ export default function Home() {
 
     function renderLander() {
         return (
-            <div className="Home">
-                <div className="lander">
-                    <h1>UNCOPIED.ART</h1>
-                    <p className="text-muted">
-                        {t('home.mission-statement')}
-                    </p>
-                    <LinkContainer to="/signup">
-                        <Nav.Link>{t('common.signup')}</Nav.Link>
-                    </LinkContainer>
+            // <div className="Home">
+            //     <div className="lander">
+            //         <h1>UNCOPIED.ART</h1>
+            //         <p className="text-muted">
+            //             {t('home.mission-statement')}
+            //         </p>
+            //         <LinkContainer to="/signup">
+            //             <Nav.Link>{t('common.signup')}</Nav.Link>
+            //         </LinkContainer>
+            //     </div>
+            //     <div className="benefits">
+            //         <h2>{t('home.for-artists')}</h2>
+            //         <p>
+            //             {t('home.for-artists-statement')}
+            //         </p>
+            //         <h2>{t('home.for-collectors')}</h2>
+            //         <p>
+            //             {t('home.for-collectors-statement')}
+            //         </p>
+            //         <h2>{t('home.for-museums')}</h2>
+            //         <p>
+            //             {t('home.for-museums-statement')}
+            //         </p>
+            //     </div>
+            // </div>
+            <div className="px-5">
+              <div className="row align-items-center text-center text-md-left">
+                <div className="col-lg-4">
+                  <h1 className="mb-3 display-3">Tell Your Story to the World</h1>
+                  <p>Join with us! Login or Register. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, ex!</p>
                 </div>
-                <div className="benefits">
-                    <h2>{t('home.for-artists')}</h2>
-                    <p>
-                        {t('home.for-artists-statement')}
-                    </p>
-                    <h2>{t('home.for-collectors')}</h2>
-                    <p>
-                        {t('home.for-collectors-statement')}
-                    </p>
-                    <h2>{t('home.for-museums')}</h2>
-                    <p>
-                        {t('home.for-museums-statement')}
-                    </p>
+                <div className="col-lg-8">
+                  <img src="https://user-images.githubusercontent.com/54095539/105851989-d76ab980-6009-11eb-9a3d-c7f6a3f00a21.png" alt="Image" class="img-fluid into-img" />
                 </div>
+               </div>
             </div>
+            
         );
     }
 

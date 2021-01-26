@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { StyleConstants } from './StyleConstants';
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -14,7 +13,6 @@ export const GlobalStyle = createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
         font-family: "Montserrat-Regular";
-        padding-top: ${StyleConstants.NAV_BAR_HEIGHT};
     }
 
     code {
@@ -29,5 +27,28 @@ export const GlobalStyle = createGlobalStyle`
     }
     input[type=file] {
         width: 100%;
+    }
+
+    /*Logo*/
+
+    .logo {
+        padding:10px;
+    }
+    
+    .Nav-link{
+        margin: 10px;
+        font-weight: 600;
+        color: #000 !important;
+    }
+    .Nav-but {
+        margin: 10px;
+        background-color: #000 !important;
+        border: #000 !important;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .Nav-but:hover {
+        background-color: #505050 !important;
     }
 `;
