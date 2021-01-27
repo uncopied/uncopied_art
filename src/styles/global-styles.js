@@ -39,6 +39,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 10px;
         font-weight: 600;
         color: #000 !important;
+        text-align: center;
     }
     .Nav-but {
         margin: 10px;
@@ -50,5 +51,15 @@ export const GlobalStyle = createGlobalStyle`
 
     .Nav-but:hover {
         background-color: #505050 !important;
+    }
+
+    .lang{
+        border: 1px solid #000;
+        border-radius: 2px;
+        background-color: #f8f9fa;
+    }
+
+    .lang1 {
+        text-align: center;
     }
 `;

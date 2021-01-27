@@ -73,7 +73,7 @@ function App() {
 							) : (
 									<>
 										<LinkContainer to="/login">
-											<Nav.Link className="Nav-link">{t('common.login')}</Nav.Link>
+											<Button className="Nav-but">{t('common.login')}</Button>
 										</LinkContainer>
 										<LinkContainer to="/signup">
 											<Button className="Nav-but">{t('common.signup')}</Button>

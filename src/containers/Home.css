@@ -5,3 +5,43 @@
 .into-img {
   float:left;
 }
+
+#business-plan {
+  padding-bottom: 130px; 
+  padding-right: 10px;
+  padding-left: 10px; 
+}
+  
+#business-plan .container-fluid {
+  padding-right: 50px;
+  padding-left: 50px; 
+}
+
+#business-plan .business-item-info {
+  margin-top: 60px; 
+}
+    
+#business-plan .business-item-info h3 {
+  font-size: 35px;
+  font-weight: 600;
+  margin-bottom: 25px; 
+}
+    
+#business-plan .business-item-info p {
+  font-size: 16px;
+  margin-bottom: 20px; 
+}
+
+#business-plan {
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #business-plan .business-item-info h3 {
+    font-size: 28px; }
+  #business-plan .business-item-info p {
+    font-size: 13px;
+    margin-bottom: 20px; }
+  #business-plan {
+    padding-bottom: 80px; }
+  }
