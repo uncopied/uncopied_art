@@ -5,7 +5,8 @@
         "debug-contact": "nous contacter, programmer une conversation",
         "signup": "Créer votre compte",
         "login": "S'identifier",
-        "logout": "Se déconnecter"
+        "logout": "Se déconnecter",
+        "blog": "Blogue"
     },
     "home": {
         "mission-statement": "Des documents élégants et sécurisés pour certifier l’œuvre d’art originale.",

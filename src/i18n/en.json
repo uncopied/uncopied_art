@@ -5,7 +5,8 @@
         "debug-contact": "contact us, schedule a live chat",
         "signup": "Signup",
         "login": "Login",
-        "logout": "Logout"
+        "logout": "Logout",
+        "blog": "Blog"
     },
     "home": {
         "mission-statement": "Elegant and digitally immutable certificates of authenticity for the original artwork.",
