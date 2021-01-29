@@ -73,7 +73,7 @@ function App() {
 										<LinkContainer to="/login">
 											<Nav.Link>{t('common.login')}</Nav.Link>
 										</LinkContainer>
-										<a href={"https://uncopied.github.io/blog/"}>
+										<a href={"https://uncopied.github.io/blog/"} class={"nav-link"}>
 											{t('common.blog')}
 										</a>
 									</>
