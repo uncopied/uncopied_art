@@ -103,8 +103,7 @@ export default function Home() {
                   <div class="business-item-info">
                     <h3>Don't feel left out, get hired or post a job and advance your career.</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do </p>    
-                    <a className="btn btn-common" href="#">Search Job</a>
-                    <a className="btn btn-common" href="#">Post Job Offer</a>
+                    <a className="btn btn-common" href="#">Discover</a>
                   </div>
                 </div>
                 <div className="col-lg-6 col-md-12 pt-70">

@@ -62,4 +62,39 @@ export const GlobalStyle = createGlobalStyle`
     .lang1 {
         text-align: center;
     }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 30px;
+        margin: 5px;
+        border-radius: 4px;
+        letter-spacing: 1px;
+        font-weight: 500;
+        color: #fff;
+        border: none;
+        text-transform: uppercase;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        display: inline-block; }
+      
+      .btn:focus,
+      .btn:active {
+        box-shadow: none;
+        outline: none; }
+      
+      .btn-common {
+        background-color: #000;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0px 8px 9px 0px rgba(96, 94, 94, 0.17);
+        width: 160px;
+        height: 50px;
+        padding: 14px 15px; }
+      
+      .btn-common:hover {
+        color: #fff;
+        transform: translateY(-2px); }
+      
 `;
