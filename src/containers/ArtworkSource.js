@@ -6,7 +6,7 @@ import "./ArtworkSource.css";
 import {useAppContext} from "../libs/contextLib";
 import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
-import LoaderButton from "./LoaderButton";
+import LoaderButton from "../app/components/LoaderButton";
 import {useFormFields} from "../libs/hooksLib";
 import embossing from "../embossing.svg";
 

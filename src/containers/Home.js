@@ -6,7 +6,7 @@ import { useAppContext } from "../libs/contextLib";
 import { LinkContainer } from "react-router-bootstrap";
 import embossing from "../embossing.svg";
 import { useTranslation } from "react-i18next";
-import Nav from "react-bootstrap/Nav";
+
 
 export default function Home() {
     const { t } = useTranslation();

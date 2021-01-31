@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
-import logo from './logo.svg';
-import {Navbar,Button} from "react-bootstrap";
 import Routes from "./Routes";
-import Nav from "react-bootstrap/Nav";
-import { LinkContainer } from "react-router-bootstrap";
 import { AppContext } from "./libs/contextLib";
 import { useHistory } from "react-router-dom";
 import { onError } from "./libs/errorLib";
-import LangLib from "./libs/langLib";
 import { useTranslation } from "react-i18next";
+import NavBar from "./app/components/NavBar";
 
 function App() {
 	const [isAuthenticated, userHasAuthenticated] = useState(false);
@@ -53,36 +49,7 @@ function App() {
 			-
 			debug env {process.env.REACT_APP_UNCOPIED_API}
 				</small>
-				<Navbar collapseOnSelect bg="light" expand="md">
-					<LinkContainer to="/">
-						<Navbar.Brand className="font-weight-bold text-muted">
-							<img className="logo" src={logo} alt="logo" width="150px" />
-						</Navbar.Brand>
-					</LinkContainer>
-					<Navbar.Toggle />
-					<Navbar.Collapse className="justify-content-end">
-					<Nav className="Nav-section">
-						    <Nav.Link className="Nav-link">{t('common.Link')+'1'}</Nav.Link>
-						    <Nav.Link className="Nav-link">{t('common.Link')+'2'}</Nav.Link>
-						    <Nav.Link className="Nav-link">{t('common.Link')+'3'}</Nav.Link>
-						    <Nav.Link className="Nav-link">{t('common.Link')+'4'}</Nav.Link>
-                            </Nav>
-						<Nav activeKey={window.location.pathname}>
-							{isAuthenticated ? (
-								<Nav.Link onClick={handleLogout}>{t('common.logout')}</Nav.Link>
-							) : (
-									<>
-										<LinkContainer to="/login">
-											<Button className="Nav-but">{t('common.login')}</Button>
-										</LinkContainer>
-										<LinkContainer to="/signup">
-											<Button className="Nav-but">{t('common.signup')}</Button>
-										</LinkContainer>
-									</>
-								)}
-						</Nav> <LangLib />
-					</Navbar.Collapse>
-				</Navbar>
+				${NavBar({isAuthenticated, handleLogout, t})}
 			</div>
 			<AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
 				<Routes />

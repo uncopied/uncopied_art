@@ -5,7 +5,7 @@ import "./Forms.css";
 import "./NewCertificate.css";
 import {useAppContext} from "../libs/contextLib";
 import Form from "react-bootstrap/Form";
-import LoaderButton from "./LoaderButton";
+import LoaderButton from "../app/components/LoaderButton";
 import embossing from "../embossing.svg";
 
 export default function NewCertificate() {
