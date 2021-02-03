@@ -10,11 +10,43 @@
     },
     "home": {
         "mission-statement": "Elegant and digitally immutable certificates of authenticity for the original artwork.",
+
+		"for-you": "Art certificates for you",
         "for-artists": "Artists",
         "for-artists-statement": "The Certificate of Authenticity (CoA) offers strong long term protection for your intellectual property. You gain control and decide with maximum flexibility on creating physical or digital editions of your artworks (single original edition, limited edition of original prints, digital prints or non fungible tokens NFTs).",
         "for-collectors": "Collectors",
-        "for-collectors-statement": "The Certificate of Expertise increase the value of your collection with physically and digitally signed documents from world-class experts and art appraisers.",
+        "for-collectors-statement": "The Certificate of Expertise (CoE) secure your collection of physical art works with digitally signed documents from world-class experts and art appraisers. Crypto art collectors can issue new cryptographic certificates for older NFT collectibles, backing up digital sources and transaction history from Ethereum ERC721 or ERC1155.",
         "for-museums": "Museums",
-        "for-museums-statement": "The Certificates of Inventory (CoI) support long term preservation of your digital and physical collections, as well as dissemination of your collection metadata in a standard and future-proof format."
+        "for-museums-statement": "The Certificates of Inventory (CoI) support conservation of your physical collections, with long term conservation of digital assets as well as dissemination of your collections metadata in a standard and future-proof format.",
+		
+		"value-proposition": "Make original art truly unique",
+		"value-proposition-more": "Affordable physical art certification and NFT minting",
+		"value-proposition-action": "Start",
+
+		"how-it-works": "How it works",
+		"how-it-works-desc": "All you need is a printer, a glue stick and a pair of scissors.",
+
+		"how-it-works-1": "Create account",
+		"how-it-works-1-more": "Create your personal account with your artist name. Optionally link your account with your blockchain address.",
+
+		"how-it-works-2": "Upload artwork",
+		"how-it-works-2-more": "Upload your high-definition source image for long-term conservation in the Interplanetary File System (IPFS). ",
+
+		"how-it-works-3": "Create edition",
+		"how-it-works-3-more": "Create your art edition : unique physical original, limited edition or crypto-art / NFTs.",
+			
+		"how-it-works-4": "Mint blockchain asset",
+		"how-it-works-4-more": "We create for you a unique asset (NFT) in the blockchain and you receive the certificate PDF document to your mailbox.",
+
+		"how-it-works-5": "Secure certificate",
+		"how-it-works-5-more": "Physically cut and sign the chirograph to make each certificate unique and send dupplicate copies to our PO Box.",
+
+		"certificate": "Certificate and chirograph",
+		"certificate-desc": "Our physical certificates are legal documents approved by an IP lawyer, printed in four copies, secured with a quintuplicate chirograph with QRCode and blockchain identifiers.",
+		"certificate-action": "Read more",
+
+		"about": "About us",
+		"about-desc": "UNCOPIED is a spin-off project of NAMSOR SAS, a French Limited Company based in Versailles, France. Open source code and IPFS infrastructure are maintained by the UNCOPIED Collective. "
+		
     }
 }
