@@ -11,7 +11,7 @@
     "home": {
         "mission-statement": "Des documents élégants et sécurisés pour certifier l’œuvre d’art originale.",
 		
-		"for-you": "Des certificats conçus pour vous",
+		"for-you": "Conçus pour vous",
         "for-artists": "Artistes",
         "for-artists-statement": "Le Certificat d'Authenticité offre une protection solide à long terme pour vos créations. Vous gardez le contrôle et vous décidez avec flexibilité de vos éditions physiques ou digitales : original unique, tirage limité en N exemplaires numérotés, droits de reproduction pour les oeuvres digitales, oeuvres cryptographiques NFT.",
         "for-collectors": "Collectionneurs",
@@ -47,7 +47,7 @@
 		"certificate-action": "En savoir plus",
 
 		"about": "A propos",
-		"about-desc": "UNCOPIED est une 'spin-off' de NAMSOR SAS, société française basée à Versailles, France. Le code open source et l'infratstructure IPDS sont maintenus par le collectif UNCOPIED. "		
+		"about-desc": "UNCOPIED est une 'spin-off' de NAMSOR SAS, société française basée à Versailles, France. Le code open source et l'infrastructure IPFS sont maintenus par le collectif UNCOPIED. "
 
     }
 }

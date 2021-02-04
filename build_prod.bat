@@ -1,10 +1,4 @@
-REM npm install -g @angular/cli
-REM npm install 
-REM TO DEBUG ng serve --open
-REM WITHOUT CUSTOM DOMAIN ng build --prod --output-path docs --base-href /namsor-chinese-names/
-REM WITH CUSTOM DOMAIN ng build --prod --output-path docs --base-href /
-REM ng build --prod --output-path docs --base-href /
-
+REM this deploys the production code from Master branch to https://uncopied.art/ as a Github page
 npm run build
 DEL /S /Q docs
 move build docs
