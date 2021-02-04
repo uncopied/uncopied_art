@@ -3,10 +3,10 @@
         "translate-button": "FR",
         "debug-header": "CE SITE EST EN CONSTRUCTION ALPHA, NE PAS UTILISER EN VRAI",
         "debug-contact": "nous contacter, programmer une conversation",
-        "signup": "Créer votre compte",
+        "signup": "S'inscrire",
         "login": "S'identifier",
         "logout": "Se déconnecter",
-        "Link":"Lien"
+        "link":"Lien"
     },
     "home": {
         "mission-statement": "Des documents élégants et sécurisés pour certifier l’œuvre d’art originale.",

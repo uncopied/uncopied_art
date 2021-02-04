@@ -1,0 +1,42 @@
+.section2,
+.section4 {
+  background-color: #F3F1F3;
+}
+
+.section2 h1 {
+  color: #000;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 50px;
+  padding-bottom: 80px
+}
+
+.section2 i {
+  justify-content: center;
+  font-size: 120px;
+  align-item: center;
+  font-family: "Font Awesome 5 Pro" !important;
+}
+
+.section2 h6 {
+  font-size: 22px;
+}
+
+.section2 p {
+  font-size: 18px;
+}
+
+.section3 {
+  background-color: #2E2C2E;
+  color: #fff;
+}
+
+.section3 .business-item-info h3,
+.section4 .business-item-info h3 {
+  font-size: 60px !important;
+}
+
+.section3 .btn-common {
+  background-color: #CACACA;
+  color: #000;
+}

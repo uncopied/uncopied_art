@@ -2,11 +2,11 @@
     "common": {
         "translate-button": "EN",
         "debug-header": "PLEASE NOTE THIS WEBSITE IS IN CONSTRUCTION ALPHA, DO NOT USE FOR REAL",
-        "debug-contact": "contact us, schedule a live chat",
-        "signup": "Sign up",
+        "debug-contact": "Contact us, schedule a live chat",
+        "signup": "Sign Up",
         "login": "Login",
         "logout": "Logout",
-        "Link":  "Link"
+        "link":  "Link"
     },
     "home": {
         "mission-statement": "Elegant and digitally immutable certificates of authenticity for the original artwork.",

@@ -14,10 +14,10 @@ export default function NavBar({isAuthenticated, handleLogout ,t}){
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
       <Nav className="Nav-section">
-        <Nav.Link className="Nav-link">{t('common.Link')+'1'}</Nav.Link>
-        <Nav.Link className="Nav-link">{t('common.Link')+'2'}</Nav.Link>
-        <Nav.Link className="Nav-link">{t('common.Link')+'3'}</Nav.Link>
-        <Nav.Link className="Nav-link">{t('common.Link')+'4'}</Nav.Link>
+        <Nav.Link className="Nav-link">{t('common.link')+'1'}</Nav.Link>
+        <Nav.Link className="Nav-link">{t('common.link')+'2'}</Nav.Link>
+        <Nav.Link className="Nav-link">{t('common.link')+'3'}</Nav.Link>
+        <Nav.Link className="Nav-link">{t('common.link')+'4'}</Nav.Link>
       </Nav>
         <Nav activeKey={window.location.pathname}>
           {isAuthenticated ? (
