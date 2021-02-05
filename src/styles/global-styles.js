@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 	* {
-			font-family: Montserrat;
+			font-family: Montserrat !important;
 	}
 
 	body {
@@ -15,20 +15,31 @@ export const GlobalStyle = createGlobalStyle`
 		font-family: "Montserrat-Regular";
 	}
 
+	body {
+		&::-webkit-scrollbar {
+			background-color: transparent;
+			width: 0px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: transparent;
+		}
+	}
+
+	 body:hover{
+		::-webkit-scrollbar {
+				width: 5px;
+				background: #F3F1F3;
+			}
+			
+			::-webkit-scrollbar-thumb {
+				background: #2E2C2E;
+				border-radius: 5px;
+			}
+	 }
+
 	.code {
 		font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 	}
-
-	select.form-control,
-	textarea.form-control,
-	input.form-control {
-		font-size: 1rem;
-	}
-
-	input[type=file] {
-		width: 100%;
-	}
-
 
 	/*Logo*/
 
@@ -82,6 +93,11 @@ export const GlobalStyle = createGlobalStyle`
 		display: inline-block;
 	}
 
+	.nav-spacing {
+		padding-right: 150px;
+		padding-left: 150px;
+	}
+
 	.spacing {
 		padding-right: 120px;
 		padding-left: 120px;
@@ -90,8 +106,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	.spacing .business-item-info {
-		text-align: justify;
-		padding-top: 70px;
+		padding-top: 160px;
 	}
 
 	.spacing .business-item-info h3 {

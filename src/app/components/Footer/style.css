@@ -58,31 +58,31 @@
 }
 
 .footer-text p {
-  margin-bottom: 14px;
-  font-size: 18px;
-  color: #7e7e7e;
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #b0acac;
   line-height: 28px;
 }
 
 .footer-social-icon span {
   color: #fff;
   display: block;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
 .footer-social-icon a {
   color: #fff;
-  font-size: 16px;
+  font-size: 28px;
   margin-right: 15px;
 }
 
 .footer-social-icon i {
-  height: 40px;
-  width: 40px;
+  height: 54px;
+  width: 54px;
   text-align: center;
-  line-height: 38px;
+  line-height: 55px;
   border-radius: 50%;
   font-family: "Font Awesome 5 Brands" !important;
 }
@@ -132,34 +132,6 @@
 .footer-widget ul li a {
   color: #878787;
   text-transform: capitalize;
-}
-
-.subscribe-form {
-  position: relative;
-  overflow: hidden;
-}
-
-.subscribe-form input {
-  width: 100%;
-  padding: 14px 28px;
-  background: #2E2E2E;
-  border: 1px solid #2E2E2E;
-  color: #fff;
-}
-
-.subscribe-form button {
-  position: absolute;
-  right: 0;
-  background: #EB6D6D;
-  padding: 13px 20px;
-  border: 1px solid #EB6D6D;
-  top: 0;
-}
-
-.subscribe-form button i {
-  color: #fff;
-  font-size: 22px;
-  font-family: "Font Awesome 5 Brands" !important;
 }
 
 .copyright-area {
