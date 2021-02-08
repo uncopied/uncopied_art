@@ -82,8 +82,9 @@
   height: 54px;
   width: 54px;
   text-align: center;
-  line-height: 55px;
+  line-height: 45px;
   border-radius: 50%;
+  padding: 5px;
   font-family: "Font Awesome 5 Brands" !important;
 }
 
@@ -110,7 +111,6 @@
 .footer-widget-heading h3::before {
   content: "";
   position: absolute;
-  left: 0;
   bottom: -15px;
   height: 2px;
   width: 50px;

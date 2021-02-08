@@ -13,6 +13,9 @@ export const GlobalStyle = createGlobalStyle`
 		-moz-osx-font-smoothing: grayscale;
 		-webkit-font-smoothing: antialiased;
 		font-family: "Montserrat-Regular";
+		overflow-x: hidden;
+		max-width: 100%;
+		white-space: normal;
 	}
 
 	body {
@@ -24,18 +27,6 @@ export const GlobalStyle = createGlobalStyle`
 			background-color: transparent;
 		}
 	}
-
-	 body:hover{
-		::-webkit-scrollbar {
-				width: 5px;
-				background: #F3F1F3;
-			}
-			
-			::-webkit-scrollbar-thumb {
-				background: #2E2C2E;
-				border-radius: 5px;
-			}
-	 }
 
 	.code {
 		font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -67,8 +58,8 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	.lang {
-		border: 1px solid #000;
-		border-radius: 2px;
+		border: 2px solid #000;
+		border-radius: 4px;
 		background-color: #f8f9fa;
 	}
 
@@ -118,7 +109,6 @@ export const GlobalStyle = createGlobalStyle`
 		font-size: 22px;
 		padding-top: 20px;
 		padding-bottom: 20px;
-		text-align: justify;
 	}
 
 	.spacing .business-item-img {
@@ -145,4 +135,105 @@ export const GlobalStyle = createGlobalStyle`
 		color: #fff;
 		transform: translateY(-0.5px);
 	}
+
+	@media screen and (min-device-width: 1425px) and (max-device-width: 1500px) { 
+		.spacing .business-item-info {
+			padding-top: 100px;
+		}
+
+		.spacing .business-item-info h3 , .section2 h1 , .section3 .business-item-info h3, .section4 .business-item-info h3 {
+			font-size: 50px !important;
+		}
+}
+
+@media screen and (min-device-width: 1380px) and (max-device-width: 1425px) { 
+	.spacing .business-item-info {
+		padding-top: 60px;
+	}
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 1480px) { 
+  
+	.spacing .business-item-info {
+		padding-top: 50px;
+	}
+
+	.spacing .business-item-info p{
+		font-size: 18px;
+	}
+
+	.spacing .business-item-info h3 , .section2 h1 , .section3 .business-item-info h3, .section4 .business-item-info h3 {
+		font-size: 40px !important;
+	}
+
+	.cards .card-info , .section2 p , #contactForm input[type=text], #contact form#contactForm input[type=email] , #contactForm textarea{
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-device-width: 800px) and (max-device-width: 1380px) { 
+	.spacing {
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+	.nav-spacing{
+		padding-left: 65px;
+		padding-right: 65px;
+	}
+}
+
+@media screen and (max-device-width: 655px) { 
+
+	.spacing {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.nav-spacing{
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+
+@media screen and (max-device-width: 400px) { 
+
+	.spacing .business-item-info h3 , .section2 h1 , .section3 .business-item-info h3, .section4 .business-item-info h3 {
+		font-size: 30px !important;
+	}
+
+	.spacing {
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	.nav-spacing{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.cards .card-title{
+		font-size: 23px;
+	}
+
+	.footer-widget ul li a {
+		font-size: 18px;
+	}
+
+	.cards .card-item {
+		padding: 30px 15px;
+	}
+}
+
+@media screen and (max-device-width: 425px) { 
+
+	.footer-widget ul li {
+		float: none;
+		display:table-footer-group;
+	}
+
+	.row {
+		text-align: center;
+	}
+}
+
 `;
