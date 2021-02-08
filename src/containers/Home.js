@@ -49,9 +49,6 @@ export default function Home() {
         return HomePage()
     }
 
-    function renderHowTo() {
-        return HowItWorks();
-    }
 
     return (
         <div className="Home">

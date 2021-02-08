@@ -14,7 +14,7 @@ export default function HomePage()
                     <div class="col-lg-6 col-md-12 px-5">
                       <div class="business-item-info">
                         <h3>{t('section1.heading')}</h3>
-                        <p>{t('section1.heading-para')}</p>    
+                        <p>{t('section1.heading-para')} <b>{t('section1.heading-para1')}</b> </p>    
                         <a className="btn btn-common" href="/">{t('section1.Button')}</a>
                       </div>
                     </div>
