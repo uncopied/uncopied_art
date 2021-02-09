@@ -1,0 +1,30 @@
+/*contact*/
+
+.contact form#contactForm input[type=text],
+#contact form#contactForm input[type=email] {
+  min-height: 52px;
+  padding: 0px 0 0 28px;
+  font-size: 18px;
+  color: #5e629c;
+}
+
+.contact form#contactForm textarea {
+  padding: 15px 0 0 28px;
+  font-size: 18px;
+  color: #5e629c;
+}
+
+.contact form#contactForm .form-control:focus {
+  border: 1px solid #EB6D6D;
+  outline: none;
+  box-shadow: none;
+  background: rgb(230, 24, 120, 0.1);
+}
+
+.section5 .business-item-info h3 {
+  padding-bottom: 20px;
+}
+
+.section5 .business-item-info {
+  padding-top: 15px !important;
+}

@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
-import logo from './logo.svg';
-import Navbar from "react-bootstrap/Navbar";
-import './App.css';
 import Routes from "./Routes";
-import Nav from "react-bootstrap/Nav";
-import { LinkContainer } from "react-router-bootstrap";
 import { AppContext } from "./libs/contextLib";
 import { useHistory } from "react-router-dom";
 import { onError } from "./libs/errorLib";
-import LangLib from "./libs/langLib";
 import { useTranslation } from "react-i18next";
+import NavBar from "./app/components/NavBar";
+import {Footer} from "./app/components/Footer"
 
 function App() {
 	const [isAuthenticated, userHasAuthenticated] = useState(false);
@@ -46,45 +42,14 @@ function App() {
 	}
 
 	return (
-		<div className="App pt-3">
-			<div className="container">
-				<small>
-					{t('common.debug-header')} -
-			<a href="https://calendly.com/namsor/uncopied_art" target="top"> {t('common.debug-contact')} </a>
-			-
-			debug env {process.env.REACT_APP_UNCOPIED_API}
-				</small>
-				<Navbar collapseOnSelect bg="light" expand="md" className="mb-3">
-					<LinkContainer to="/">
-						<Navbar.Brand className="font-weight-bold text-muted">
-							<img className="logo" src={logo} alt="logo" width="150px" />
-						</Navbar.Brand>
-					</LinkContainer>
-					<Navbar.Toggle />
-					<Navbar.Collapse className="justify-content-end">
-						<Nav activeKey={window.location.pathname}>
-							{isAuthenticated ? (
-								<Nav.Link onClick={handleLogout}>{t('common.logout')}</Nav.Link>
-							) : (
-									<>
-										<LinkContainer to="/signup">
-											<Nav.Link>{t('common.signup')}</Nav.Link>
-										</LinkContainer>
-										<LinkContainer to="/login">
-											<Nav.Link>{t('common.login')}</Nav.Link>
-										</LinkContainer>
-										<a href={"https://uncopied.art"} class={"nav-link"}>
-											{t('common.blog')}
-										</a>
-									</>
-								)}
-						</Nav> <LangLib />
-					</Navbar.Collapse>
-				</Navbar>
+		<div className="App">
+			<div>
+				{NavBar({isAuthenticated, handleLogout, t})}
 			</div>
 			<AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
 				<Routes />
 			</AppContext.Provider>
+			<Footer></Footer>
 		</div>
 	);
 }

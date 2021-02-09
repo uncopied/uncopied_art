@@ -8,7 +8,7 @@ import embossing from "../embossing.svg";
 import ListGroup from "react-bootstrap/ListGroup";
 import {LinkContainer} from "react-router-bootstrap";
 import Form from "react-bootstrap/Form";
-import LoaderButton from "./LoaderButton";
+import LoaderButton from "../app/components/LoaderButton";
 
 export default function CollectCertificate() {
     const [key, setKey] = useState(null);
