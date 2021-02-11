@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Montserrat-Black";
-  src: url(fonts/Montserrat-Black.ttf) format("truetype");
+  src: url(https://cdn.jsdelivr.net/npm/pstpn-webfont-montserrat@0.0.5/fonts/Black/Montserrat-Black.ttf) format("truetype");
 }
 @font-face {
   font-family: "Montserrat-Regular";
-  src: url(fonts/Montserrat-Regular.ttf) format("truetype");
+  src: url(https://cdn.jsdelivr.net/npm/pstpn-webfont-montserrat@0.0.5/fonts/Regular/Montserrat-Regular.ttf) format("truetype");
 }

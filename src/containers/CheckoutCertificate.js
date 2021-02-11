@@ -1,23 +1,18 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { onError } from "../libs/errorLib";
-import "./ArtworkSource.css";
+import "./Forms.css";
+import "./CheckoutCertificate.css";
 import {useAppContext} from "../libs/contextLib";
-import ListGroup from "react-bootstrap/ListGroup";
-import Form from "react-bootstrap/Form";
-import LoaderButton from "./LoaderButton";
-import {useFormFields} from "../libs/hooksLib";
 import embossing from "../embossing.svg";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 export default function CheckoutCertificate() {
 
     const history = useHistory();
-
+    const { uuid } = useParams();
     const [checkout, setCheckout] = useState(null);
     const {isAuthenticated} = useAppContext();
     const [isLoading, setIsLoading] = useState(true);
-    const [isCheckedout, setIsCheckedout] = useState(false);
 
     useEffect(() => {
         async function onLoad() {
@@ -26,29 +21,25 @@ export default function CheckoutCertificate() {
                 return;
             }
             try {
-                const id = localStorage.getItem("OrderUUID")
-                const checkout = await loadCheckout(id);
+                const checkout = await loadCheckout({uuid});
                 console.log("checkout = "+checkout )
-                setCheckout(checkout);
-                if( checkout.Order.PaymentStatus != "") {
-                    setIsCheckedout(true)
-                }
+                setCheckout(checkout)
             } catch (e) {
                 onError(e);
             }
             setIsLoading(false);
         }
         onLoad();
-    }, [isAuthenticated]);
+    }, [isAuthenticated,uuid]);
 
 
-    function loadCheckout(id) {
+    function loadCheckout(orderId) {
         return new Promise(resolve => {
             try {
                 // Sending and receiving data in JSON format using POST method
                 //
                 var xhr = new XMLHttpRequest();
-                var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/order/checkout/"+id;
+                var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/order/checkout/"+orderId.uuid;
                 console.log(url)
                 xhr.open("GET", url, true);
                 xhr.setRequestHeader("Content-Type", "application/json");
@@ -78,7 +69,6 @@ export default function CheckoutCertificate() {
     }
 
     function updateOrder(IsDIY, PaymentSuccess, details) {
-        setIsCheckedout(true)
         try {
             // Sending and receiving data in JSON format using POST method
             //
@@ -101,7 +91,8 @@ export default function CheckoutCertificate() {
                 }
                 setIsLoading(false);
                 // trigger page reload
-                window.location.reload(false);
+                // window.location.reload(false);
+                history.push("/cert/collect/"+checkout.Order.OrderUUID);
             };
             var stringified = JSON.stringify(details)
             var data = JSON.stringify(
@@ -196,7 +187,8 @@ export default function CheckoutCertificate() {
 
     function renderOrder() {
         return (
-            <div>
+            <div className="form-container-outer">
+                <div className="form-container-inner">
                 <div>
                     <img className="embossing" src={embossing} alt="embossing" />
                     <h2 align="center">CHECKOUT CERTIFICATE</h2>
@@ -205,7 +197,7 @@ export default function CheckoutCertificate() {
                         to secure commercial contracts. Our registered and unique design combines physical and digital security features to protect your
                         certificates.
                     </p>
-                    <div align="center" dangerouslySetInnerHTML={{ __html: checkout.CertPreview.TaillyPreviewSVG }} />
+                    <div className="tallypreview" dangerouslySetInnerHTML={{ __html: checkout.CertPreview.TaillyPreviewSVG }} />
                 </div>
                 <h3>Delivery options</h3>
                 <p>
@@ -219,7 +211,7 @@ export default function CheckoutCertificate() {
                     The cost is 25 {checkout.Pricing.CcySymbol} + 5 {checkout.Pricing.CcySymbol} per certificate.
                 </p>
                 <p>
-                    Pay now {checkout.Pricing.CcySymbol} {checkout.Pricing.Price} {checkout.Pricing.Ccy}
+                    Pay now {checkout.Pricing.CcySymbol} {checkout.Pricing.Price} {checkout.Pricing.Ccy} {process.env.REACT_APP_UNCOPIED_PAYPAL_TESTCARD}
                 </p>
                 <PayPalScriptProvider options={{
                     "client-id": process.env.REACT_APP_UNCOPIED_PAYPAL ,
@@ -248,7 +240,7 @@ export default function CheckoutCertificate() {
                     While we are in ALPHA/BETA, the cost is just 1 {checkout.Pricing.CcySymbol} per certificate. Then the cost will be 5 {checkout.Pricing.CcySymbol} + 3 {checkout.Pricing.CcySymbol} per certificate.
                 </p>
                 <p>
-                    Pay now {checkout.Pricing.CcySymbol} {checkout.Pricing.PriceDiy} {checkout.Pricing.Ccy}
+                    Pay now {checkout.Pricing.CcySymbol} {checkout.Pricing.PriceDiy} {checkout.Pricing.Ccy} {process.env.REACT_APP_UNCOPIED_PAYPAL_TESTCARD}
                 </p>
                 <PayPalScriptProvider options={{
                     "client-id": process.env.REACT_APP_UNCOPIED_PAYPAL ,
@@ -266,44 +258,15 @@ export default function CheckoutCertificate() {
                 <p>
                     SATISFIED OR REIMBURSED !
                 </p>
-            </div>
-        );
-    }
-
-
-    function renderCollect() {
-        return (
-            <div>
-                <div>
-                    <img className="embossing" src={embossing} alt="embossing" />
-                    <h2 align="center">COLLECT CERTIFICATE</h2>
                 </div>
-                <h3>Thank you !</h3>
-                <p>
-                    Your order production status is {checkout.Order.ProductionStatus}.
-                    { checkout.Order.ProductionStatus=='READY_TO_DELIVER' ? <p> Download <a href={`${process.env.REACT_APP_UNCOPIED_WWW}doc/${checkout.Order.OrderUUID}/${checkout.Order.ZipBundle}`}>{checkout.Order.ZipBundle}</a> </p> : <p> Reload to refresh status </p> }
-                </p>
-                <p>
-                    Your order delivery status is {checkout.Order.DeliveryStatus}
-                </p>
-                <p>
-                    Your order payment status is {checkout.Order.PaymentStatus}
-                </p>
             </div>
         );
     }
 
-    function renderCheckout() {
-        if (! isCheckedout) {
-            return renderOrder()
-        } else {
-            return renderCollect()
-        }
-    }
 
     return (
         <div className="Home">
-            {isAuthenticated && !isLoading ? renderCheckout() : <p>Please sign-in</p>}
+            {isAuthenticated && !isLoading ? renderOrder() : <p>Please sign-in</p>}
         </div>
     );
 

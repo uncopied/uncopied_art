@@ -1,18 +1,18 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { onError } from "../libs/errorLib";
-import "./ArtworkSource.css";
+import "./Forms.css";
+import "./NewCertificate.css";
 import {useAppContext} from "../libs/contextLib";
-import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
-import LoaderButton from "./LoaderButton";
-import {useFormFields} from "../libs/hooksLib";
+import LoaderButton from "../app/components/LoaderButton";
 import embossing from "../embossing.svg";
 
 export default function NewCertificate() {
 
     const history = useHistory();
     const [assetTemplate, setAssetTemplate] = useState(null);
+    const { id } = useParams();
     const {isAuthenticated} = useAppContext();
     const [isLoading, setIsLoading] = useState(true);
     const [isCertificateAgreed, setIsCertificateAgreed] = useState(false);
@@ -32,8 +32,7 @@ export default function NewCertificate() {
                 return;
             }
             try {
-                const id = localStorage.getItem("assetTemplateID")
-                const assetTemplate = await loadAssetTemplate(id);
+                const assetTemplate = await loadAssetTemplate({id});
                 console.log("assetTemplate = "+assetTemplate )
                 setAssetTemplate(assetTemplate);
             } catch (e) {
@@ -42,15 +41,15 @@ export default function NewCertificate() {
             setIsLoading(false);
         }
         onLoad();
-    }, [isAuthenticated]);
+    }, [isAuthenticated, id]);
 
-    function loadAssetTemplate(id) {
+    function loadAssetTemplate(assetTemplateId) {
         return new Promise(resolve => {
             try {
                 // Sending and receiving data in JSON format using POST method
                 //
                 var xhr = new XMLHttpRequest();
-                var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/asset/"+id;
+                var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/asset/"+assetTemplateId.id;
                 console.log(url)
                 xhr.open("GET", url, true);
                 xhr.setRequestHeader("Content-Type", "application/json");
@@ -98,9 +97,9 @@ export default function NewCertificate() {
                         setIsLoading(false);
                     } else {
                         console.log(json);
-                        localStorage.removeItem('assetTemplateID');
-                        localStorage.setItem('OrderUUID', assetTemplate.ObjectUUID);
-                        history.push("/cert/order");
+                        //local Storage.removeItem('assetTemplateID');
+                        //local Storage.setItem('OrderUUID', assetTemplate.ObjectUUID);
+                        history.push("/cert/order/"+assetTemplate.ObjectUUID);
                     }
                 } else {
                     alert("Could order " + assetTemplate.ObjectUUID + " error " + xhr.status);
@@ -120,7 +119,9 @@ export default function NewCertificate() {
 
     function renderAssetTemplate() {
         return (
-            <div>
+            <div className="form-container-outer">
+                <div className="form-container-inner">
+
                 <div>
                     <img className="embossing" src={embossing} alt="embossing" />
                     <h2 align="center">PREVIEW CERTIFICATE</h2>
@@ -162,6 +163,7 @@ export default function NewCertificate() {
                     with the promise you made in earlier edition. Please, follow our <a href="https://en.wikipedia.org/wiki/Guideline" target="top">guideline</a> and don't hesitate to
                     <a href="https://calendly.com/namsor/uncopied_art" target="top"> schedule a free chat </a> with an advisor.
                 </p>
+                </div>
             </div>
         );
     }

@@ -14,8 +14,8 @@ const LangLib = () => {
     return (
         <div>
             <div>
-                <select value={lang} name="language" onChange={changeLanguage}>
-                    <option value="fr">FR</option>
+                <select className="lang" value={lang} name="language" onChange={changeLanguage}>
+                    <option className="lang1" value="fr">FR</option>
                     <option value="en">EN</option>
                 </select>
             </div>

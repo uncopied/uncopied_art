@@ -3,7 +3,7 @@ This is the front-end for Uncopied.art web site.
 
 ## Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It is based on the [serverless-stack.com](https://serverless-stack.com/chapters/initialize-the-frontend-repo.html) tutorial.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It is based on the [serverless-stack.com](https://serverless-stack.com/chapters/initialize-the-frontend-repo.html) tutorial, with i18n (https://blogs.infinitesquare.com/posts/web/ajouter-des-traductions-dans-votre-app-react-avec-i18n).
 
 ## Available Scripts
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./containers/Home";
-import NotFound from "./containers/NotFound";
+import NotFound from "./app/pages/NotFoundPage";
 import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import NewArtworkSource from "./containers/NewArtworkSource";
@@ -32,13 +32,13 @@ export default function Routes() {
 		<Route exact path="/src">
 			<ArtworkSources />
 		</Route>
-		<Route exact path="/cert/new">
+		<Route exact path="/cert/new/:id">
 			<NewCertificate />
 		</Route>
-		<Route exact path="/cert/order">
+		<Route exact path="/cert/order/:uuid">
 			<CheckoutCertificate />
 		</Route>
-		<Route exact path="/cert/collect">
+		<Route exact path="/cert/collect/:uuid">
 			<CollectCertificate />
 		</Route>
 		{/* Finally, catch all unmatched routes */}
