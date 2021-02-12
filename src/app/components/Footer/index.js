@@ -5,23 +5,23 @@ export function Footer()
 {
   const { t } = useTranslation();
   return (
-    <footer class="footer-section">
-    <div class="container-fluid nav-spacing" >
-      <div class="footer-content pt-5 pb-5">
-        <div class="row">
-          <div class="col-xl-4 col-lg-4 mb-50">
-            <div class="footer-widget">
-              <div class="footer-logo">
-                <a href="/"><img src="https://user-images.githubusercontent.com/54095539/106423469-808c3680-6486-11eb-834e-e1c96eaab845.png" class="img-fluid" alt="logo"/></a>
+    <footer className="footer-section">
+    <div className="container-fluid nav-spacing" >
+      <div className="footer-content pt-5 pb-5">
+        <div className="row">
+          <div className="col-xl-4 col-lg-4 mb-50">
+            <div className="footer-widget">
+              <div className="footer-logo">
+                <a href="/"><img src="https://user-images.githubusercontent.com/54095539/106423469-808c3680-6486-11eb-834e-e1c96eaab845.png" className="img-fluid" alt="logo"/></a>
               </div>
-              <div class="footer-text">
+              <div className="footer-text">
               <p>{t('footer.heading1')}</p>
               </div>
             </div>
           </div>
-          <div class="col-xl-6 col-lg-4 col-md-6 mb-30">
-            <div class="footer-widget">
-              <div class="footer-widget-heading">
+          <div className="col-xl-6 col-lg-4 col-md-6 mb-30">
+            <div className="footer-widget">
+              <div className="footer-widget-heading">
                 <h3>{t('footer.heading2')}</h3>
               </div>
               <ul>
@@ -36,24 +36,24 @@ export function Footer()
               </ul>
             </div>
           </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 mb-50">
-          <div class="footer-widget">
-          <div class="footer-social-icon">
+          <div className="col-xl-2 col-lg-4 col-md-6 mb-50">
+          <div className="footer-widget">
+          <div className="footer-social-icon">
             <span>{t('footer.heading3')}</span>
-            <a href="/"><i class="fal fa-facebook facebook-bg"></i></a>
-            <a href="/"><i class="fal fa-twitter twitter-bg"></i></a>
-            <a href="/"><i class="fal fa-google-plus-g google-bg"></i></a>
+            <a href="/"><i className="fal fa-facebook facebook-bg"></i></a>
+            <a href="/"><i className="fal fa-twitter twitter-bg"></i></a>
+            <a href="/"><i className="fal fa-google-plus-g google-bg"></i></a>
           </div>
           </div>
          </div>
         </div>
       </div>
     </div>
-    <div class="copyright-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-12 col-lg-12 text-center">
-            <div class="copyright-text">
+    <div className="copyright-area">
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-12 col-lg-12 text-center">
+            <div className="copyright-text">
               <p>{t('footer.copyright')} <a href="/">Uncopied</a> <br/>
                 <small>
                 {t('common.debug-header')} -

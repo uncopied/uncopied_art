@@ -1,18 +1,20 @@
-import React, { useRef, useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+// import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+// import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { onError } from "../libs/errorLib";
 import "./Forms.css";
 import "./CollectCertificate.css";
 import {useAppContext} from "../libs/contextLib";
 import embossing from "../embossing.svg";
-import ListGroup from "react-bootstrap/ListGroup";
-import {LinkContainer} from "react-router-bootstrap";
+// import ListGroup from "react-bootstrap/ListGroup";
+// import {LinkContainer} from "react-router-bootstrap";
 import Form from "react-bootstrap/Form";
 import LoaderButton from "../app/components/LoaderButton";
 
 export default function CollectCertificate() {
     const [key, setKey] = useState(null);
-    const history = useHistory();
+    // const history = useHistory();
     const { uuid } = useParams();
     const [checkout, setCheckout] = useState(null);
     const {isAuthenticated} = useAppContext();
@@ -38,14 +40,14 @@ export default function CollectCertificate() {
 
 
     function validateForm() {
-        return checkout.Order.ProductionStatus=="READY_TO_DELIVER";
+        return checkout.Order.ProductionStatus==="READY_TO_DELIVER";
     }
 
     function handleSubmit(event) {
         console.log("handleSubmit1")
         event.preventDefault();
         console.log("handleSubmit2")
-        if(checkout.Order.ProductionStatus!="READY_TO_DELIVER") {
+        if(checkout.Order.ProductionStatus!=="READY_TO_DELIVER") {
             console.log("handleSubmit3")
             setKey( ""+Math.random() )
         }
@@ -97,7 +99,7 @@ export default function CollectCertificate() {
                     <h3>Thank you !</h3>
                     <p>
                         Your order production status is {checkout.Order.ProductionStatus}.
-                        { checkout.Order.ProductionStatus=='READY_TO_DELIVER' ? <p> Download <a href={`${process.env.REACT_APP_UNCOPIED_WWW}doc/${checkout.Order.OrderUUID}/${checkout.Order.ZipBundle}`}>{checkout.Order.ZipBundle}</a> </p> : <p>  Reload to refresh status {checkout.Order.ProductionMessage}  </p> }
+                        { checkout.Order.ProductionStatus==='READY_TO_DELIVER' ? <p> Download <a href={`${process.env.REACT_APP_UNCOPIED_WWW}doc/${checkout.Order.OrderUUID}/${checkout.Order.ZipBundle}`}>{checkout.Order.ZipBundle}</a> </p> : <p>  Reload to refresh status {checkout.Order.ProductionMessage}  </p> }
                     </p>
                     <p>
                         Your order delivery status is {checkout.Order.DeliveryStatus}

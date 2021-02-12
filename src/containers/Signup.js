@@ -20,7 +20,7 @@ export default function Signup() {
     role: "artist"
   });
   const history = useHistory();
-  const [newUser, setNewUser] = useState(null);
+  // const [newUser, setNewUser] = useState(null);
   const { userHasAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
 

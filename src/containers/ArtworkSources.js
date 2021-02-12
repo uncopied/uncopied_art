@@ -19,7 +19,7 @@ export default function Home() {
             }
             try {
                 const artworkSources = await loadArtworkSources();
-                const artworkSourcesStamped = artworkSources.filter( artworkSource =>  artworkSource.StampError.length == 0 );
+                const artworkSourcesStamped = artworkSources.filter( artworkSource =>  artworkSource.StampError.length === 0 );
                 setArtworkSources(artworkSourcesStamped);
             } catch (e) {
                 onError(e);

@@ -1,10 +1,11 @@
-import React, { useRef, useState, useEffect } from "react";
+// import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { onError } from "../libs/errorLib";
 import "./Forms.css";
 import "./ArtworkSource.css";
 import {useAppContext} from "../libs/contextLib";
-import ListGroup from "react-bootstrap/ListGroup";
+// import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
 import LoaderButton from "../app/components/LoaderButton";
 import {useFormFields} from "../libs/hooksLib";
@@ -25,7 +26,7 @@ export default function ArtworkSource() {
         editionTotal:1,
     });
 
-    const file = useRef(null);
+    // const file = useRef(null);
     const { id } = useParams();
     const history = useHistory();
     const [artworkSource, setArtworkSource] = useState(null);
