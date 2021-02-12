@@ -21,7 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6d6ddb0c-847a-48a0-9eaa-47d34d653717" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Footer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/HomePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/HomePage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/fr.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,12 +99,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>48</line>
+          <line>44</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>44</line>
+          <line>40</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

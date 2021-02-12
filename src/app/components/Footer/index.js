@@ -26,13 +26,13 @@ export function Footer()
               </div>
               <ul>
                 <li><a href="/">{t('footer.heading2-link1')}</a></li>
-                <li><a href="/">{t('footer.heading2-link2')}</a></li>
-                <li><a href="/">{t('footer.heading2-link3')}</a></li>
-                <li><a href="https://uncopied.art">{t('footer.heading2-link4')}</a></li>
-                <li><a href="/">{t('footer.heading2-link5')}</a></li>
-                <li><a href="/">{t('footer.heading2-link6')}</a></li>
-                <li><a href="/">{t('footer.heading2-link7')}</a></li>
-                <li><a href="/">{t('footer.heading2-link8')}</a></li>
+                <li><a href="https://uncopied.art/about/">{t('footer.heading2-link2')}</a></li>
+                <li><a href="https://uncopied.art/about/">{t('footer.heading2-link3')}</a></li>
+                <li><a href="https://uncopied.art/blog/">{t('footer.heading2-link4')}</a></li>
+                <li><a href="https://uncopied.art/contact/">{t('footer.heading2-link5')}</a></li>
+                <li><a href="https://uncopied.art/about/">{t('footer.heading2-link6')}</a></li>
+                <li><a href="https://opencollective.com/uncopied">{t('footer.heading2-link7')}</a></li>
+                <li><a href="https://uncopied.art/blog/">{t('footer.heading2-link8')}</a></li>
               </ul>
             </div>
           </div>
@@ -40,9 +40,10 @@ export function Footer()
           <div class="footer-widget">
           <div class="footer-social-icon">
             <span>{t('footer.heading3')}</span>
-            <a href="/"><i class="fal fa-facebook facebook-bg"></i></a>
-            <a href="/"><i class="fal fa-twitter twitter-bg"></i></a>
-            <a href="/"><i class="fal fa-google-plus-g google-bg"></i></a>
+            <a href="https://twitter.com/uncopied_art"><i class="fal fa-twitter twitter-bg"></i></a>
+            <a href="https://www.facebook.com/uncopied"><i className="fal fa-facebook facebook-bg"></i></a>
+            <a href="https://www.instagram.com/uncopied_art"><i className="fal fa-instagram"></i></a>
+            <a href="http://github.com/uncopied"><i className="fal fa-github"></i></a>
           </div>
           </div>
          </div>
@@ -54,13 +55,8 @@ export function Footer()
         <div class="row">
           <div class="col-xl-12 col-lg-12 text-center">
             <div class="copyright-text">
-              <p>{t('footer.copyright')} <a href="/">Uncopied</a> <br/>
-                <small>
-                {t('common.debug-header')} -
-                  <a href="https://calendly.com/namsor/uncopied_art" target="top"> {t('common.debug-contact')} </a>
-                -
-                debug env {process.env.REACT_APP_UNCOPIED_API}
-                </small>
+              <p>
+                {t('footer.copyright')} <a href="/">Uncopied</a> <br/>
               </p>
             </div>
           </div>

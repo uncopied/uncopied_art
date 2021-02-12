@@ -15,7 +15,7 @@ export default function HomePage()
                       <div class="business-item-info">
                         <h3>{t('section1.heading')}</h3>
                         <p>{t('section1.heading-para')} <b>{t('section1.heading-para1')}</b> </p>    
-                        <a className="btn btn-common" href="/">{t('section1.Button')}</a>
+                        <a className="btn btn-common" href="https://uncopied.art/">{t('section1.heading-button')}</a>
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-12 pt-70">
@@ -112,7 +112,7 @@ export default function HomePage()
           <div className="business-item-info">
             <h3>{t('certificate.heading')}</h3>
             <p>{t('certificate.heading-para')}</p>
-            <a className="btn btn-common" href="https://uncopied.art/post/chapter-1/">{t('certificate.Button')}</a>
+            <a className="btn btn-common" href="https://uncopied.art/blog/chapter-1/">{t('certificate.Button')}</a>
           </div>
         </div>
         <div className="col-lg-6 col-md-12 pt-70">
@@ -147,7 +147,8 @@ export default function HomePage()
           <h2 className="business-item-info">
             <h3>{t('contact.heading')}</h3>
           </h2>
-          <form id="contactForm">
+          <a className="btn btn-common" href="https://uncopied.art/contact/">{t('contact.button')}</a>
+{/*          <form id="contactForm">
             <div className="row">
               <div className="col-md-12">
                 <div className="form-group">
@@ -173,7 +174,7 @@ export default function HomePage()
                 </div>
               </div>
             </div>
-          </form>
+          </form>*/}
         </div>
         <div className="col-lg-6 col-md-12 pt-70">
           <div className="business-item-img">
