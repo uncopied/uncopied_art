@@ -57,6 +57,10 @@ export const GlobalStyle = createGlobalStyle`
 		background-color: #505050 !important;
 	}
 
+	.navbar-light .navbar-toggler {
+		border-color: #f8f9fa!important;
+	}
+
 	.lang {
 		border: 2px solid #000;
 		border-radius: 4px;
@@ -136,15 +140,16 @@ export const GlobalStyle = createGlobalStyle`
 		transform: translateY(-0.5px);
 	}
 
-	@media screen and (min-device-width: 1425px) and (max-device-width: 1500px) { 
+	@media screen and (min-device-width: 1480px) and (max-device-width: 1659px) { 
 		.spacing .business-item-info {
 			padding-top: 100px;
 		}
 
 		.spacing .business-item-info h3 , .section2 h1 , .section3 .business-item-info h3, .section4 .business-item-info h3 {
-			font-size: 50px !important;
+			font-size: 63px !important;
 		}
 }
+
 
 @media screen and (min-device-width: 1380px) and (max-device-width: 1425px) { 
 	.spacing .business-item-info {
@@ -197,7 +202,7 @@ export const GlobalStyle = createGlobalStyle`
 @media screen and (max-device-width: 400px) { 
 
 	.spacing .business-item-info h3 , .section2 h1 , .section3 .business-item-info h3, .section4 .business-item-info h3 {
-		font-size: 30px !important;
+		font-size: 37px !important;
 	}
 
 	.spacing {

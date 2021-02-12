@@ -1,4 +1,4 @@
-.section2,
+
 .section4 {
   background-color: #F3F1F3;
 }
@@ -8,7 +8,8 @@
   text-align: center;
   letter-spacing: 1px;
   font-size: 60px;
-  padding-bottom: 80px
+  padding-bottom: 140px;
+  font-weight: 600;
 }
 
 .section2 i {
@@ -52,7 +53,7 @@
 
 .card {
   background-color: transparent;
-  border:none;
+  border:none !important;
   padding-left: 20px;
   padding-right:20px;
 }
@@ -61,6 +62,7 @@
   display: flex;
   flex-wrap: wrap;
   background-color: #fff;
+  background: #F3F1F3;
 }
 
 .cards {
@@ -72,7 +74,7 @@
 .cards .card-item {
   display: flex;
   flex-direction: column;
-  background-color: #f3f1f32b;
+  background-color: #fff;
   width: 100%;
   border-radius: 6px;
   overflow: hidden;
@@ -81,9 +83,9 @@
   padding: 40px 30px;
 }
 .cards .card-item:hover {
-  border: 3px solid rgba(235,109,109);
+  border: 1px solid rgba(235,109,109);
   box-shadow: 0px 0px 25px 0px rgba(95, 95, 95, 0.24);
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 .cards .card-info {
   display: flex;
@@ -130,7 +132,7 @@
   }
 }
 
-.contact .business-item-info{
+/* .contact .business-item-info{
   padding-top: 0px !important;
 }
 
@@ -154,4 +156,4 @@
   outline: none;
   box-shadow: none;
   background: rgba(235,109,109, 0.1); 
-}
+} */

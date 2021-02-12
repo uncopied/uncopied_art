@@ -14,7 +14,7 @@ export default function NewArtworkSource() {
     const [hash, setHash] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
-    const types = ['image/x-png', 'image/png', 'image/jpeg']
+    // const types = ['image/x-png', 'image/png', 'image/jpeg']
 
     function validateForm() {
         return (hash.length > 0);

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import "./Forms.css";
 import "./CheckoutCertificate.css";
@@ -147,7 +147,7 @@ export default function CheckoutCertificate() {
             // VOIDED. All purchase units in the order are voided.
             // COMPLETED. The payment was authorized or the authorized payment was captured for the order.
             // PAYER_ACTION_REQUIRED. The order requires an action from the payer (e.g. 3DS authentication). Redirect the payer to the "rel":"payer-action" HATEOAS link returned as part of the response prior to authorizing or capturing the order.
-            if( details.status == 'COMPLETED' ) {
+            if( details.status === 'COMPLETED' ) {
                 updateOrder(true,true,details)
             } else {
                 updateOrder(true,false,details)
@@ -165,7 +165,7 @@ export default function CheckoutCertificate() {
             // VOIDED. All purchase units in the order are voided.
             // COMPLETED. The payment was authorized or the authorized payment was captured for the order.
             // PAYER_ACTION_REQUIRED. The order requires an action from the payer (e.g. 3DS authentication). Redirect the payer to the "rel":"payer-action" HATEOAS link returned as part of the response prior to authorizing or capturing the order.
-            if( details.status == 'COMPLETED' ) {
+            if( details.status === 'COMPLETED' ) {
                 updateOrder(false,true,details)
             } else {
                 updateOrder(false,false,details)

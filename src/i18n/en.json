@@ -8,7 +8,7 @@
     },
 
     "section1": {
-        "heading": "Making original truly unique.",
+        "heading": "Making original truly unique",
         "heading-para": "Elegant and digitally immutable certificates of authenticity for the original artwork.",
         "heading-para1": "Soft launch April 2021!",
         "heading-button":"Discover"
@@ -57,17 +57,15 @@
     },
 
     "footer": {
-        "heading1": "Making original truly unique.",
+        "heading1": "Making original truly unique",
         "heading2": "Useful Links",
         "heading3": "Follow Us",
         "heading2-link1": "Home",
-        "heading2-link2": "About us",
+        "heading2-link2": "Blog",
         "heading2-link3": "Services",
-        "heading2-link4": "Blog",
-        "heading2-link5": "Contact Us",
-        "heading2-link6": "Why Uncopied?",
-        "heading2-link7": "Our collective",
-        "heading2-link8": "Latest News",
+        "heading2-link4": "Why Uncopied?",
+        "heading2-link5": "Our collective",
+        "heading2-link6": "Contact Us",
         "copyright": "Copyright © 2021, All Rights Reserved"
     }
 
