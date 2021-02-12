@@ -8,7 +8,8 @@
   text-align: center;
   letter-spacing: 1px;
   font-size: 60px;
-  padding-bottom: 80px
+  padding-bottom: 140px;
+  font-weight: 600;
 }
 
 .section2 i {
@@ -131,7 +132,7 @@
   }
 }
 
-.contact .business-item-info{
+/* .contact .business-item-info{
   padding-top: 0px !important;
 }
 
@@ -155,4 +156,4 @@
   outline: none;
   box-shadow: none;
   background: rgba(235,109,109, 0.1); 
-}
+} */

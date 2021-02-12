@@ -202,7 +202,7 @@ export const GlobalStyle = createGlobalStyle`
 @media screen and (max-device-width: 400px) { 
 
 	.spacing .business-item-info h3 , .section2 h1 , .section3 .business-item-info h3, .section4 .business-item-info h3 {
-		font-size: 30px !important;
+		font-size: 37px !important;
 	}
 
 	.spacing {

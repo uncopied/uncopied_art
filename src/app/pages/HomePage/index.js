@@ -19,7 +19,7 @@ export default function HomePage()
                       <div className="business-item-info">
                         <h3>{t('section1.heading')}</h3>
                         <p>{t('section1.heading-para')} <b>{t('section1.heading-para1')}</b> </p>    
-                        <a className="btn btn-common" href="/">{t('section1.Button')}</a>
+                        <a className="btn btn-common" href="https://uncopied.art/">{t('section1.heading-button')}</a>
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-12 pt-70">
@@ -68,7 +68,7 @@ export default function HomePage()
 </div>
 
         <div className="section2 container-fluid spacing">
-            <h1><b>{t('works.heading')}</b></h1>
+            <h1>{t('works.heading')}</h1>
         <div className="card-container">
           <div className="card">
           <div className="content text-center">
@@ -116,7 +116,7 @@ export default function HomePage()
           <div className="business-item-info">
             <h3>{t('certificate.heading')}</h3>
             <p>{t('certificate.heading-para')}</p>
-            <a className="btn btn-common" href="https://uncopied.art/post/chapter-1/">{t('certificate.Button')}</a>
+            <a className="btn btn-common" href="https://uncopied.art/blog/chapter-1/">{t('certificate.Button')}</a>
           </div>
         </div>
         <div className="col-lg-6 col-md-12 pt-70">
@@ -144,40 +144,13 @@ export default function HomePage()
       </div>
     </div>
   </section>
-  <section className="section5 contact spacing">
+  {/* <section className="section5 contact spacing">
     <div className="container-fluid">
       <div className="row">
         <div className="col-lg-6 col-md-12">
           <div className="business-item-info">
             <h3>{t('contact.heading')}</h3>
-          </div>
-          <form id="contactForm">
-            <div className="row">
-              <div className="col-md-12">
-                <div className="form-group">
-                  <input type="text" className="form-control" id="name" name="name" placeholder={t('contact.form1')} required data-error="Please enter your name" />
-                  <div className="help-block with-errors"></div>
-                </div>
-              </div>
-              <div className="col-md-12">
-                <div className="form-group">
-                  <input type="text" className="form-control" id="email" name="email" placeholder={t('contact.form2')} required data-error="Please enter your Email" />
-                  <div className="help-block with-errors"></div>
-                </div>
-              </div>
-              <div className="col-md-12">
-                <div className="form-group">
-                  <textarea className="form-control" type="message" id="message"  name="message" placeholder={t('contact.form3')} rows="6" data-error="Please enter your subject" required></textarea>
-                  <div className="help-block with-errors"></div>
-                </div>
-                <div className="submit-button">
-                  <button className="btn btn-common" id="submit" type="submit">{t('contact.Button')}</button>
-                  <div id="msgSubmit" className="h3 hidden"></div>
-                  <div className="clearfix"></div>
-                </div>
-              </div>
-            </div>
-          </form>
+          <a className="btn btn-common" href="https://uncopied.art/contact/">{t('contact.button')}</a>
         </div>
         <div className="col-lg-6 col-md-12 pt-70">
           <div className="business-item-img">
@@ -186,7 +159,8 @@ export default function HomePage()
         </div>
       </div>
     </div>
-  </section>
+    </div>
+  </section> */}
 </div>
   );
 }

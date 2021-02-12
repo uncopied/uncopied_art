@@ -11,7 +11,7 @@
         "heading": "Rendre l'original vraiment unique",
         "heading-para": "Des documents élégants et sécurisés pour certifier l’œuvre d’art originale.",
         "heading-para1": "Lancement progressif avril 2021!",
-        "Button":"Découvrir"
+        "heading-button":"Découvrir"
     },
 
     "services": {
@@ -49,11 +49,11 @@
     },
   
     "contact": {
-        "heading": "Entrer En contact",
+        "heading": "Nous contacter",
         "form1": "Nom",
         "form2": "Email",
         "form3": "Écrire un message",
-        "Button": "soumettre"
+        "button": "Discutons-en!"
     },
     
     "footer": {
@@ -61,13 +61,11 @@
         "heading2": "Liens utiles",
         "heading3": "Suivez nous",
         "heading2-link1": "Maison",
-        "heading2-link2": "À propos de nous",
-        "heading2-link3": "prestations de service",
-        "heading2-link4": "Blog",
-        "heading2-link5": "Nous contacter",
-        "heading2-link6": "pourquoi Uncopied?",
-        "heading2-link7": "équipe d'experts",
-        "heading2-link8": "dernières nouvelles",
+        "heading2-link2": "Blog",
+        "heading2-link3": "Nos services",
+        "heading2-link4": "Pourquoi Uncopied?",
+        "heading2-link5": "Le collectif",
+        "heading2-link6": "Nous contacter",
         "copyright": "Copyright © 2021, tous droits réservés"
     }
 }
