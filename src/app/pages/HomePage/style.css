@@ -8,7 +8,7 @@
   text-align: center;
   letter-spacing: 1px;
   font-size: 60px;
-  padding-bottom: 140px;
+  padding-bottom: 100px;
   font-weight: 600;
 }
 
@@ -16,7 +16,6 @@
   justify-content: center;
   font-size: 100px;
   align-item: center;
-  font-family: "Font Awesome 5 Pro" !important;
 }
 
 .section2 h6 {
@@ -117,13 +116,12 @@
   margin-bottom: 25px; 
 }
 .card-item .icon i {
-  font-size: 40px;
+  font-size: 45px;
   color: rgba(235,109,109);
-  font-family: "Font Awesome 5 Pro" !important;
   position: absolute;
   left: 0;
   right: 0;
-  top: 30%; 
+  top: 20%; 
 }
 
 @media (min-width: 65rem) {

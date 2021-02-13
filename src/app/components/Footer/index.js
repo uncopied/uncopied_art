@@ -1,6 +1,9 @@
 import React from 'react';
 import "./style.css"
 import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter, faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
+import logo from './assets/logo.png';
 export function Footer()
 {
   const { t } = useTranslation();
@@ -12,7 +15,7 @@ export function Footer()
           <div className="col-xl-4 col-lg-4 mb-50">
             <div className="footer-widget">
               <div className="footer-logo">
-                <a href="/"><img src="https://user-images.githubusercontent.com/54095539/106423469-808c3680-6486-11eb-834e-e1c96eaab845.png" className="img-fluid" alt="logo"/></a>
+                <a href="/"><img src={logo} className="img-fluid" alt="logo"/></a>
               </div>
               <div className="footer-text">
               <p>{t('footer.heading1')}</p>
@@ -38,21 +41,21 @@ export function Footer()
           <div className="footer-widget">
           <div className="footer-social-icon">
             <span>{t('footer.heading3')}</span>
-            <a href="https://twitter.com/uncopied_art"><i class="fal fa-twitter twitter-bg"></i></a>
-            <a href="https://www.facebook.com/uncopied"><i className="fal fa-facebook facebook-bg"></i></a>
-            <a href="https://www.instagram.com/uncopied_art"><i className="fal fa-instagram instagram-bg"></i></a>
-            <a href="http://github.com/uncopied"><i className="fal fa-github github-bg"></i></a>
+            <a href="https://twitter.com/uncopied_art"><i className="twitter-bg"><FontAwesomeIcon icon={faTwitter} /></i></a>
+            <a href="https://www.facebook.com/uncopied"><i className="facebook-bg"><FontAwesomeIcon icon={faFacebook} /></i></a>
+            <a href="https://www.instagram.com/uncopied_art"><i className="instagram-bg"><FontAwesomeIcon icon={faInstagram} /></i></a>
+            <a href="http://github.com/uncopied"><i className="github-bg"><FontAwesomeIcon icon={faGithub} /></i></a>
           </div>
           </div>
          </div>
         </div>
       </div>
     </div>
-    <div class="copyright-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-12 col-lg-12 text-center">
-            <div class="copyright-text">
+    <div className="copyright-area">
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-12 col-lg-12 text-center">
+            <div className="copyright-text">
               <p>
                 {t('footer.copyright')} <a href="/">Uncopied</a> <br/>
               </p>

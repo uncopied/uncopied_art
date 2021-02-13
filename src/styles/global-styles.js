@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 	* {
-			font-family: Montserrat !important;
+			font-family: Montserrat;
 	}
 
 	body {
@@ -12,7 +12,6 @@ export const GlobalStyle = createGlobalStyle`
 		font-size: 16px;
 		-moz-osx-font-smoothing: grayscale;
 		-webkit-font-smoothing: antialiased;
-		font-family: "Montserrat-Regular";
 		overflow-x: hidden;
 		max-width: 100%;
 		white-space: normal;
@@ -26,10 +25,6 @@ export const GlobalStyle = createGlobalStyle`
 		&::-webkit-scrollbar-thumb {
 			background-color: transparent;
 		}
-	}
-
-	.code {
-		font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 	}
 
 	/*Logo*/

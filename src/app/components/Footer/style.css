@@ -79,13 +79,9 @@
 }
 
 .footer-social-icon i {
-  height: 54px;
-  width: 54px;
   text-align: center;
-  line-height: 45px;
   border-radius: 50%;
-  padding: 5px;
-  font-family: "Font Awesome 5 Brands" !important;
+  padding: 10px 13px;
 }
 
 .facebook-bg {
