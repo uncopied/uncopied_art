@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@paypal/react-paypal-js": "^3.0.3",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
@@ -51,6 +55,6 @@
     ]
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.2"
+    "@fortawesome/fontawesome-free": "^5.10.0-5"
   }
 }

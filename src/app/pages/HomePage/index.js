@@ -3,7 +3,9 @@ import "./style.css";
 import intro from './assets/Intro.svg';
 import certificate from './assets/certificate.svg';
 import about from './assets/about.svg';
-import contact from './assets/contact.svg';
+// import contact from './assets/contact.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenSquare, faHandsHelping, faCertificate, faUserPlus, faImage, faFileCode, faGem, faFileSignature } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from "react-i18next";
 
 export default function HomePage()
@@ -31,11 +33,11 @@ export default function HomePage()
                 </div>
               </section>
 
-<div class="container-fluid spacing box">
-  <div class="cards">
-    <div class="card-item">
-    <div class="icon">
-      <i class="fal fa-pen-square"></i>
+<div className="container-fluid spacing box">
+  <div className="cards">
+    <div className="card-item">
+    <div className="icon">
+      <i><FontAwesomeIcon icon={faPenSquare} /></i>
       </div>
       <div className="card-info">
         <h2 className="card-title">{t('services.card1')}</h2>
@@ -46,7 +48,7 @@ export default function HomePage()
   <div className="cards">
     <div className="card-item">
     <div className="icon">
-      <i className="fal fa-hands-helping"></i>
+      <i><FontAwesomeIcon icon={faHandsHelping} /></i>
       </div>
       <div className="card-info">
         <h2 className="card-title">{t('services.card2')}</h2>
@@ -57,7 +59,7 @@ export default function HomePage()
   <div className="cards">
     <div className="card-item">
     <div className="icon">
-      <i className="fal fa-hand-holding-box"></i>    
+      <i><FontAwesomeIcon icon={faCertificate} /></i>    
       </div>
       <div className="card-info">
         <h2 className="card-title">{t('services.card3')}</h2>
@@ -72,35 +74,35 @@ export default function HomePage()
         <div className="card-container">
           <div className="card">
           <div className="content text-center">
-            <i className="icon fal fa-user-plus mb-5"></i>
+            <i className="icon mb-5"><FontAwesomeIcon icon={faUserPlus} /></i>
             <h6><b>{t('works.sec1')}</b></h6>
             <p>{t('works.sec1-para')}</p>
           </div>
           </div>
           <div className="card">
           <div className="content text-center">
-          <i className="icon fal fa-image mb-5"></i>
+          <i className="icon mb-5"><FontAwesomeIcon icon={faImage} /></i>
             <h6><b>{t('works.sec2')}</b></h6>
             <p>{t('works.sec2-para')}</p>
             </div>
           </div>
           <div className="card">
           <div className="content text-center">
-          <i className="icon fal fa-file-code mb-5"></i>
+          <i className="icon mb-5"><FontAwesomeIcon icon={faFileCode } /></i>
             <h6><b>{t('works.sec5')}</b></h6>
             <p>{t('works.sec5-para')}</p>
           </div>
           </div>
           <div className="card">
           <div className="content text-center">
-          <i className="icon fal fa-gem mb-5"></i>
+          <i className="icon mb-5"><FontAwesomeIcon icon={faGem} /></i>
             <h6><b>{t('works.sec3')}</b></h6>
             <p>{t('works.sec3-para')}</p>
           </div>
           </div>
           <div className="card">
           <div className="content text-center">
-          <i className="icon fal fa-file-signature mb-5"></i>
+          <i className="icon mb-5"><FontAwesomeIcon icon={faFileSignature} /></i>
             <h6><b>{t('works.sec4')}</b></h6>
             <p>{t('works.sec4-para')}</p>
           </div>
