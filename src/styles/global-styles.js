@@ -27,66 +27,9 @@ export const GlobalStyle = createGlobalStyle`
 		}
 	}
 
-	/*Logo*/
 
-	.logo {
-		padding: 10px;
-	}
+	/* Spacing between components */
 
-	.Nav-link {
-		margin: 10px;
-		font-weight: 600;
-		color: #000 !important;
-		text-align: center;
-	}
-
-	.Nav-but {
-		margin: 10px;
-		background-color: #000 !important;
-		border: #000 !important;
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-
-	.Nav-but:hover {
-		background-color: #505050 !important;
-	}
-
-	.navbar-light .navbar-toggler {
-		border-color: #f8f9fa!important;
-	}
-
-	.lang {
-		border: 2px solid #000;
-		border-radius: 4px;
-		background-color: #f8f9fa;
-	}
-
-	.lang1 {
-		text-align: center;
-	}
-
-	.btn {
-		font-size: 14px;
-		padding: 10px 30px;
-		margin: 5px;
-		border-radius: 4px;
-		letter-spacing: 1px;
-		font-weight: 500;
-		color: #fff;
-		border: none;
-		text-transform: uppercase;
-		-webkit-transition: all 0.3s ease-in-out;
-		-moz-transition: all 0.3s ease-in-out;
-		-o-transition: all 0.3s ease-in-out;
-		transition: all 0.3s ease-in-out;
-		display: inline-block;
-	}
-
-	.nav-spacing {
-		padding-right: 150px;
-		padding-left: 150px;
-	}
 
 	.spacing {
 		padding-right: 120px;
@@ -114,6 +57,28 @@ export const GlobalStyle = createGlobalStyle`
 		padding: 20px;
 	}
 
+
+
+/* Buttons*/
+  
+
+	.btn {
+		font-size: 14px;
+		padding: 10px 30px;
+		margin: 5px;
+		border-radius: 4px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		color: #fff;
+		border: none;
+		text-transform: uppercase;
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+		display: inline-block;
+	}
+
 	.btn:focus,
 	.btn:active {
 		box-shadow: none;
@@ -135,7 +100,11 @@ export const GlobalStyle = createGlobalStyle`
 		transform: translateY(-0.5px);
 	}
 
-	@media screen and (min-device-width: 1480px) and (max-device-width: 1659px) { 
+
+/* Media Queries */
+
+
+@media screen and (min-device-width: 1480px) and (max-device-width: 1659px) { 
 		.spacing .business-item-info {
 			padding-top: 100px;
 		}
@@ -222,13 +191,21 @@ export const GlobalStyle = createGlobalStyle`
 	.cards .card-item {
 		padding: 30px 15px;
 	}
+
+	.copyright-text p , .footer-widget ul li {
+		font-size: 16px;
+	}
 }
 
 @media screen and (max-device-width: 425px) { 
 
 	.footer-widget ul li {
 		float: none;
-		display:table-footer-group;
+		display:table-header-group;
+	}
+
+	.footer-social-icon i {
+		margin: -2px;
 	}
 
 	.row {
