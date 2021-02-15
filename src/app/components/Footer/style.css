@@ -84,6 +84,10 @@
   padding: 10px 13px;
 }
 
+.footer-social-icon .last{
+  margin-right: 0px !important;
+}
+
 .facebook-bg {
   background: #3B5998;
 }
