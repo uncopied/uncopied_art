@@ -62,7 +62,7 @@ export const GlobalStyle = createGlobalStyle`
 		background-color: #f8f9fa;
 	}
 
-	.lang1 {
+	.center {
 		text-align: center;
 	}
 
