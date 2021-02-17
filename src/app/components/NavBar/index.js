@@ -1,5 +1,6 @@
 import {Navbar, Button, Nav} from 'react-bootstrap';
 import React from 'react';
+import './style.css';
 import { LinkContainer } from "react-router-bootstrap";
 import logo from './assets/logo.svg';
 import LangLib from "../../../libs/langLib";

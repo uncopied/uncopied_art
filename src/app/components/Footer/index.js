@@ -44,7 +44,7 @@ export function Footer()
             <a href="https://twitter.com/uncopied_art"><i className="twitter-bg"><FontAwesomeIcon icon={faTwitter} /></i></a>
             <a href="https://www.facebook.com/uncopied"><i className="facebook-bg"><FontAwesomeIcon icon={faFacebook} /></i></a>
             <a href="https://www.instagram.com/uncopied_art"><i className="instagram-bg"><FontAwesomeIcon icon={faInstagram} /></i></a>
-            <a href="http://github.com/uncopied"><i className="github-bg"><FontAwesomeIcon icon={faGithub} /></i></a>
+            <a className="last" href="http://github.com/uncopied"><i className="github-bg"><FontAwesomeIcon icon={faGithub} /></i></a>
           </div>
           </div>
          </div>
