@@ -11,10 +11,10 @@ import {Footer} from "./app/components/Footer";
 import ReactGA from 'react-ga';
 import { withRouter } from "react-router-dom";
 
+ReactGA.initialize('G-BN7YXG0H90');
+
 function App() {
-  
 	useEffect(() => {
-		ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_CODE);
     // to report page view
     ReactGA.pageview(window.location.pathname + window.location.search);
 	},[]);
