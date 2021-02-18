@@ -53,8 +53,8 @@ export const GlobalStyle = createGlobalStyle`
 		padding-bottom: 20px;
 	}
 
-	.spacing .business-item-img {
-		padding: 20px;
+	.center {
+		text-align: center;
 	}
 
 
