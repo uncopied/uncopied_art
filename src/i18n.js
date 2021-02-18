@@ -4,7 +4,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import translationEN from './i18n/en.json';
 import translationFR from './i18n/fr.json';
 
-let defaultLanguage = "fr";
+let defaultLanguage = localStorage.getItem('i18nextLng') || "fr";
 
 // the translations
 const resources = {
@@ -22,9 +22,8 @@ i18n
     .init({
         resources,
         lng: defaultLanguage,
-
         keySeparator: ".",  // to support nested translations
-
+        fallbackLng: "en",
         interpolation: {
             escapeValue: false // react already safes from xss
         }
