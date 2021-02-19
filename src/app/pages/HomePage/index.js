@@ -3,7 +3,6 @@ import "./style.css";
 import intro from './assets/Intro.svg';
 import certificate from './assets/certificate.svg';
 import about from './assets/about.svg';
-// import contact from './assets/contact.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenSquare, faHandsHelping, faCertificate, faUserPlus, faImage, faFileCode, faGem, faFileSignature } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from "react-i18next";
@@ -146,23 +145,6 @@ export default function HomePage()
       </div>
     </div>
   </section>
-  {/* <section className="section5 contact spacing">
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-lg-6 col-md-12">
-          <div className="business-item-info">
-            <h3>{t('contact.heading')}</h3>
-          <a className="btn btn-common" href="https://uncopied.art/contact/">{t('contact.button')}</a>
-        </div>
-        <div className="col-lg-6 col-md-12 pt-70">
-          <div className="business-item-img">
-            <img src={contact} className="img-fluid" alt=""/>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section> */}
 </div>
   );
 }

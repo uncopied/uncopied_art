@@ -2,8 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { onError } from "../libs/errorLib";
-import "./Forms.css";
-import "./NewCertificate.css";
 import {useAppContext} from "../libs/contextLib";
 import Form from "react-bootstrap/Form";
 import LoaderButton from "../app/components/LoaderButton";
