@@ -1,0 +1,24 @@
+.Wrapper {
+  padding-top: 100px !important;
+  padding: 40px 40px;
+  text-align: center;
+}
+
+.Header {
+  font-size: 50px;
+  padding-top: 100px;
+}
+
+.Button {
+  padding: 40px;
+}
+
+@media screen and (max-device-width: 350px) { 
+  .Wrapper {
+    padding: 20px 20px;
+  }
+  .Header {
+    font-size: 28px;
+    padding-top: 100px;
+  }
+}

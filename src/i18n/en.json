@@ -67,6 +67,11 @@
         "heading2-link5": "Our collective",
         "heading2-link6": "Contact Us",
         "copyright": "Copyright © 2021, All Rights Reserved"
+    },
+
+    "error": {
+        "heading":"Sorry, page not found!!!",
+        "button": "Go back"
     }
 
 }
