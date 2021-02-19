@@ -67,5 +67,10 @@
         "heading2-link5": "Le collectif",
         "heading2-link6": "Nous contacter",
         "copyright": "Copyright © 2021, tous droits réservés"
+    },
+
+    "error": {
+        "heading":"Désolé, page introuvable !!!",
+        "button": "Retourner"
     }
 }

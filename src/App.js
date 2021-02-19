@@ -8,16 +8,8 @@ import { onError } from "./libs/errorLib";
 import { useTranslation } from "react-i18next";
 import NavBar from "./app/components/NavBar";
 import {Footer} from "./app/components/Footer";
-import ReactGA from 'react-ga';
-import { withRouter } from "react-router-dom";
-
-ReactGA.initialize('G-BN7YXG0H90');
 
 function App() {
-	useEffect(() => {
-    // to report page view
-    ReactGA.pageview(window.location.pathname + window.location.search);
-	},[]);
 
 	const [isAuthenticated, userHasAuthenticated] = useState(false);
 	const [isAuthenticating, setIsAuthenticating] = useState(true);
@@ -64,4 +56,4 @@ function App() {
 		</div>
 	);
 }
-export default withRouter(App);
+export default App;

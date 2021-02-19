@@ -1,20 +1,22 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import errorpage from './assets/404.svg';
+import { useTranslation } from "react-i18next";
+import './style.css'
 
 export default function NotFound()
 {
+  const { t } = useTranslation();
+
   return (
-    <Wrapper>
-      <Header>Sorry, page not found!!!</Header>
-    </Wrapper>
+    <div class="Wrapper">
+      <div className="business-item-img">
+        <img src={errorpage} className="img-fluid" alt=""/>
+      </div>
+      <div class="Header">{t('error.heading')}</div>
+       <div class="Button">
+       <a className="btn btn-common" href="https://uncopied.org/">{t('error.button')}</a> 
+       </div>
+    </div>
   );
 }
-
-const Wrapper = styled.div`
-  padding-top: 100px;
-  text-align: center;
-`;
-
-const Header = styled.div`
-  font-size: 40px
-`;
