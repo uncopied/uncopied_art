@@ -1,6 +1,4 @@
 import React from "react";
-import "./Forms.css"
-import "./Home.css";
 import { useAppContext } from "../libs/contextLib";
 import embossing from "../embossing.svg";
 // import { useTranslation } from "react-i18next";

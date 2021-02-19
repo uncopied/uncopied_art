@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 // import { useParams, useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { onError } from "../libs/errorLib";
-import "./Forms.css";
-import "./CollectCertificate.css";
 import {useAppContext} from "../libs/contextLib";
 import embossing from "../embossing.svg";
 // import ListGroup from "react-bootstrap/ListGroup";
