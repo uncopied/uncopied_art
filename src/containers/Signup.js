@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-// import Button from "react-bootstrap/Button";
 import LoaderButton from "../app/components/LoaderButton";
 import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
@@ -19,7 +18,6 @@ export default function Signup() {
     role: "artist"
   });
   const history = useHistory();
-  // const [newUser, setNewUser] = useState(null);
   const { userHasAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
 
