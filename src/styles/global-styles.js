@@ -31,17 +31,23 @@ body {
 
 /* Spacing between components */
 
-.container {
+.spacing {
+  padding-right: 120px;
+  padding-left: 120px;
   padding-top: 150px;
   padding-bottom: 150px;
 }
 
-.business-item-info h3 {
-  font-size: 60px;
+.spacing .business-item-info {
+  padding-top: 160px;
+}
+
+.spacing .business-item-info h3 {
+  font-size: 70px;
   font-weight: 600;
 }
 
-.business-item-info p {
+.spacing .business-item-info p {
   font-size: 22px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -158,11 +164,32 @@ div form button.btn {
 
 /* Media Queries */
 
+@media screen and (min-device-width: 1480px) and (max-device-width: 1659px) {
+  .spacing .business-item-info {
+    padding-top: 100px;
+  }
+  .spacing .business-item-info h3,
+  .section2 h1,
+  .section3 .business-item-info h3,
+  .section4 .business-item-info h3 {
+    font-size: 63px !important;
+  }
+}
+
+@media screen and (min-device-width: 1380px) and (max-device-width: 1425px) {
+  .spacing .business-item-info {
+    padding-top: 60px;
+  }
+}
+
 @media screen and (min-device-width: 320px) and (max-device-width: 1480px) {
-  .container .business-item-info p {
+  .spacing .business-item-info {
+    padding-top: 50px;
+  }
+  .spacing .business-item-info p {
     font-size: 18px;
   }
-  .container .business-item-info h3,
+  .spacing .business-item-info h3,
   .section2 h1,
   .section3 .business-item-info h3,
   .section4 .business-item-info h3 {
@@ -178,7 +205,7 @@ div form button.btn {
 }
 
 @media screen and (min-device-width: 800px) and (max-device-width: 1380px) {
-  .container {
+  .spacing {
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -189,7 +216,7 @@ div form button.btn {
 }
 
 @media screen and (max-device-width: 655px) {
-  .container {
+  .spacing {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -200,13 +227,13 @@ div form button.btn {
 }
 
 @media screen and (max-device-width: 400px) {
-  .container .business-item-info h3,
+  .spacing .business-item-info h3,
   .section2 h1,
   .section3 .business-item-info h3,
   .section4 .business-item-info h3 {
     font-size: 37px !important;
   }
-  .container {
+  .spacing {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 30px;
