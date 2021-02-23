@@ -2,7 +2,7 @@ import { store } from 'react-notifications-component';
 
 export function notify(notification) {
     const notificationBox = {
-        title: "" || notification.title,
+        title: notification.title || " ",
         message: " ",
         type: notification.type,
         insert: "top",
@@ -15,6 +15,5 @@ export function notify(notification) {
           onScreen: true
         }
       }
-    console.log(notificationBox);
     return store.addNotification(notificationBox);
 }

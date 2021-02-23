@@ -36,9 +36,7 @@ export default function Login() {
 				"username": fields.username,
 				"password": fields.password 
 			})
-			axios.post(url, data, {
-				headers: headers
-			}).then(response => {
+			axios.post(url, data, headers).then(response => {
 				if(response.status === 200)
 				{
 					notify({"title":"Successfully Logged In", "type":"success"})

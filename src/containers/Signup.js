@@ -8,6 +8,8 @@ import { onError } from "../libs/errorLib";
 import embossing from "../embossing.svg";
 import Nav from "react-bootstrap/Nav";
 import { LinkContainer } from "react-router-bootstrap";
+import axios from "axios"
+import { notify } from './Notification'
 
 export default function Signup() {
   const [fields, handleFieldChange] = useFormFields({
@@ -34,35 +36,48 @@ export default function Signup() {
     event.preventDefault();
     try {
       setIsLoading(true);
-      // Sending and receiving data in JSON format using POST method
-      //
-      var xhr = new XMLHttpRequest();
-      var url = process.env.REACT_APP_UNCOPIED_API + "api/v1.0/auth/register";
-      xhr.open("POST", url, true);
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onload = function () {
-        if (xhr.status === 200) {
-          var json = JSON.parse(xhr.responseText);
-          if (json == null || json.token == null) {
-            alert("Could not signup and auth user " + fields.username);
-            setIsLoading(false);
-            userHasAuthenticated(false);
-          } else {
-            console.log(json.user + ", " + json.token);
-            localStorage.setItem('jwtoken', json.token);
-            userHasAuthenticated(true);
-            history.push("/");
-          }
-        } else {
-          alert("Could not signup user " + fields.username);
-          setIsLoading(false);
-          userHasAuthenticated(false);
+      const url = process.env.REACT_APP_UNCOPIED_API + "api/v1.0/auth/register";
+      const data = JSON.stringify({
+        "username": fields.username,
+        "display_name": fields.displayName,
+        "email": fields.email,
+        "password": fields.password,
+        "role": fields.role 
+      });
+			const headers = {
+				"Content-Type": "application/json"
+			}
+      axios.post(url, data, headers)
+      .then((response => {
+        if(response.status === 200)
+        {
+          notify({"title":"Successfully Signed In", "type":"success"})
+          localStorage.setItem('jwtoken', response.data.token);
+          userHasAuthenticated(true);
+          history.push("/");
         }
-      };
-      var data = JSON.stringify({ "username": fields.username, "display_name": fields.displayName, "email": fields.email, "password": fields.password, "role": fields.role });
-      xhr.send(data);
-    } catch (e) {
-      onError(e);
+        else if(!response.data.user || !response.data.token)
+        {
+          notify({"title":"Could not signup and authorize user", "type":"danger"})
+        }
+        setIsLoading(false);
+        userHasAuthenticated(false);
+      }))
+      .catch(error => {
+        if(error.response.status === 409)
+        {
+          notify({"title":"Username already exists", "type":"danger"})
+        }
+        else
+        {
+          notify({"title":"Sign up failed", "type":"danger"})
+        }
+        setIsLoading(false);
+        userHasAuthenticated(false);
+      })
+    } catch(error) {
+      notify({"title":"Sign up failed", "type":"danger"})
+      onError(error);
       setIsLoading(false);
       userHasAuthenticated(false);
     }
