@@ -3,6 +3,11 @@
   background-color: #F3F1F3;
 }
 
+.section1 {
+  background-color: #fff;
+  background: #F3F1F3;
+}
+
 .section2 h1 {
   color: #000;
   text-align: center;
@@ -36,6 +41,10 @@
   font-size: 60px !important;
 }
 
+.business-item-img {
+  margin: 10px;
+}
+
 .section3 .btn-common {
   background-color: #CACACA;
   color: #000;
@@ -60,13 +69,11 @@
 .box {
   display: flex;
   flex-wrap: wrap;
-  background-color: #fff;
-  background: #F3F1F3;
 }
 
 .cards {
   display: flex;
-  padding: 2rem;
+  padding: 1rem;
   width: 100%;
 }
 

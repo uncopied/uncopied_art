@@ -52,7 +52,7 @@ export function Footer()
       </div>
     </div>
     <div className="copyright-area">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-xl-12 col-lg-12 text-center">
             <div className="copyright-text">
