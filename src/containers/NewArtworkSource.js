@@ -5,6 +5,7 @@ import LoaderButton from "../app/components/LoaderButton";
 import {onError} from "../libs/errorLib";
 import embossing from "../embossing.svg";
 import axios from "axios"
+import { notify } from "./Notification" 
 
 export default function NewArtworkSource() {
     const file = useRef(null);
@@ -34,43 +35,41 @@ export default function NewArtworkSource() {
         }
         if (file.current) {
             try{
+                setIsUploading(true);
+                // Sending and receiving data in JSON format using POST method
+                //
                 const url = process.env.REACT_APP_UNCOPIED_UPLOAD;
                 const bearer = 'Bearer ' + localStorage.getItem("jwtoken")
                 const headers = {
                 headers: {
+                    "Content-Type": "multipart/form-data",
                     "Authorization": bearer
                     }
                 }   
                 const formData = new FormData();
                 formData.append("file", file.current, "file");
-
+                
                 axios.post(url, formData, headers)
                 .then(response => {
-                    console.log(response);
                     if(response.status === 200)
                     {
-                        console.log("Done!!");
                         const json = response.data
                         if(json == null)
-                            alert("Couldnt upload file");
-                        else if(json.Message)
-                            alert(json.Message)
+                            notify({title: "Couldn't upload data", type:"danger"})
                         else
                         {
+                            notify({title: "Upload successfull", type:"success" })
                             setHash(json.IPFSHash)
-                            console.log(json);
                         }
                     }
+                    setIsUploading(false);
                 }).catch(e => {
-                    console.log("Inside catch");
                     onError(e);
                     setIsUploading(false);
-
                 })
             }
             catch(e)
             {
-                console.log("Outside catch");
                 onError(e);
                 setIsUploading(false);
             }
@@ -84,35 +83,41 @@ export default function NewArtworkSource() {
                 setIsLoading(true);
                 // Sending and receiving data in JSON format using POST method
                 //
-                var xhr = new XMLHttpRequest();
-                var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/src/";
-                xhr.open("POST", url, true);
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("jwtoken"));
-                xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        var json = JSON.parse(xhr.responseText);
-                        if (json == null) {
-                            alert("Could upload " + hash);
-                            setIsLoading(false);
-                        } else if (json.StampError.length > 0) {
-                            alert(json.StampError);
-                            setIsLoading(false);
-                        } else {
-                            console.log(json);
-                            // create a new edition for json.ID
-                            history.push("/src/"+json.ID);
+                const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/src/"
+                const Bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+                const headers = {
+                    "Content-Type": "application/json",
+                    "Authorization": Bearer
+                }
+                const data = JSON.stringify({
+                    "source_license": license,
+                    "ipfs_hash": hash
+                });
+                axios.post(url, data, headers)
+                .then(response => {
+                    if(response.status === 200)
+                    {
+                        const data = response.data;
+                        if(data == null)
+                        {
+                            notify({title: "Could not upload!", type: "danger"})
                         }
-                    } else {
-                        alert("Could upload " + hash + " error " + xhr.status);
+                        else if(data.StampError.length > 0)
+                        {
+                            console.log(data.StampError);
+                        }
+                        else
+                        {
+                            notify({title:"Successfully uploaded Artwork"})
+                            history.push("/src/"+data.ID);
+                        }
                     }
-                };
-                /*
-                "source_license":"CC-BY 4.0",
-                "ipfs_hash":"QmZFmZfRcspTtgUk7EDZNofTMJiCUh7ffhU6kd3ycNbWDi"
-                */
-                var data = JSON.stringify({"source_license": license, "ipfs_hash": hash});
-                xhr.send(data);
+                    setIsLoading(false);
+                })
+                .catch(error => {
+                    onError(error);
+                    setIsLoading(false);
+                })
             } catch (e) {
                 onError(e);
                 setIsLoading(false);
