@@ -32,39 +32,44 @@ export default function NewArtworkSource() {
             return;
         }
         if (file.current) {
-            try {
-                setIsUploading(true);
-                // Sending and receiving data in JSON format using POST method
-                //
-                var xhr = new XMLHttpRequest();
-                var url = process.env.REACT_APP_UNCOPIED_UPLOAD;
-                xhr.open("POST", url, true);
-                xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("jwtoken"));
-                xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        var json = JSON.parse(xhr.responseText);
-                        if (json == null) {
+            try{
+                const url = process.env.REACT_APP_UNCOPIED_UPLOAD;
+                const bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+                const headers = {
+                headers: {
+                    "Authorization": bearer
+                    }
+                }   
+                const formData = new FormData();
+                formData.append("file", file.current, "file");
+
+                axios.post(url, formData, headers)
+                .then(response => {
+                    console.log(response);
+                    if(response.status === 200)
+                    {
+                        console.log("Done!!");
+                        const json = response.data
+                        if(json == null)
                             alert("Couldnt upload file");
-                        } else if (json.Message) {
-                            alert(json.Message);
-                        } else {
-                            // all good
+                        else if(json.Message)
+                            alert(json.Message)
+                        else
+                        {
                             setHash(json.IPFSHash)
                             console.log(json);
                         }
-                    } else {
-                        alert("Could upload " + hash + " error " + xhr.status);
                     }
+                }).catch(e => {
+                    console.log("Inside catch");
+                    onError(e);
                     setIsUploading(false);
-                };
-                /*
-                "source_license":"CC-BY 4.0",
-                "ipfs_hash":"QmZFmZfRcspTtgUk7EDZNofTMJiCUh7ffhU6kd3ycNbWDi"
-                */
-                var formData = new FormData();
-                formData.append("file", file.current, "file");
-                xhr.send(formData);
-            } catch (e) {
+
+                })
+            }
+            catch(e)
+            {
+                console.log("Outside catch");
                 onError(e);
                 setIsUploading(false);
             }
