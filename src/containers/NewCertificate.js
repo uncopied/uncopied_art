@@ -9,7 +9,6 @@ import axios from "axios"
 import { notify } from "./Notification";
 
 export default function NewCertificate() {
-
     const history = useHistory();
     const [assetTemplate, setAssetTemplate] = useState(null);
     const { id } = useParams();
@@ -37,71 +36,60 @@ export default function NewCertificate() {
     }, [isAuthenticated, id]);
     function loadAssetTemplate(assetTemplateId)
     {
-        try {
-            const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/asset/"+assetTemplateId.id;
-            const bearer = 'Bearer ' + localStorage.getItem("jwtoken")
-            const headers = {
-                "Content-Type": "application/json",
-                "Authorization": bearer
-            }
-            axios.get(url, {headers: headers})
-            .then(response => {
-                if(response.status === 200)
-                {
-                    const assetTemplate = response.data;
-                    setAssetTemplate(assetTemplate);
-                    if(assetTemplate == null)
-                    {
-                        console.error("Could not fetch asset, data is null")
-                    }
-                }
-                else{
-                    notify({"title": "Could not fetch asset", "type":"danger"})
-                }
-                setIsLoading(false);
-            }).catch(error => {
-                notify({"title": "Could not fetch asset", "type":"danger"})
-                console.error(error);
-                setIsLoading(false);
-            })
-        } catch(error) {
-            console.error(error);
-            onError(error);
-            setIsLoading(false);
+        const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/asset/"+assetTemplateId.id;
+        const bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+        const headers = {
+            "Content-Type": "application/json",
+            "Authorization": bearer
         }
+        axios.get(url, {headers: headers})
+        .then(response => {
+            if(response.status === 200)
+            {
+                const assetTemplate = response.data;
+                setAssetTemplate(assetTemplate);
+                if(assetTemplate == null)
+                {
+                    console.error("Could not fetch asset, data is null")
+                }
+            }
+            else{
+                notify({"title": "Could not fetch asset", "type":"danger"})
+            }
+            setIsLoading(false);
+        }).catch(error => {
+            notify({"title": "Could not fetch asset", "type":"danger"})
+            console.error(error);
+            setIsLoading(false);
+        })
     }
 
     function handleSubmit(event) {
         event.preventDefault();
-        try {
-            setIsLoading(true);
-            const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/cert/order"
-            const bearer = 'Bearer ' + localStorage.getItem("jwtoken")
-            const headers = {
-                "Content-Type": "application/json",
-                "Authorization": bearer
-            }
-            const data = JSON.stringify({
-                "AssetTemplateID" : assetTemplate.ID,
-                "OrderUUID": assetTemplate.ObjectUUID
-            });
-            axios.post(url, data, headers)
-            .then(response => {
-                if(response.status === 200)
-                {
-                    console.log(response.data);
-                    history.push("/cert/order/"+assetTemplate.ObjectUUID);
-                }
-                setIsLoading(false);
-            })
-            .catch(error => {
-                const title = "Could order " + assetTemplate.ObjectUUID + " error " + error.response.status
-                notify({"title": title, "type":"danger"})
-            })
-        } catch(error) {
-            onError(error);
-            setIsLoading(false);
+        setIsLoading(true);
+        const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/cert/order"
+        const bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+        const headers = {
+            "Content-Type": "application/json",
+            "Authorization": bearer
         }
+        const data = JSON.stringify({
+            "AssetTemplateID" : assetTemplate.ID,
+            "OrderUUID": assetTemplate.ObjectUUID
+        });
+        axios.post(url, data, headers)
+        .then(response => {
+            if(response.status === 200)
+            {
+                console.log(response.data);
+                history.push("/cert/order/"+assetTemplate.ObjectUUID);
+            }
+            setIsLoading(false);
+        })
+        .catch(error => {
+            const title = "Could order " + assetTemplate.ObjectUUID + " error " + error.response.status
+            notify({"title": title, "type":"danger"})
+        })
     }
 
     function renderAssetTemplate() {

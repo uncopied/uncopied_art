@@ -10,7 +10,6 @@ import {notify} from "./Notification"
 
 export default function CollectCertificate() {
     const [key, setKey] = useState(null);
-    // const history = useHistory();
     const { uuid } = useParams();
     const [checkout, setCheckout] = useState(null);
     const {isAuthenticated} = useAppContext();

@@ -26,34 +26,30 @@ export default function Login() {
 
 	function handleSubmit(event) {
 		event.preventDefault();
-		try {
-			setIsLoading(true);
-			const url = process.env.REACT_APP_UNCOPIED_API + "api/v1.0/auth/login";
-			const headers = {
-				"Content-Type": "application/json"
-			}
-			const data =  JSON.stringify({
-				"username": fields.username,
-				"password": fields.password 
-			})
-			axios.post(url, data, headers).then(response => {
-				if(response.status === 200)
-				{
-					notify({"title":"Successfully Logged In", "type":"success"})
-					localStorage.setItem('jwtoken', response.data.token);
-					userHasAuthenticated(true)
-					history.push("/")
-				}
-				setIsLoading(false)
-			}).catch(error => {
-				notify({"title":"Logged In failed", "type":"danger"})
-				onError(error)
-				setIsLoading(false)
-				userHasAuthenticated(false)
-			})
-		} catch(error) {
-			onError(error);
+		setIsLoading(true);
+		const url = process.env.REACT_APP_UNCOPIED_API + "api/v1.0/auth/login";
+		const headers = {
+			"Content-Type": "application/json"
 		}
+		const data =  JSON.stringify({
+			"username": fields.username,
+			"password": fields.password 
+		})
+		axios.post(url, data, headers).then(response => {
+			if(response.status === 200)
+			{
+				notify({"title":"Successfully Logged In", "type":"success"})
+				localStorage.setItem('jwtoken', response.data.token);
+				userHasAuthenticated(true)
+				history.push("/")
+			}
+			setIsLoading(false)
+		}).catch(error => {
+			notify({"title":"Logged In failed", "type":"danger"})
+			onError(error)
+			setIsLoading(false)
+			userHasAuthenticated(false)
+		})
 	}
 
 	return (

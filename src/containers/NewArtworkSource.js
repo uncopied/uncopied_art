@@ -34,55 +34,45 @@ export default function NewArtworkSource() {
             return;
         }
         if (file.current) {
-            try{
-                setIsUploading(true);
-                // Sending and receiving data in JSON format using POST method
-                //
-                const url = process.env.REACT_APP_UNCOPIED_UPLOAD;
-                const bearer = 'Bearer ' + localStorage.getItem("jwtoken")
-                const headers = {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                    "Authorization": bearer
-                    }
-                }   
-                const formData = new FormData();
-                formData.append("file", file.current, "file");
-                
-                axios.post(url, formData, headers)
-                .then(response => {
-                    if(response.status === 200)
+            setIsUploading(true);
+            // Sending and receiving data in JSON format using POST method
+            const url = process.env.REACT_APP_UNCOPIED_UPLOAD;
+            const bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+            const headers = {
+            headers: {
+                "Content-Type": "multipart/form-data",
+                "Authorization": bearer
+                }
+            }   
+            const formData = new FormData();
+            formData.append("file", file.current, "file");
+            
+            axios.post(url, formData, headers)
+            .then(response => {
+                if(response.status === 200)
+                {
+                    const json = response.data
+                    if(json == null)
+                        notify({title: "Couldn't upload data", type:"danger"})
+                    else
                     {
-                        const json = response.data
-                        if(json == null)
-                            notify({title: "Couldn't upload data", type:"danger"})
-                        else
-                        {
-                            notify({title: "Upload successfull", type:"success" })
-                            setHash(json.IPFSHash)
-                        }
+                        notify({title: "Upload successfull", type:"success" })
+                        setHash(json.IPFSHash)
                     }
-                    setIsUploading(false);
-                }).catch(e => {
-                    onError(e);
-                    setIsUploading(false);
-                })
-            }
-            catch(e)
-            {
+                }
+                setIsUploading(false);
+            }).catch(e => {
                 onError(e);
                 setIsUploading(false);
-            }
+            })
         }
     }
 
     async function handleSubmit(event) {
         event.preventDefault();
         if (hash.length > 0) {
-            try {
                 setIsLoading(true);
                 // Sending and receiving data in JSON format using POST method
-                //
                 const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/src/"
                 const Bearer = 'Bearer ' + localStorage.getItem("jwtoken")
                 const headers = {
@@ -118,10 +108,6 @@ export default function NewArtworkSource() {
                     onError(error);
                     setIsLoading(false);
                 })
-            } catch (e) {
-                onError(e);
-                setIsLoading(false);
-            }
         }
     }
 

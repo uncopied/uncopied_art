@@ -34,53 +34,47 @@ export default function Signup() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    try {
-      setIsLoading(true);
-      const url = process.env.REACT_APP_UNCOPIED_API + "api/v1.0/auth/register";
-      const data = JSON.stringify({
-        "username": fields.username,
-        "display_name": fields.displayName,
-        "email": fields.email,
-        "password": fields.password,
-        "role": fields.role 
-      });
-			const headers = {
-				"Content-Type": "application/json"
-			}
-      axios.post(url, data, headers)
-      .then((response => {
-        if(response.status === 200)
-        {
-          notify({"title":"Successfully Signed In", "type":"success"})
-          localStorage.setItem('jwtoken', response.data.token);
-          userHasAuthenticated(true);
-          history.push("/");
-        }
-        else if(!response.data.user || !response.data.token)
-        {
-          notify({"title":"Could not signup and authorize user", "type":"danger"})
-        }
-        setIsLoading(false);
-        userHasAuthenticated(false);
-      }))
-      .catch(error => {
-        if(error.response.status === 409)
-        {
-          notify({"title":"Username already exists", "type":"danger"})
-        }
-        else
-        {
-          notify({"title":"Sign up failed", "type":"danger"})
-        }
-        setIsLoading(false);
-        userHasAuthenticated(false);
-      })
-    } catch(error) {
-      notify({"title":"Sign up failed", "type":"danger"})
-      onError(error);
+    setIsLoading(true);
+    const url = process.env.REACT_APP_UNCOPIED_API + "api/v1.0/auth/register";
+    const data = JSON.stringify({
+      "username": fields.username,
+      "display_name": fields.displayName,
+      "email": fields.email,
+      "password": fields.password,
+      "role": fields.role 
+    });
+    const headers = {
+      "Content-Type": "application/json"
+    }
+    axios.post(url, data, headers)
+    .then((response => {
+      if(response.status === 200)
+      {
+        notify({"title":"Successfully Signed In", "type":"success"})
+        localStorage.setItem('jwtoken', response.data.token);
+        userHasAuthenticated(true);
+        history.push("/");
+      }
+      else if(!response.data.user || !response.data.token)
+      {
+        notify({"title":"Could not signup and authorize user", "type":"danger"})
+      }
       setIsLoading(false);
       userHasAuthenticated(false);
-    }
+    }))
+    .catch(error => {
+      if(error.response.status === 409)
+      {
+        notify({"title":"Username already exists", "type":"danger"})
+      }
+      else
+      {
+        notify({"title":"Sign up failed", "type":"danger"})
+      }
+      setIsLoading(false);
+      userHasAuthenticated(false);
+    })
+    
   }
 
   return (
@@ -155,5 +149,4 @@ export default function Signup() {
       </div>
     </div>
   );
-
 }	
