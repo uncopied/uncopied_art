@@ -1,18 +1,15 @@
-// import React, { useRef, useState, useEffect } from "react";
 import React, { useState, useEffect } from "react";
-// import { useParams, useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { onError } from "../libs/errorLib";
 import {useAppContext} from "../libs/contextLib";
 import embossing from "../embossing.svg";
-// import ListGroup from "react-bootstrap/ListGroup";
-// import {LinkContainer} from "react-router-bootstrap";
 import Form from "react-bootstrap/Form";
 import LoaderButton from "../app/components/LoaderButton";
+import axios from "axios"
+import {notify} from "./Notification"
 
 export default function CollectCertificate() {
     const [key, setKey] = useState(null);
-    // const history = useHistory();
     const { uuid } = useParams();
     const [checkout, setCheckout] = useState(null);
     const {isAuthenticated} = useAppContext();
@@ -24,13 +21,7 @@ export default function CollectCertificate() {
             if (!isAuthenticated) {
                 return;
             }
-            try {
-                const checkout = await loadCheckout({uuid});
-                console.log("checkout = "+checkout )
-                setCheckout(checkout)
-            } catch (e) {
-                onError(e);
-            }
+            loadCheckout({uuid})
             setIsLoading(false);
         }
         onLoad();
@@ -52,38 +43,26 @@ export default function CollectCertificate() {
     }
 
     function loadCheckout(orderId) {
-        return new Promise(resolve => {
-            try {
-                // Sending and receiving data in JSON format using POST method
-                //
-                var xhr = new XMLHttpRequest();
-                var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/order/checkout/"+orderId.uuid;
-                console.log(url)
-                xhr.open("GET", url, true);
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("jwtoken"));
-                xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        var json = JSON.parse(xhr.responseText);
-                        if (json == null) {
-                            alert("Could not get order, json is null");
-                        } else {
-                            console.log(json);
-                            resolve(json)
-                        }
-                    } else {
-                        alert("Could not get order " + xhr.status);
-                    }
-                };
-                /*
-                "source_license":"CC-BY 4.0",
-                "ipfs_hash":"QmZFmZfRcspTtgUk7EDZNofTMJiCUh7ffhU6kd3ycNbWDi"
-                */
-                xhr.send();
-            } catch (e) {
-                onError(e);
+        const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/order/checkout/"+orderId.uuid
+        const Bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+        const headers = {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": Bearer
             }
+        }
+        axios.get(url, headers)
+        .then(response => {
+            const checkout = response.data
+            setCheckout(checkout);
+            if(checkout == null)
+            {
+                notify({"title":"Could not get order", "type": "danger"});
+            }
+        }).catch(error => {
+            onError(error);
         })
+
     }
 
     function renderOrder() {
@@ -123,7 +102,7 @@ export default function CollectCertificate() {
 
     return (
         <div className="Home">
-            {isAuthenticated && !isLoading ? renderOrder() : <p>Please sign-in</p>}
+            {isAuthenticated && !isLoading && checkout ? renderOrder() : <p>Please sign-in</p>}
         </div>
     );
 

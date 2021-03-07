@@ -3,6 +3,8 @@ import { useParams, useHistory } from "react-router-dom";
 import {useAppContext} from "../libs/contextLib";
 import embossing from "../embossing.svg";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import axios from "axios";
+import { notify } from "./Notification";
 
 export default function CheckoutCertificate() {
 
@@ -18,13 +20,7 @@ export default function CheckoutCertificate() {
             if (!isAuthenticated) {
                 return;
             }
-            try {
-                const checkout = await loadCheckout({uuid});
-                console.log("checkout = "+checkout )
-                setCheckout(checkout)
-            } catch (e) {
-                onError(e);
-            }
+            loadCheckout({uuid});
             setIsLoading(false);
         }
         onLoad();
@@ -32,74 +28,64 @@ export default function CheckoutCertificate() {
 
 
     function loadCheckout(orderId) {
-        return new Promise(resolve => {
-            try {
-                // Sending and receiving data in JSON format using POST method
-                //
-                var xhr = new XMLHttpRequest();
-                var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/order/checkout/"+orderId.uuid;
-                console.log(url)
-                xhr.open("GET", url, true);
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("jwtoken"));
-                xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        var json = JSON.parse(xhr.responseText);
-                        if (json == null) {
-                            alert("Could not get order, json is null");
-                        } else {
-                            console.log(json);
-                            resolve(json)
-                        }
-                    } else {
-                        alert("Could not get order " + xhr.status);
-                    }
-                };
-                /*
-                "source_license":"CC-BY 4.0",
-                "ipfs_hash":"QmZFmZfRcspTtgUk7EDZNofTMJiCUh7ffhU6kd3ycNbWDi"
-                */
-                xhr.send();
-            } catch (e) {
-                onError(e);
+        const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/order/checkout/"+orderId.uuid;
+        const Bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+        const headers = {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": Bearer
             }
+        }
+        axios.get(url, headers)
+        .then(response => {
+            if(response.status === 200 && response.data)
+            {
+                const checkout = response.data;
+                setCheckout(checkout)
+            }
+            else if(response.data == null)
+            {
+                console.info("Data is empty");
+            }
+        }).catch(error => {
+            onError(error)
         })
     }
 
     function updateOrder(IsDIY, PaymentSuccess, details) {
-        try {
-            // Sending and receiving data in JSON format using POST method
-            //
-            var xhr = new XMLHttpRequest();
-            var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/order/process";
-            xhr.open("POST", url, true	);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("jwtoken"));
-            xhr.onload = function () {
-                if ( xhr.status === 200 ) {
-                    var json = JSON.parse(xhr.responseText);
-                    if( json==null ) {
-                        alert("Could update order");
-                    } else {
-                        console.log("got order update "+json);
-                    }
-
-                } else {
-                    alert("Could not update order");
-                }
-                setIsLoading(false);
-                // trigger page reload
-                // window.location.reload(false);
-                history.push("/cert/collect/"+checkout.Order.OrderUUID);
-            };
-            var stringified = JSON.stringify(details)
-            var data = JSON.stringify(
-                {"OrderUUID": checkout.Order.OrderUUID, "IsDIY": IsDIY, "IsPaid": PaymentSuccess, "PaypalDetails": stringified});
-            console.log("create order process = "+data)
-            xhr.send(data);
-        } catch (e) {
-            onError(e);
+        const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/order/process";
+        const Bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+        const headers = {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": Bearer
+            }
         }
+        const stringified = JSON.stringify(details)
+        const data = 
+        JSON.stringify(
+            {"OrderUUID": checkout.Order.OrderUUID,
+            "IsDIY": IsDIY,
+            "IsPaid": PaymentSuccess,
+            "PaypalDetails": stringified
+        })
+        axios.post(url, data, headers)
+        .then(response => {
+            const result = response.data;
+            if(!result)
+            {
+                notify({"title":"Could not update the order", "type":"danger"})
+            }
+            else
+            {
+                notify({"title":"Successfully updated order", "type":"success"})
+            }
+            setIsLoading(false);
+            history.push("/cert/collect/"+checkout.Order.OrderUUID);
+        }).catch(error => {
+            setIsLoading(false);
+            onError(error)
+        })
     }
 
 

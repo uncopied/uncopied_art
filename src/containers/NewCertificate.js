@@ -1,4 +1,3 @@
-// import React, { useRef, useState, useEffect } from "react";
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { onError } from "../libs/errorLib";
@@ -6,9 +5,10 @@ import {useAppContext} from "../libs/contextLib";
 import Form from "react-bootstrap/Form";
 import LoaderButton from "../app/components/LoaderButton";
 import embossing from "../embossing.svg";
+import axios from "axios"
+import { notify } from "./Notification";
 
 export default function NewCertificate() {
-
     const history = useHistory();
     const [assetTemplate, setAssetTemplate] = useState(null);
     const { id } = useParams();
@@ -30,90 +30,66 @@ export default function NewCertificate() {
             if (!isAuthenticated) {
                 return;
             }
-            try {
-                const assetTemplate = await loadAssetTemplate({id});
-                console.log("assetTemplate = "+assetTemplate )
-                setAssetTemplate(assetTemplate);
-            } catch (e) {
-                onError(e);
-            }
-            setIsLoading(false);
+            loadAssetTemplate({id})
         }
         onLoad();
     }, [isAuthenticated, id]);
-
-    function loadAssetTemplate(assetTemplateId) {
-        return new Promise(resolve => {
-            try {
-                // Sending and receiving data in JSON format using POST method
-                //
-                var xhr = new XMLHttpRequest();
-                var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/asset/"+assetTemplateId.id;
-                console.log(url)
-                xhr.open("GET", url, true);
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("jwtoken"));
-                xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        var json = JSON.parse(xhr.responseText);
-                        if (json == null) {
-                            alert("Could not get asset, json is null");
-                        } else {
-                            console.log(json);
-                            resolve(json)
-                        }
-                    } else {
-                        alert("Could not get asset " + xhr.status);
-                    }
-                };
-                /*
-                "source_license":"CC-BY 4.0",
-                "ipfs_hash":"QmZFmZfRcspTtgUk7EDZNofTMJiCUh7ffhU6kd3ycNbWDi"
-                */
-                xhr.send();
-            } catch (e) {
-                onError(e);
+    function loadAssetTemplate(assetTemplateId)
+    {
+        const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/asset/"+assetTemplateId.id;
+        const bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+        const headers = {
+            "Content-Type": "application/json",
+            "Authorization": bearer
+        }
+        axios.get(url, {headers: headers})
+        .then(response => {
+            if(response.status === 200)
+            {
+                const assetTemplate = response.data;
+                setAssetTemplate(assetTemplate);
+                if(assetTemplate == null)
+                {
+                    console.error("Could not fetch asset, data is null")
+                }
             }
+            else{
+                notify({"title": "Could not fetch asset", "type":"danger"})
+            }
+            setIsLoading(false);
+        }).catch(error => {
+            notify({"title": "Could not fetch asset", "type":"danger"})
+            console.error(error);
+            setIsLoading(false);
         })
     }
 
     function handleSubmit(event) {
         event.preventDefault();
-        try {
-            setIsLoading(true);
-            // Sending and receiving data in JSON format using POST method
-            //
-            var xhr = new XMLHttpRequest();
-            var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/cert/order";
-            xhr.open("POST", url, true);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("jwtoken"));
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    var json = JSON.parse(xhr.responseText);
-                    if (json == null) {
-                        alert("Could order " + assetTemplate.ObjectUUID);
-                        setIsLoading(false);
-                    } else {
-                        console.log(json);
-                        //local Storage.removeItem('assetTemplateID');
-                        //local Storage.setItem('OrderUUID', assetTemplate.ObjectUUID);
-                        history.push("/cert/order/"+assetTemplate.ObjectUUID);
-                    }
-                } else {
-                    alert("Could order " + assetTemplate.ObjectUUID + " error " + xhr.status);
-                }
-            };
-            /*
-            "source_license":"CC-BY 4.0",
-            "ipfs_hash":"QmZFmZfRcspTtgUk7EDZNofTMJiCUh7ffhU6kd3ycNbWDi"
-            */
-            var data = JSON.stringify({"AssetTemplateID" : assetTemplate.ID, "OrderUUID": assetTemplate.ObjectUUID });
-            xhr.send(data);
-        } catch (e) {
-            onError(e);
-            setIsLoading(false);
+        setIsLoading(true);
+        const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/cert/order"
+        const bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+        const headers = {
+            "Content-Type": "application/json",
+            "Authorization": bearer
         }
+        const data = JSON.stringify({
+            "AssetTemplateID" : assetTemplate.ID,
+            "OrderUUID": assetTemplate.ObjectUUID
+        });
+        axios.post(url, data, headers)
+        .then(response => {
+            if(response.status === 200)
+            {
+                console.log(response.data);
+                history.push("/cert/order/"+assetTemplate.ObjectUUID);
+            }
+            setIsLoading(false);
+        })
+        .catch(error => {
+            const title = "Could order " + assetTemplate.ObjectUUID + " error " + error.response.status
+            notify({"title": title, "type":"danger"})
+        })
     }
 
     function renderAssetTemplate() {
@@ -169,7 +145,7 @@ export default function NewCertificate() {
 
     return (
         <div className="Home">
-            {isAuthenticated && !isLoading ? renderAssetTemplate() : <p>Please sign-in</p>}
+            {isAuthenticated && !isLoading && assetTemplate ? renderAssetTemplate() : <p>Try with valid credentials</p>}
         </div>
     );
 

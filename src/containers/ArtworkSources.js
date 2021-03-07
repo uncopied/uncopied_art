@@ -5,6 +5,7 @@ import {onError} from "../libs/errorLib";
 import {LinkContainer} from "react-router-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import embossing from "../embossing.svg";
+import axios from "axios"
 
 export default function Home() {
     const [artworkSources, setArtworkSources] = useState([]);
@@ -16,49 +17,30 @@ export default function Home() {
             if (!isAuthenticated) {
                 return;
             }
-            try {
-                const artworkSources = await loadArtworkSources();
-                const artworkSourcesStamped = artworkSources.filter( artworkSource =>  artworkSource.StampError.length === 0 );
-                setArtworkSources(artworkSourcesStamped);
-            } catch (e) {
-                onError(e);
-            }
+            loadArtworkSources();
             setIsLoading(false);
         }
         onLoad();
     }, [isAuthenticated]);
 
     function loadArtworkSources() {
-        return new Promise(resolve => {
-            try {
-                // Sending and receiving data in JSON format using POST method
-                //
-                var xhr = new XMLHttpRequest();
-                var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/src/";
-                xhr.open("GET", url, true);
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("jwtoken"));
-                xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        var json = JSON.parse(xhr.responseText);
-                        if (json == null) {
-                            alert("Could not get src, json is null");
-                        } else {
-                            console.log(json);
-                            resolve(json)
-                        }
-                    } else {
-                        alert("Could not get src " + xhr.status);
-                    }
-                };
-                /*
-                "source_license":"CC-BY 4.0",
-                "ipfs_hash":"QmZFmZfRcspTtgUk7EDZNofTMJiCUh7ffhU6kd3ycNbWDi"
-                */
-                xhr.send();
-            } catch (e) {
-                onError(e);
+        const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/src/"
+        const Bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+        const headers = {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": Bearer
             }
+        }
+        axios.get(url, headers)
+        .then(response => {
+            const artworkSources = response.data
+            const artworkSourcesStamped = artworkSources.filter( artworkSource =>  artworkSource.StampError.length === 0 );
+            setArtworkSources(artworkSourcesStamped)
+        })
+        .catch(error => {
+            console.log(error);
+            onError(error);
         })
     }
 

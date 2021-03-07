@@ -10,7 +10,7 @@ export function useFormFields(initialState) {
         ...fields,
         [event.target.id]: event.target.value
       });
-      console.log("fields = "+JSON.stringify(fields))
+      // console.log("fields = "+JSON.stringify(fields))
     }
   ];
 }

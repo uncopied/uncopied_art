@@ -8,6 +8,7 @@ import Form from "react-bootstrap/Form";
 import LoaderButton from "../app/components/LoaderButton";
 import {useFormFields} from "../libs/hooksLib";
 import embossing from "../embossing.svg";
+import axios from "axios";
 
 export default function ArtworkSource() {
 
@@ -23,12 +24,9 @@ export default function ArtworkSource() {
         metadataTemplate:"",
         editionTotal:1,
     });
-
-    // const file = useRef(null);
     const { id } = useParams();
     const history = useHistory();
     const [artworkSource, setArtworkSource] = useState(null);
-
     const {isAuthenticated} = useAppContext();
     const [isLoading, setIsLoading] = useState(true);
 
@@ -115,96 +113,79 @@ export default function ArtworkSource() {
             if (!isAuthenticated) {
                 return;
             }
-            try {
-                const artworkSource = await loadArtworkSource({id});
-                console.log("artworkSource = "+artworkSource )
-                setArtworkSource(artworkSource);
-            } catch (e) {
-                onError(e);
-            }
+            loadArtworkSource({id});
             setIsLoading(false);
         }
         onLoad();
     }, [isAuthenticated,id]);
 
-
     function loadArtworkSource(sourceId) {
-        return new Promise(resolve => {
-            try {
-                // Sending and receiving data in JSON format using POST method
-                //
-                var xhr = new XMLHttpRequest();
-                var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/src/"+sourceId.id;
-                console.log(url)
-                xhr.open("GET", url, true);
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("jwtoken"));
-                xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        var json = JSON.parse(xhr.responseText);
-                        if (json == null) {
-                            alert("Could not get src, json is null");
-                        } else {
-                            console.log(json);
-                            resolve(json)
-                        }
-                    } else {
-                        alert("Could not get src " + xhr.status);
-                    }
-                };
-                /*
-                "source_license":"CC-BY 4.0",
-                "ipfs_hash":"QmZFmZfRcspTtgUk7EDZNofTMJiCUh7ffhU6kd3ycNbWDi"
-                */
-                xhr.send();
-            } catch (e) {
-                onError(e);
+        const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/src/"+sourceId.id;
+        const Bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+        const headers = {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": Bearer
             }
+        }
+        axios.get(url, headers)
+        .then(response => {
+            if(response.status === 200)
+            {
+                const artworkSource = response.data
+                if(response.data == null)
+                {
+                    console.info("ArtworkSource fetched is null");
+                }
+                else
+                {
+                    setArtworkSource(artworkSource)
+                }
+            }
+        }).catch(error => {
+            onError(error)
         })
     }
 
     function handleSubmit(event) {
         event.preventDefault();
-        try {
-            // Sending and receiving data in JSON format using POST method
-            //
-            var xhr = new XMLHttpRequest();
-            var url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/asset/";
-            xhr.open("POST", url, true	);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("jwtoken"));
-            xhr.onload = function () {
-                if ( xhr.status === 200 ) {
-                    var json = JSON.parse(xhr.responseText);
-                    if( json==null ) {
-                        alert("Could not read asset template");
-                    } else {
-                        console.log("got asset template "+json);
-                        // local Storage.setItem('assetTemplateID', json.Template.ID);
-                        history.push("/cert/new/"+parseInt(json.Template.ID.valueOf()));
-                    }
-                } else {
-                    alert("Could not create asset template");
-                }
-                setIsLoading(false);
-            };
-            var data = JSON.stringify(
-                {"name": fields.artworkName, "certificate_label": fields.certificateLabel,
-                    "asset_label": fields.assetLabel, "edition_total": parseInt(fields.editionTotal),
-                    "metadata":fields.metadataTemplate,
-                    "asset_properties" : {
-                        "ArtMedium":fields.artMedium,
-                        "ArtworkSurface":fields.artworkSurface,
-                        "Width":fields.width,
-                        "Height":fields.height,
-                    },
-                    "source_id": parseInt(id)});
-            console.log("create asset data = "+data)
-            xhr.send(data);
-        } catch (e) {
-            onError(e);
-            setIsLoading(false);
+        const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/asset/";
+        const Bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+        const headers = {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": Bearer
+            }
         }
+        const data = JSON.stringify(
+            {"name": fields.artworkName,
+            "certificate_label": fields.certificateLabel,
+            "asset_label": fields.assetLabel,
+            "edition_total": parseInt(fields.editionTotal),
+            "metadata":fields.metadataTemplate,
+            "asset_properties" : {
+                "ArtMedium":fields.artMedium,
+                "ArtworkSurface":fields.artworkSurface,
+                "Width":fields.width,
+                "Height":fields.height,
+            },
+                "source_id": parseInt(id)
+            })
+        axios.post(url, data, headers)
+        .then(response => {
+            if(!response.data)
+            {
+                console.info("Could not read asset template");
+            }
+            else
+            {
+                history.push("/cert/new/"+parseInt(response.data.Template.ID.valueOf()));
+            }
+            setIsLoading(false)
+        }).catch(error => {
+            onError(error)
+            setIsLoading(false)
+        })
     }
 
     function renderArtworkSource() {
@@ -344,7 +325,7 @@ export default function ArtworkSource() {
 
     return (
         <div className="Home">
-            {isAuthenticated && !isLoading ? renderArtworkSource() : <p>Please sign-in</p>}
+            {isAuthenticated && !isLoading && artworkSource ? renderArtworkSource() : <p>Enter valid details</p>}
         </div>
     );
 

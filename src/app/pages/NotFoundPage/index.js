@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components/macro';
 import errorpage from './assets/404.svg';
 import { useTranslation } from "react-i18next";
 import './style.css'

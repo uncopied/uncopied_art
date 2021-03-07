@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-// import Button from "react-bootstrap/Button";
 import LoaderButton from "../app/components/LoaderButton";
+import { notify } from './Notification'
 import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
 import { useHistory } from "react-router-dom";
 import { onError } from "../libs/errorLib";
 
+
 import embossing from "../embossing.svg";
+import axios from "axios";
 
 export default function Login() {
 	const { userHasAuthenticated } = useAppContext();
@@ -24,37 +26,34 @@ export default function Login() {
 
 	function handleSubmit(event) {
 		event.preventDefault();
-		try {
-			setIsLoading(true);
-			// Sending and receiving data in JSON format using POST method
-			var xhr = new XMLHttpRequest();
-
-			var url = process.env.REACT_APP_UNCOPIED_API + "api/v1.0/auth/login";
-			xhr.open("POST", url, true);
-			xhr.setRequestHeader("Content-Type", "application/json");
-			xhr.onload = function () {
-				if (xhr.status === 200) {
-					var json = JSON.parse(xhr.responseText);
-					console.log(json.user + ", " + json.token);
-					localStorage.setItem('jwtoken', json.token);
-					userHasAuthenticated(true);
-					history.push("/");
-				} else {
-					alert("Could not authenticate user " + fields.username + " xhr.readyState=" + xhr.readyState + " xhr.status=" + xhr.status);
-					setIsLoading(false);
-					userHasAuthenticated(false);
-				}
-			};
-			var data = JSON.stringify({ "username": fields.username, "password": fields.password });
-			xhr.send(data);
-		} catch (e) {
-			onError(e);
-			setIsLoading(false);
-			userHasAuthenticated(false);
+		setIsLoading(true);
+		const url = process.env.REACT_APP_UNCOPIED_API + "api/v1.0/auth/login";
+		const headers = {
+			"Content-Type": "application/json"
 		}
+		const data =  JSON.stringify({
+			"username": fields.username,
+			"password": fields.password 
+		})
+		axios.post(url, data, headers).then(response => {
+			if(response.status === 200)
+			{
+				notify({"title":"Successfully Logged In", "type":"success"})
+				localStorage.setItem('jwtoken', response.data.token);
+				userHasAuthenticated(true)
+				history.push("/")
+			}
+			setIsLoading(false)
+		}).catch(error => {
+			notify({"title":"Logged In failed", "type":"danger"})
+			onError(error)
+			setIsLoading(false)
+			userHasAuthenticated(false)
+		})
 	}
 
 	return (
+		<>
 		<div className="form-container-outer">
 			<div className="form-container-inner">
 				<div>
@@ -91,5 +90,6 @@ export default function Login() {
 				</Form>
 			</div>
 		</div>
+		</>
 	);
 }	
