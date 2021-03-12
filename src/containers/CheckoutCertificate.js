@@ -42,6 +42,7 @@ export default function CheckoutCertificate() {
             {
                 const checkout = response.data;
                 setCheckout(checkout)
+                console.info("Data looks good");
             }
             else if(response.data == null)
             {

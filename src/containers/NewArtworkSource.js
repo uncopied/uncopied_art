@@ -75,10 +75,13 @@ export default function NewArtworkSource() {
                 // Sending and receiving data in JSON format using POST method
                 const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/src/"
                 const Bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+                // [ELIAN] Hi! Looks like we need to encapsulate in an {options { headers: ... }}
                 const headers = {
-                    "Content-Type": "application/json",
-                    "Authorization": Bearer
-                }
+                    headers : {
+                        "Content-Type": "application/json",
+                        "Authorization": Bearer
+                    }
+                };
                 const data = JSON.stringify({
                     "source_license": license,
                     "ipfs_hash": hash
@@ -98,7 +101,7 @@ export default function NewArtworkSource() {
                         }
                         else
                         {
-                            notify({title:"Successfully uploaded Artwork"})
+                            // [ELIAN] this line caused an error : notify({title:"Successfully uploaded Artwork"})
                             history.push("/src/"+data.ID);
                         }
                     }

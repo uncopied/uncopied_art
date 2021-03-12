@@ -69,10 +69,13 @@ export default function NewCertificate() {
         setIsLoading(true);
         const url = process.env.REACT_APP_UNCOPIED_API+"api/v1.0/cert/order"
         const bearer = 'Bearer ' + localStorage.getItem("jwtoken")
+            // [ELIAN] Hi! Looks like we need to encapsulate in an {options { headers: ... }}
         const headers = {
-            "Content-Type": "application/json",
-            "Authorization": bearer
-        }
+            headers : {
+                "Content-Type": "application/json",
+                "Authorization": bearer
+            }
+        };
         const data = JSON.stringify({
             "AssetTemplateID" : assetTemplate.ID,
             "OrderUUID": assetTemplate.ObjectUUID
