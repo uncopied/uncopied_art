@@ -5,8 +5,8 @@ export function notify(notification) {
         title: notification.title || " ",
         message: " ",
         type: notification.type,
-        insert: "top",
-        container: "top-right",
+        insert: "bottom",
+        container: "bottom-left",
         animationIn: ["animate__animated", "animate__fadeIn"],
         animationOut: ["animate__animated", "animate__fadeOut"],
         dismiss: {
