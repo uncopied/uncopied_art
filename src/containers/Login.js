@@ -54,7 +54,7 @@ export default function Login() {
 
 	return (
 		<>
-		<div className="form-container-outer">
+		<div className="form-container-outer spacing">
 			<div className="form-container-inner">
 				<div>
 					<img className="embossing" src={embossing} alt="embossing" />

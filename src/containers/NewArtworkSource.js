@@ -4,7 +4,8 @@ import {useHistory} from "react-router-dom";
 import LoaderButton from "../app/components/LoaderButton";
 import {onError} from "../libs/errorLib";
 import embossing from "../embossing.svg";
-import axios from "axios"
+import axios from "axios";
+import Sidebar from './sidebar';
 import { notify } from "./Notification" 
 
 export default function NewArtworkSource() {
@@ -112,7 +113,9 @@ export default function NewArtworkSource() {
     }
 
     return (
-        <div className="form-container-outer">
+        <div className="form-container-outer spacing">
+            <div class="sidebar-flex">
+                <Sidebar></Sidebar>
             <div className="form-container-inner">
 
             <div>
@@ -178,6 +181,7 @@ export default function NewArtworkSource() {
                     Create
                 </LoaderButton>
             </Form>
+            </div>               
             </div>
         </div>
     );

@@ -4,11 +4,13 @@
   padding: 10px;
 }
 
-.Nav-link {
+.nav-link {
   margin: 10px;
   font-weight: 600;
   color: #000 !important;
   text-align: center;
+  padding-top: .8rem;
+  font-weight: 600;
 }
 
 .Nav-but {
@@ -40,4 +42,7 @@
 .nav-spacing {
   padding-right: 150px;
   padding-left: 150px;
+  box-shadow:
+  0  5px 10px rgba(154,160,185,0.05),
+  0 15px 40px rgba(166,173,201,0.2);
 }
