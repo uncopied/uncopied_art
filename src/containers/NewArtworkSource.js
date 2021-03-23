@@ -5,7 +5,7 @@ import LoaderButton from "../app/components/LoaderButton";
 import {onError} from "../libs/errorLib";
 import embossing from "../embossing.svg";
 import axios from "axios";
-import Sidebar from './sidebar';
+
 import { notify } from "./Notification" 
 
 export default function NewArtworkSource() {
@@ -114,8 +114,7 @@ export default function NewArtworkSource() {
 
     return (
         <div className="form-container-outer spacing">
-            <div class="sidebar-flex">
-                <Sidebar></Sidebar>
+            <div className="sidebar-flex">
             <div className="form-container-inner">
 
             <div>

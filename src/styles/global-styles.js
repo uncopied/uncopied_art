@@ -392,6 +392,7 @@ div form button.btn {
   flex: 0 1 80%;
   padding: 20px;
   flex-direction: row;
+  background-color:pink;
 }
 
 
@@ -402,5 +403,14 @@ div form button.btn {
 .form-container-outer .spacing {
   padding-top: 100px;
   padding-bottom: 100px;
+}
+.mainpage{
+  display: flex
+}
+.maincontent {
+  justify-content: center;
+  display: grid;
+  text-align: center;
+  margin: auto;
 }
 `;

@@ -5,7 +5,7 @@ import embossing from "../embossing.svg";
 // import HowItWorks from "../app/components/StaticContent/HowItWorks";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
-import Sidebar from './sidebar';
+import Sidebar from '../app/components/Sidebar';
 import Container from '../app/components/LinkContainer'
 import  HomePage  from '../app/pages/HomePage'
 
@@ -34,14 +34,14 @@ export default function Home() {
         return (
             <div className="form-container-outer">
                 <div className="spacing">
-                <div class="sidebar-flex">
-                    <Sidebar></Sidebar>
+                <div className="sidebar-flex">
+                    {/* <Sidebar></Sidebar> */}
                     <div className="content artworkSources">
                      <div>
                         <h2 className="center">Create your <span>Artworks</span></h2>
                      </div>
-                     <div class="box">
-                      <a href="/src/new" class="content">
+                     <div className="box">
+                      <a href="/src/new" className="content">
                        <p><FontAwesomeIcon icon={faArrowAltCircleUp} /></p>
                        <h3>Upload</h3>
                       </a>

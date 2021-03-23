@@ -8,12 +8,12 @@ export default function NotFound()
   const { t } = useTranslation();
 
   return (
-    <div class="Wrapper">
+    <div className="Wrapper">
       <div className="business-item-img">
         <img src={errorpage} className="img-fluid" alt=""/>
       </div>
-      <div class="Header">{t('error.heading')}</div>
-       <div class="Button">
+      <div className="Header">{t('error.heading')}</div>
+       <div className="Button">
        <a className="btn btn-common" href="https://uncopied.org/">{t('error.button')}</a> 
        </div>
     </div>
