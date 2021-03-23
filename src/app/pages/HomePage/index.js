@@ -12,7 +12,7 @@ export default function HomePage()
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className="mainhomepage">
       <section className="spacing">
                 <div className="container-fluid">
                   <div className="row">

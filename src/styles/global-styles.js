@@ -28,8 +28,25 @@ body {
   }
 }
 
+body, .maincontent {
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 2px;
+  }
+ &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+}
+
 
 /* Spacing between components */
+
+.top-spacing {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-right: 120px;
+  padding-left: 120px;
+}
 
 .spacing {
   padding-right: 120px;
@@ -131,9 +148,9 @@ body {
   padding: 20px;
 }
 
-.form-container-outer {
-  background: #f2f2f2;
-}
+// .form-container-outer {
+
+// }
 
 .form-container-inner {
   font-size: 18px;
@@ -222,7 +239,7 @@ div form button.btn {
 }
 
 @media screen and (min-device-width: 800px) and (max-device-width: 1380px) {
-  .spacing {
+  .spacing, .top-spacing {
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -233,7 +250,7 @@ div form button.btn {
 }
 
 @media screen and (max-device-width: 655px) {
-  .spacing {
+  .spacing, .top-spacing {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -250,12 +267,13 @@ div form button.btn {
   .section4 .business-item-info h3 {
     font-size: 37px !important;
   }
-  .spacing {
+  .spacing, .top-spacing {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 30px;
     padding-bottom: 30px;
   }
+
   .nav-spacing {
     padding-left: 20px;
     padding-right: 20px;
@@ -339,6 +357,7 @@ div form button.btn {
 .artworkSources .box .content h3 {
   margin: 0 0 10px;
   color: #EB6D6D;
+  margin-right: 120px;
 }
 
 .artworkSources .box .content p {
@@ -392,9 +411,7 @@ div form button.btn {
   flex: 0 1 80%;
   padding: 20px;
   flex-direction: row;
-  background-color:pink;
 }
-
 
 .artworkSources span {
   color: rgba(235, 109, 109, 0.8);
@@ -405,12 +422,23 @@ div form button.btn {
   padding-bottom: 100px;
 }
 .mainpage{
-  display: flex
+  display: flex;
 }
 .maincontent {
   justify-content: center;
   display: grid;
   text-align: center;
   margin: auto;
+  overflow: auto;
+  height: 90vh;
+  max-height: 80vh;
+  width: 80vw;
 }
+
+@media (max-width: 790px) {
+  .mainpage{
+    display: grid;
+  }
+}
+
 `;

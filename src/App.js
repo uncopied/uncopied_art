@@ -48,10 +48,16 @@ function App() {
 
 	function RenderSideBar()
 	{
-		console.log("Is user Authenticated??"+ isAuthenticated)
-		if(isAuthenticated)
-			return <Sidebar></Sidebar>
-		return <></>
+		if(isAuthenticated) {
+			return (
+				<div className="mainpage top-spacing">
+					<Sidebar></Sidebar>
+				<div className="maincontent">
+			<Routes />
+		</div>
+			</div>
+	)}
+			return <Routes/>
 	}
 
 	return (
@@ -60,12 +66,7 @@ function App() {
 				{NavBar({isAuthenticated, handleLogout, t})}
 			</div>
 			<AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
-				<div className="mainpage spacing">
-					<RenderSideBar/>
-					<div className="maincontent">
-						<Routes />
-					</div>
-				</div>
+       <RenderSideBar/>
 			</AppContext.Provider>
 			<Footer></Footer>
 		</div>

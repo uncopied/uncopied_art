@@ -113,7 +113,7 @@ export default function NewArtworkSource() {
     }
 
     return (
-        <div className="form-container-outer spacing">
+        <div className="form-container-outer">
             <div className="sidebar-flex">
             <div className="form-container-inner">
 

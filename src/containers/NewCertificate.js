@@ -94,7 +94,7 @@ export default function NewCertificate() {
 
     function renderAssetTemplate() {
         return (
-            <div className="form-container-outer spacing">
+            <div className="form-container-outer">
                 <div className="form-container-inner">
 
                 <div>
