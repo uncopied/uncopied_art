@@ -15,6 +15,7 @@ export default function NewArtworkSource() {
     const [hash, setHash] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
+    const [UploadedImg, setUploadedImg] = useState('');
     // const types = ['image/x-png', 'image/png', 'image/jpeg']
 
     function validateForm() {
@@ -23,6 +24,7 @@ export default function NewArtworkSource() {
 
     function handleFileChange(event) {
         file.current = event.target.files[0];
+        setUploadedImg(URL.createObjectURL(file.current));
     }
 
     async function handleUpload(event) {
@@ -132,6 +134,7 @@ export default function NewArtworkSource() {
                     <Form.Control onChange={handleFileChange} type="file" accept="image/x-png,image/png,image/jpeg"
                                   disabled={false}/>
                 </Form.Group>
+                <img className="thumbnail" src={UploadedImg}/>
 
                 <LoaderButton
                     block

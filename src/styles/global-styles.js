@@ -340,7 +340,7 @@ div form button.btn {
 
 .artworkSources .box .content {
   background: #f2f2f2;
-  padding: 120px 220px;
+  padding: 120px 320px;
   overflow: hidden;
   text-align: center;
   cursor: pointer;
@@ -357,7 +357,6 @@ div form button.btn {
 .artworkSources .box .content h3 {
   margin: 0 0 10px;
   color: #EB6D6D;
-  margin-right: 120px;
 }
 
 .artworkSources .box .content p {
@@ -388,6 +387,11 @@ div form button.btn {
   list-style: none;
   padding: 20px;
   font-size: 18px;
+}
+
+.sidebar ul a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .sidebar ul li {
@@ -426,18 +430,89 @@ div form button.btn {
 }
 .maincontent {
   justify-content: center;
-  display: grid;
   text-align: center;
   margin: auto;
   overflow: auto;
   height: 90vh;
   max-height: 80vh;
   width: 80vw;
+  display: flex;
 }
 
 @media (max-width: 790px) {
   .mainpage{
     display: grid;
+  }
+}
+
+// Artwork Sources
+
+.artworkSources {
+  padding: 30px;
+}
+
+.artworkSources h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.artworkSources .btn {
+  margin-top: 20px;
+}
+
+.artworkSources .list-group a {
+  margin: 20px;
+}
+
+.list-group{
+  flex-direction: row;
+  display: flex;
+}
+
+.list-group-item+.list-group-item {
+  border-top-width: 1px;
+}
+
+.thumbnailCaption {
+  padding-top: 20px;
+  font-size: 17px;
+}
+
+.thumbnailCaption span {
+  font-size: 18px;
+  color: #222;
+}
+
+.artworkSources .plus-btn {
+  color: #222;
+  float: right;
+  margin-right: 20px;
+}
+
+
+@media (max-width: 1300px) {
+  .list-group {
+    flex-direction: column;
+  } 
+
+  .artworkSources .list-group a {
+    margin-bottom: 20px !important;
+    margin: 0px;
+  }
+}
+
+@media (max-width: 734px) {
+  .artworkSources {
+    padding: 0px;
+  }
+  .thumbnailCaption {
+    font-size: 14px;
+  }
+  .thumbnailCaption span {
+    font-size: 15px;
+  }
+  .artworkSources .btn {
+    font-size: 14px;
   }
 }
 

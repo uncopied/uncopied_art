@@ -8,6 +8,7 @@ import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 import Sidebar from '../app/components/Sidebar';
 import Container from '../app/components/LinkContainer'
 import  HomePage  from '../app/pages/HomePage'
+import { Link } from "react-router-dom";
 
 
 export default function Home() {
@@ -38,13 +39,12 @@ export default function Home() {
                     {/* <Sidebar></Sidebar> */}
                     <div className="content artworkSources">
                      <div>
-                        <h2 className="center">Create your <span>Artworks</span></h2>
+                        <h2 className="center">CREATE YOUR <span>ARTWORKS</span></h2>
                      </div>
                      <div className="box">
-                      <a href="/src/new" className="content">
+                      <Link to="/src/new" className="content">
                        <p><FontAwesomeIcon icon={faArrowAltCircleUp} /></p>
-                       <h3>Upload</h3>
-                      </a>
+                      </Link>
                      </div>
                     </div>
                 </div>
