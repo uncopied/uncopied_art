@@ -4,7 +4,7 @@ import {useAppContext} from "../libs/contextLib";
 import {onError} from "../libs/errorLib";
 import {LinkContainer} from "react-router-bootstrap";
 import Nav from "react-bootstrap/Nav";
-import embossing from "../embossing.svg";
+import { Link } from "react-router-dom";
 import axios from "axios"
 
 export default function Home() {
@@ -36,6 +36,7 @@ export default function Home() {
         .then(response => {
             const artworkSources = response.data
             const artworkSourcesStamped = artworkSources.filter( artworkSource =>  artworkSource.StampError.length === 0 );
+            console.log(artworkSourcesStamped);
             setArtworkSources(artworkSourcesStamped)
         })
         .catch(error => {
@@ -53,16 +54,12 @@ export default function Home() {
                         <ListGroup.Item action>
                             <span className="font-weight-bold">
                               <img className="thumbnail" src={`${process.env.REACT_APP_UNCOPIED_IPFS}${item.IPFSHashThumbnail}`} alt={`${new Date(item.CreatedAt).toLocaleString()} ${item.SourceLicense}`}/>
-                              <figcaption className="thumbnailCaption">{new Date(item.CreatedAt).toLocaleString()} {item.SourceLicense}</figcaption>
+                              <figcaption className="thumbnailCaption"> <span>Created on :</span> {new Date(item.CreatedAt).toLocaleString()} <br /> <span> Source License :</span> {item.SourceLicense}</figcaption>
                             </span>
                         </ListGroup.Item>
                     </LinkContainer>
                 ))}
-                <LinkContainer to="/src/new/">
-                    <ListGroup.Item action className="py-3 text-nowrap text-truncate">
-                        <span className="ml-2 font-weight-bold">New source image</span>
-                    </ListGroup.Item>
-                </LinkContainer>
+                
             </>
         );
     }
@@ -71,8 +68,8 @@ export default function Home() {
         return (
             <div className="artworkSources">
                 <div>
-                    <img className="embossing" src={embossing} alt="embossing" />
-                    <h2 align="center">YOUR ARTWORKS</h2>
+                    <h2 align="center">YOUR <span>ARTWORKS</span></h2>
+                   <Link className="btn btn-common" to="/src/new/">New Artwork</Link>
                 </div>
                 <ListGroup>{!isLoading && renderArtworkSourcesList(artworkSources)}</ListGroup>
             </div>

@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 import { onError } from "./libs/errorLib";
 import { useTranslation } from "react-i18next";
 import NavBar from "./app/components/NavBar";
+import Sidebar from "./app/components/Sidebar"
 import {Footer} from "./app/components/Footer";
 
 function App() {
@@ -45,13 +46,27 @@ function App() {
 		history.push("/login");
 	}
 
+	function RenderSideBar()
+	{
+		if(isAuthenticated) {
+			return (
+				<div className="mainpage top-spacing">
+					<Sidebar></Sidebar>
+				<div className="maincontent">
+			<Routes />
+		</div>
+			</div>
+	)}
+			return <Routes/>
+	}
+
 	return (
 		<div className="App">
 			<div>
 				{NavBar({isAuthenticated, handleLogout, t})}
 			</div>
 			<AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
-				<Routes />
+       <RenderSideBar/>
 			</AppContext.Provider>
 			<Footer></Footer>
 		</div>
