@@ -101,7 +101,7 @@ export default function NewArtworkSource() {
                         }
                         else
                         {
-                            // [ELIAN] this line caused an error : notify({title:"Successfully uploaded Artwork"})
+                            notify({title:"Successfully uploaded Artwork", type: "success"})
                             history.push("/src/"+data.ID);
                         }
                     }
