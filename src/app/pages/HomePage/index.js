@@ -6,6 +6,7 @@ import about from './assets/about.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenSquare, faHandsHelping, faCertificate, faUserPlus, faImage, faFileCode, faGem, faFileSignature } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from "react-i18next";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function HomePage()
 {
@@ -25,7 +26,7 @@ export default function HomePage()
                     </div>
                     <div className="col-lg-6 col-md-12 pt-70">
                       <div className="business-item-img">
-                        <img src={intro} className="img-fluid" alt=""/>
+                      <LazyLoadImage src={intro} className="img-fluid" alt=""/>
                       </div>
                     </div>
                   </div>
@@ -122,7 +123,7 @@ export default function HomePage()
         </div>
         <div className="col-lg-6 col-md-12 pt-70">
           <div className="business-item-img">
-            <img src={certificate} className="img-fluid" alt=""/>
+          <LazyLoadImage src={certificate} className="img-fluid" alt=""/>
           </div>
         </div>
       </div>
@@ -133,7 +134,7 @@ export default function HomePage()
       <div className="row">
         <div className="col-lg-6 col-md-12 pt-70">
           <div className="business-item-img">
-            <img src={about} className="img-fluid" alt=""/>
+            <LazyLoadImage src={about} className="img-fluid" alt=""/>
           </div>
         </div>
         <div className="col-lg-6 col-md-12 px-5">

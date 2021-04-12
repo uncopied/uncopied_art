@@ -5,7 +5,7 @@ import LoaderButton from "../app/components/LoaderButton";
 import {onError} from "../libs/errorLib";
 import embossing from "../embossing.svg";
 import axios from "axios";
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { notify } from "./Notification" 
 
 export default function NewArtworkSource() {
@@ -134,7 +134,7 @@ export default function NewArtworkSource() {
                     <Form.Control onChange={handleFileChange} type="file" accept="image/x-png,image/png,image/jpeg"
                                   disabled={false}/>
                 </Form.Group>
-                <img className="thumbnail" src={UploadedImg}/>
+                 <LazyLoadImage className="thumbnail" src={UploadedImg}/>
 
                 <LoaderButton
                     block
