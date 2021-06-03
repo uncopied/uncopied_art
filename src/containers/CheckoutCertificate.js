@@ -251,7 +251,7 @@ export default function CheckoutCertificate() {
 
     return (
         <div className="Home">
-            {isAuthenticated && !isLoading ? renderOrder() : <p>Please sign-in</p>}
+            {isAuthenticated && !isLoading && checkout ? renderOrder() : <p>Please sign-in</p>}
         </div>
     );
 

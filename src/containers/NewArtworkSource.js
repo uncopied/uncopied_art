@@ -4,7 +4,8 @@ import {useHistory} from "react-router-dom";
 import LoaderButton from "../app/components/LoaderButton";
 import {onError} from "../libs/errorLib";
 import embossing from "../embossing.svg";
-import axios from "axios"
+import axios from "axios";
+
 import { notify } from "./Notification" 
 
 export default function NewArtworkSource() {
@@ -14,6 +15,7 @@ export default function NewArtworkSource() {
     const [hash, setHash] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
+    const [UploadedImg, setUploadedImg] = useState('');
     // const types = ['image/x-png', 'image/png', 'image/jpeg']
 
     function validateForm() {
@@ -22,6 +24,7 @@ export default function NewArtworkSource() {
 
     function handleFileChange(event) {
         file.current = event.target.files[0];
+        setUploadedImg(URL.createObjectURL(file.current));
     }
 
     async function handleUpload(event) {
@@ -101,7 +104,7 @@ export default function NewArtworkSource() {
                         }
                         else
                         {
-                            // [ELIAN] this line caused an error : notify({title:"Successfully uploaded Artwork"})
+                            notify({title:"Successfully uploaded Artwork", type: "success"})
                             history.push("/src/"+data.ID);
                         }
                     }
@@ -116,6 +119,7 @@ export default function NewArtworkSource() {
 
     return (
         <div className="form-container-outer">
+            <div className="sidebar-flex">
             <div className="form-container-inner">
 
             <div>
@@ -133,6 +137,7 @@ export default function NewArtworkSource() {
                     <Form.Control onChange={handleFileChange} type="file" accept="image/x-png,image/png,image/jpeg"
                                   disabled={false}/>
                 </Form.Group>
+                <img className="thumbnail" src={UploadedImg}/>
 
                 <LoaderButton
                     block
@@ -181,6 +186,7 @@ export default function NewArtworkSource() {
                     Create
                 </LoaderButton>
             </Form>
+            </div>               
             </div>
         </div>
     );

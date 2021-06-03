@@ -23,7 +23,15 @@ export default function NavBar({isAuthenticated, handleLogout ,t}){
       </Nav> */}
         <Nav activeKey={window.location.pathname}>
           {isAuthenticated ? (
-            <Nav.Link onClick={handleLogout}>{t('navbar.logout')}</Nav.Link>
+            <>
+            {/* <LinkContainer to="">
+              <Nav.Link> Collections </Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="">
+              <Nav.Link> Artworks </Nav.Link>
+            </LinkContainer> */}
+            <Button className="Nav-but" onClick={handleLogout}>{t('navbar.logout')}</Button>
+            </>
           ) : (
               <>
                 <LinkContainer to="/login">

@@ -12,7 +12,7 @@ export default function HomePage()
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className="mainhomepage">
       <section className="spacing">
                 <div className="container-fluid">
                   <div className="row">
@@ -32,7 +32,7 @@ export default function HomePage()
                 </div>
               </section>
 
-<div className="container-fluid spacing box">
+<div className="container-fluid spacing box1">
   <div className="cards">
     <div className="card-item">
     <div className="icon">
