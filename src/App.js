@@ -27,6 +27,12 @@ function App() {
 				// TODO set client-side expiry for this token
 				userHasAuthenticated(true);
 			}
+			const windowUrl = window.location.search;
+			const params = new URLSearchParams(windowUrl);
+			if( params.has("roleToken")) {
+				const roleToken = params.get("roleToken");
+				console.log("Web App started with roleToken = "+roleToken)
+			}
 		}
 		catch (e) {
 			if (e !== 'No current user') {
